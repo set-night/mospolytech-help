@@ -25,9 +25,9 @@ if (element) {
     cue.inert = progress > 0.96;
   }
   function measure(): void {
-    mobile = matchMedia('(max-width: 800px)').matches;
+    mobile = matchMedia('(max-width: 1050px)').matches;
     startY = scene.clientHeight / 2 - form.offsetHeight / 2;
-    endY = mobile ? 79 : 12;
+    endY = mobile ? document.querySelector<HTMLElement>('.site-header')!.offsetHeight + 11 : 12;
     render();
   }
   function schedule(): void {

@@ -98,9 +98,10 @@ test('мобильное меню открывается и ведёт к чат
   );
 });
 
-for (const width of [320, 375, 390, 768, 1024, 1920]) {
+for (const width of [320, 375, 390, 768, 844, 1024, 1920]) {
   test(`адаптация ${width}px: нет горизонтальной прокрутки`, async ({ page }) => {
     await page.setViewportSize({ width, height: 844 });
+    await page.emulateMedia({ reducedMotion: 'reduce' });
     for (const path of [
       '/',
       '/articles/',
@@ -114,6 +115,13 @@ for (const width of [320, 375, 390, 768, 1024, 1920]) {
         content: document.documentElement.scrollWidth,
       }));
       expect(size.content, path).toBeLessThanOrEqual(size.viewport);
+      if (path === '/') {
+        await page.locator('.stage-more').click();
+        await expect(page.locator('html')).toHaveClass(/search-docked/);
+        await page.locator('#browse-query').click({ trial: true });
+        await page.locator('.brand').click({ trial: true });
+        await page.locator('#theme-toggle').click({ trial: true });
+      }
     }
   });
 }
