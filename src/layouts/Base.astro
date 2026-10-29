@@ -2,10 +2,11 @@
 import '@fontsource-variable/manrope';
 import '@fontsource-variable/golos-text';
 import '../styles/global.css';
+import '../features/navigation/header.css';
+import '../features/brand/identity.css';
 import Search from '../components/Search.astro';
 import Icon from '../components/Icon.astro';
-import BrandMark from '../components/BrandMark.astro';
-import Ribbon from '../features/browse/Ribbon.astro';
+import Curl from '../features/brand/Curl.astro';
 import { repository } from '../lib/data';
 interface Props {
   title?: string;
@@ -16,13 +17,16 @@ const {
   description = 'Расписание, навигация, документы и ответы на вопросы студентов Московского Политеха. Открытый неофициальный справочник с источниками.',
 } = Astro.props;
 const isHome = Astro.url.pathname === '/';
+const currentSection = /^\/(articles|topics)\//.test(Astro.url.pathname)
+  ? '/articles/'
+  : Astro.url.pathname;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const nav = [
-  { href: '/', title: 'Главная' },
-  { href: '/articles/', title: 'Справочник' },
-  { href: '/resources/', title: 'Сервисы' },
-  { href: '/community/', title: 'Чаты и медиа' },
-];
+  { href: '/', title: 'Главная', icon: 'home' },
+  { href: '/articles/', title: 'Справочник', icon: 'book' },
+  { href: '/resources/', title: 'Сервисы', icon: 'grid' },
+  { href: '/community/', title: 'Чаты и медиа', icon: 'chat' },
+] as const;
 ---
 
 <!doctype html>
@@ -36,7 +40,7 @@ const nav = [
     <title>{title} — polytech.help</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.svg?v=4" type="image/svg+xml" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
@@ -49,31 +53,16 @@ const nav = [
       К содержимому
     </a>
     <header class="site-header">
-      <div class="header-inner wrap">
+      <div class="header-inner">
         <a class="brand" href="/" aria-label="polytech.help — на главную">
-          <span class="brand-symbol" aria-hidden="true">
-            <BrandMark />
-          </span>
           <span class="brand-wordmark">
             polytech<span>.help</span>
           </span>
         </a>
-        <nav class="desktop-nav" aria-label="Основная навигация">
-          {nav.map((item) => (
-            <a
-              href={item.href}
-              aria-current={Astro.url.pathname === item.href ? 'page' : undefined}
-            >
-              {item.title}
-            </a>
-          ))}
-        </nav>
         <div class="header-actions">
           <button class="header-search icon-button" data-open-search aria-label="Открыть поиск">
             <Icon name="search" />
-            <kbd>⌘ K</kbd>
           </button>
-          <span class="header-divider"></span>
           <button id="theme-toggle" class="icon-button" aria-label="Включить светлую тему">
             <Icon name="sun" class="theme-sun" />
             <Icon name="moon" class="theme-moon" />
@@ -94,12 +83,31 @@ const nav = [
         </div>
       </div>
     </header>
-    <nav id="mobile-nav" class="mobile-nav wrap" aria-label="Мобильная навигация" hidden>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Навигация по сайту" hidden>
       {nav.map((item) => (
-        <a href={item.href}>{item.title} ↗</a>
+        <a
+          href={item.href}
+          aria-current={
+            Astro.url.pathname === item.href
+              ? 'page'
+              : currentSection === item.href
+                ? 'true'
+                : undefined
+          }
+        >
+          <Icon name={item.icon} size={17} />
+          {item.title}
+        </a>
       ))}
-      <a href={`${repository}/blob/main/CONTRIBUTING.md`}>Дополнить справочник ↗</a>
+      <a href={`${repository}/blob/main/CONTRIBUTING.md`} class="menu-contribute">
+        <Icon name="github" size={17} /> Дополнить справочник <Icon name="arrow" size={15} />
+      </a>
     </nav>
+    {!isHome && (
+      <div class="page-identity" aria-hidden="true">
+        <Curl id="page-curl" />
+      </div>
+    )}
     <main id="main">
       <slot />
     </main>
@@ -115,7 +123,7 @@ const nav = [
             <Icon name="arrow" size={25} />
           </span>
         </a>
-        <Ribbon class="footer-ribbon" />
+        <Curl id="footer-curl" class="footer-ribbon" />
       </div>
       <div class="footer-bottom">
         <a href="/" class="footer-wordmark">
@@ -137,24 +145,8 @@ const nav = [
     <script>
       import '../features/theme/theme';
       import '../features/motion/motion';
-      const button = document.querySelector<HTMLButtonElement>('#menu-toggle')!;
-      const nav = document.querySelector<HTMLElement>('#mobile-nav')!;
-      function setMenu(open: boolean): void {
-        button.setAttribute('aria-expanded', String(open));
-        button.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
-        nav.hidden = !open;
-      }
-      button.addEventListener('click', () => setMenu(nav.hidden !== false));
-      document.addEventListener('keydown', (event) => {
-        if (
-          event.key === 'Escape' &&
-          !nav.hidden &&
-          !document.querySelector<HTMLDialogElement>('#search-dialog')?.open
-        ) {
-          setMenu(false);
-          button.focus();
-        }
-      });
+      import '../features/brand/favicon';
+      import '../features/navigation/menu';
     </script>
   </body>
 </html>

@@ -84,13 +84,15 @@ test('статьи: источники, отметки и редактура', a
   await expect(page.locator('.sources a')).toHaveCount(3);
 });
 
-test('мобильное меню открывается и ведёт к чатам', async ({ page, isMobile }) => {
-  test.skip(!isMobile, 'Меню используется на узких экранах');
+test('меню открывается и ведёт к чатам на любом экране', async ({ page }) => {
   await page.goto('/');
   const button = page.locator('#menu-toggle');
   await button.click();
   await expect(button).toHaveAttribute('aria-expanded', 'true');
-  await page.locator('#mobile-nav').getByRole('link', { name: 'Чаты и медиа ↗' }).click();
+  await page
+    .locator('#mobile-nav')
+    .getByRole('link', { name: 'Чаты и медиа', exact: true })
+    .click();
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Чаты и медиа');
   await expect(page.getByRole('link', { name: /Студенческий чат/ })).toHaveAttribute(
     'href',
@@ -342,4 +344,61 @@ test('ссылка на тег сразу открывает материалы 
   expect(rect!.y).toBeLessThan(page.viewportSize()!.height);
   await first.locator('.answer-main').click();
   await expect(page).toHaveURL(/\/articles\//);
+});
+
+test('бренд: текст в шапке, прозрачный вопрос и доступная анимация favicon', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/');
+  await expect(page.locator('.brand')).toHaveText('polytech.help');
+  await expect(page.locator('.brand svg, .brand img')).toHaveCount(0);
+  const icon = page.locator('link[rel="icon"]');
+  const fallback = await icon.getAttribute('href');
+  expect(fallback).toMatch(/^\/favicon.svg\?v=/);
+  const alpha = await page.evaluate(async (url) => {
+    const image = new Image();
+    image.src = url!;
+    await image.decode();
+    const canvas = document.createElement('canvas');
+    canvas.width = canvas.height = 96;
+    const context = canvas.getContext('2d')!;
+    context.drawImage(image, 0, 0, 96, 96);
+    const pixels = context.getImageData(0, 0, 96, 96).data;
+    let body = 0;
+    for (let index = 3; index < 96 * 70 * 4; index += 4) body = Math.max(body, pixels[index]);
+    return { corner: pixels[3], body };
+  }, fallback);
+  expect(alpha.corner).toBe(0);
+  expect(alpha.body).toBeGreaterThan(100);
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await expect(icon).toHaveAttribute('href', /^data:image\/svg\+xml,/);
+  const first = await icon.getAttribute('href');
+  await expect.poll(() => icon.getAttribute('href')).not.toBe(first);
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await expect(icon).toHaveAttribute('href', fallback!);
+});
+
+test('единая шапка и меню из кнопок на основных страницах', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  let expected: { x: number; y: number; width: number; height: number } | null = null;
+  for (const path of ['/', '/articles/', '/articles/schedule/', '/resources/', '/community/']) {
+    await page.goto(path);
+    const actions = page.locator('.header-actions');
+    await expect(actions.locator('.icon-button')).toHaveCount(4);
+    const rect = await actions.boundingBox();
+    if (!expected) expected = rect;
+    expect(rect, path).toEqual(expected);
+    const toggle = page.locator('#menu-toggle');
+    await toggle.click();
+    const menu = page.locator('#mobile-nav');
+    await expect(menu).toBeVisible();
+    await expect(menu).toHaveCSS('display', 'grid');
+    await expect(menu.locator('a')).toHaveCount(5);
+    await expect(menu.locator('a').first()).toHaveCSS('border-top-style', 'solid');
+    await page.keyboard.press('Escape');
+    await expect(menu).not.toBeVisible();
+    await expect(toggle).toBeFocused();
+    await toggle.click();
+    await page.locator('#main').click({ position: { x: 5, y: 200 } });
+    await expect(menu).not.toBeVisible();
+  }
 });

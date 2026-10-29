@@ -4,6 +4,7 @@ import Icon, { type IconName } from '../../components/Icon.astro';
 import { categories, repository, resources, statusLabels } from '../../lib/data';
 import { quickTags, normalizeTag, formatMaterialCount } from './topics';
 import Ribbon from './Ribbon.astro';
+import Curl from '../brand/Curl.astro';
 interface Props {
   services?: boolean;
   category?: string;
@@ -58,6 +59,7 @@ const serviceIcons: IconName[] = ['calendar', 'map', 'book', 'file'];
     {services && (
       <div class="scene-art" data-scene-parallax aria-hidden="true">
         <Ribbon class="scene-ribbon" />
+        <Curl id="hero-curl" class="scene-curl" />
         <span class="scene-point point-one"></span>
         <span class="scene-point point-two"></span>
         <span class="scene-cross">+</span>

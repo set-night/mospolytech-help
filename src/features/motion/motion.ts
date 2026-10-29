@@ -21,6 +21,13 @@ const observer = new IntersectionObserver(
   { threshold: 0.08 },
 );
 document.querySelectorAll('[data-reveal]').forEach((element) => observer.observe(element));
+const curls = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => entry.target.classList.toggle('is-visible', entry.isIntersecting));
+  },
+  { threshold: 0.05 },
+);
+document.querySelectorAll('[data-curl]').forEach((element) => curls.observe(element));
 reduced.addEventListener('change', () => {
   if (reduced.matches) document.getAnimations().forEach((animation) => animation.cancel());
 });

@@ -16,7 +16,21 @@ const ribs = Array.from({ length: 40 }, (_, index) => {
 ---
 
 <svg viewBox="-360 -360 720 720" fill="none" class={className} aria-hidden="true">
-  <g stroke="currentColor" stroke-width=".7">
+  <defs>
+    <linearGradient
+      id="ribbon-fade"
+      x1="-280"
+      y1="240"
+      x2="240"
+      y2="-210"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stop-color="currentColor" stop-opacity="0" />
+      <stop offset=".5" stop-color="currentColor" stop-opacity=".4" />
+      <stop offset="1" stop-color="currentColor" />
+    </linearGradient>
+  </defs>
+  <g stroke="url(#ribbon-fade)" stroke-width=".7">
     {ribs.map((rib) => (
       <ellipse cx="0" cy="0" rx={rib.rx} ry={rib.ry} transform={rib.transform} />
     ))}

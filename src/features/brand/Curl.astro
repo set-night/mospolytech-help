@@ -1,0 +1,35 @@
+---
+interface Props {
+  id: string;
+  class?: string;
+}
+const { id, class: className } = Astro.props;
+const path =
+  'M67 331C-3 168 177 77 245 185C321 307 125 395 138 255C152 110 370 62 425 201C478 334 338 417 290 340';
+---
+
+<svg
+  class:list={['identity-curl', className]}
+  viewBox="0 0 560 560"
+  fill="none"
+  aria-hidden="true"
+  data-curl
+>
+  <defs>
+    <linearGradient id={id} x1="80" y1="350" x2="420" y2="160" gradientUnits="userSpaceOnUse">
+      <stop stop-color="currentColor" stop-opacity="0" />
+      <stop offset=".3" stop-color="currentColor" stop-opacity=".15" />
+      <stop offset=".7" stop-color="currentColor" stop-opacity=".65" />
+      <stop offset="1" stop-color="currentColor" />
+    </linearGradient>
+  </defs>
+  <path class="curl-guide" d={path} stroke="currentColor" stroke-width="1" />
+  <path
+    class="curl-ink"
+    d={path}
+    pathLength="1"
+    stroke={`url(#${id})`}
+    stroke-width="23"
+    stroke-linecap="round"
+  />
+</svg>
