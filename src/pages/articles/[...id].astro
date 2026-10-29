@@ -42,6 +42,11 @@ const issueUrl = `${repository}/issues/new?template=correction.yml&title=${encod
           {article.data.title}
         </h1>
         <p class="article-lead">{article.data.description}</p>
+        <nav class="article-tags" aria-label="Теги статьи" data-pagefind-ignore>
+          {article.data.tags.slice(0, 5).map((tag) => (
+            <a href={`/?tag=${encodeURIComponent(tag)}`}>#{tag}</a>
+          ))}
+        </nav>
         <span class="sr-only" data-pagefind-weight="3">
           {article.data.tags.join(' ')}
         </span>

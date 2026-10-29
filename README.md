@@ -2,7 +2,7 @@
 
 # polytech.help ↗
 
-**Политех, по-человечески.**
+**Всё нужное студенту — в одном месте.**
 
 Открытый справочник студентов Московского Политеха.
 
@@ -16,7 +16,7 @@
 
 ![Главная polytech.help](public/images/screenshot-desktop.png)
 
-106 статей с источниками. Полнотекстовый поиск, русская морфология, синонимы и исправление раскладки. `Ctrl/⌘ K` или `/` — поиск; `↑ ↓` — выбрать; `Enter` — открыть; `Esc` — закрыть.
+106 статей с источниками. Поиск прямо на главной, категории, теги и полезные сервисы. Тёмная тема по умолчанию, светлая — по переключателю. `Ctrl/⌘ K` или `/` — поиск; `↑ ↓` — выбрать; `Enter` — открыть; `Esc` — закрыть.
 
 **Astro 7 · TypeScript strict · Markdown · Pagefind · Cloudflare Pages**
 
@@ -40,15 +40,13 @@ npm run build
 npm run preview
 ```
 
-Проверки: `npm run check`, `npm run check:content`, `npm run check:links` после сборки, `npm test` после `npx playwright install chromium`. Форматирование: `npm run format`.
+Проверить проект: `npm run verify`. Браузерные тесты: `npm test` после `npx playwright install chromium`. Форматирование: `npm run format`.
 
-## Публикация
-
-PR → форматирование, типы, контент, ссылки, браузерные тесты и axe → merge в `main` → успешный CI → отдельный Deploy → [polytech.help](https://polytech.help).
-
-В Actions доступны HTML-отчёт и готовая сборка. PR из форков не получают секреты. Деплой использует проверенный артефакт и токен из environment `production`; исходники проекта в задаче публикации не выполняются. [Настройка](docs/deployment.md) · [Безопасность](SECURITY.md).
+[Структура проекта и работа над интерфейсом](CONTRIBUTING.md#изменить-сайт) · [Документация](docs/README.md)
 
 ## Источники
+
+Вдохновились идеей из [поста «Подслушано»](https://t.me/mospolyoverheard/2542).
 
 Материалы [официального сайта](https://mospolytech.ru/), [«Привет, Московский Политех»](https://privet-mospolytech-student-guide.lavrushec.chatgpt.site/) и [«Политех. Выжить и выпуститься»](https://faq.rozb.pw/). Снимки, покрытие импорта и ограничения — в [docs/sources](docs/sources/README.md). 50 совпадающих вопросов объединены с сохранением ссылок.
 

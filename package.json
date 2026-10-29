@@ -17,7 +17,8 @@
     "check:content": "node scripts/check-content.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "deploy": "wrangler pages deploy dist --project-name polytech-help"
+    "deploy": "wrangler pages deploy dist --project-name polytech-help",
+    "verify": "npm run check:content && npm run check && npm run build && npm run check:links"
   },
   "repository": {
     "type": "git",

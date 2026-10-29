@@ -5,17 +5,18 @@ test('главная: сервисы, разделы, участие и отсу
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
   await page.goto('/');
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('по-человечески');
-  await expect(page.getByRole('link', { name: /Какая сейчас пара/ })).toHaveAttribute(
+  await expect(page.locator('#browse-query')).toBeVisible();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await expect(page.getByRole('link', { name: /МосРасписание/ })).toHaveAttribute(
     'href',
     'https://mosrasp.ru',
   );
-  await expect(page.getByRole('link', { name: /А где эта аудитория/ })).toHaveAttribute(
+  await expect(page.getByRole('link', { name: /МПУ Навигатор/ })).toHaveAttribute(
     'href',
     'https://mpunav.ru',
   );
   await expect(page.locator('.topic')).toHaveCount(8);
-  await expect(page.getByRole('link', { name: 'Как помочь проекту ↗' })).toHaveAttribute(
+  await expect(page.locator('.sidebar-helpers a').last()).toHaveAttribute(
     'href',
     /CONTRIBUTING.md$/,
   );
@@ -27,7 +28,7 @@ test('поиск: шорткаты, синонимы, русская раскл�
   await page.keyboard.press('Control+k');
   const dialog = page.getByRole('dialog');
   await expect(dialog).toBeVisible();
-  const input = page.getByRole('searchbox');
+  const input = page.getByRole('dialog').getByRole('searchbox');
   await input.fill('общага');
   await expect(page.locator('.search-result').first()).toBeVisible();
   await expect(page.locator('#search-status')).toContainText('Найдено');
@@ -49,18 +50,18 @@ test('поиск: шорткаты, синонимы, русская раскл�
 
 test('поиск: пустые результаты, закрытие и возврат фокуса', async ({ page }) => {
   await page.goto('/');
-  await page.locator('.hero-search').click();
-  await page.getByRole('searchbox').fill('фывапролджэщзхънесуществующий');
+  await page.locator('.header-search').click();
+  await page.getByRole('dialog').getByRole('searchbox').fill('фывапролджэщзхънесуществующий');
   await expect(page.locator('#search-status')).toContainText('Ничего не нашлось');
   await page.keyboard.press('Escape');
   await expect(page.getByRole('dialog')).not.toBeVisible();
-  await expect(page.locator('.hero-search')).toBeFocused();
+  await expect(page.locator('.header-search')).toBeFocused();
   await page.keyboard.press('/');
   await expect(page.getByRole('dialog')).toBeVisible();
 });
 
 test('поиск: ?q= и недоступный индекс', async ({ page }) => {
-  await page.goto('/?q=расписание');
+  await page.goto('/resources/?q=расписание');
   await expect(page.locator('.search-result').first()).toBeVisible();
   await page.keyboard.press('Escape');
   await page.route('**/pagefind/pagefind.js', (route) => route.abort());
@@ -90,7 +91,7 @@ test('мобильное меню открывается и ведёт к чат
   await button.click();
   await expect(button).toHaveAttribute('aria-expanded', 'true');
   await page.locator('#mobile-nav').getByRole('link', { name: 'Чаты и медиа ↗' }).click();
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('На связи');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Чаты и медиа');
   await expect(page.getByRole('link', { name: /Студенческий чат/ })).toHaveAttribute(
     'href',
     'https://t.me/+FnrRLqRwubY0MDFi',
@@ -152,4 +153,132 @@ test('reduced motion отключает анимации и сохраняет �
   expect(animations).toBe(0);
   await page.locator('.contribute').scrollIntoViewIfNeeded();
   await expect(page.locator('.contribute')).toHaveCSS('opacity', '1');
+});
+
+test('тема: тёмная по умолчанию, выбор сохраняется между страницами', async ({ page }) => {
+  await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
+  await page.goto('/');
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await page.getByRole('button', { name: 'Включить светлую тему' }).click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+  await page.goto('/articles/scholarships/');
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+  await page.reload();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+  await page.getByRole('button', { name: 'Включить тёмную тему' }).click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+});
+
+test('навигация: категории, теги, URL, сброс и ещё материалы', async ({ page }) => {
+  await page.goto('/');
+  const cards = page.locator('.answer-card:visible');
+  await expect(cards).toHaveCount(8);
+  await page.locator('#browse-more').click();
+  await expect(cards).toHaveCount(20);
+  await page.locator('[data-category="money"]').click();
+  await expect(page).toHaveURL(/category=money/);
+  await expect(page.locator('#feed-title')).toHaveText('Деньги');
+  expect(
+    await cards.evaluateAll((elements) =>
+      elements.every((element) => (element as HTMLElement).dataset.categoryId === 'money'),
+    ),
+  ).toBe(true);
+  await page.locator('.tag-bar [data-tag="стипендия"]').click();
+  await expect(cards.first()).toContainText('Какие стипендии');
+  expect(
+    await cards.evaluateAll((elements) =>
+      elements.every((element) =>
+        JSON.parse((element as HTMLElement).dataset.tags ?? '[]').includes('стипендия'),
+      ),
+    ),
+  ).toBe(true);
+  const matchingCount = await cards.count();
+  expect(matchingCount).toBeGreaterThan(0);
+  await page.reload();
+  await expect(cards).toHaveCount(matchingCount);
+  await page.locator('#browse-reset').click();
+  await expect(cards).toHaveCount(8);
+  await expect(page).toHaveURL(/\/$/);
+  await page.goBack();
+  await expect(cards).toHaveCount(matchingCount);
+});
+
+test('главная: полнотекстовый поиск без модалки и переход из тега статьи', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('searchbox', { name: 'Найти в справочнике' }).fill('общага');
+  await expect(page.locator('#feed-title')).toHaveText('Результаты поиска');
+  await expect(page.getByRole('dialog')).not.toBeVisible();
+  await expect(page.locator('.answer-card:visible').first()).toContainText(/общежит/i);
+  await page.locator('.answer-card:visible .answer-main').first().click();
+  await page.locator('.article-tags a').first().click();
+  await expect(page).toHaveURL(/\?tag=/);
+  await expect(page.locator('.answer-card:visible').first()).toBeVisible();
+});
+
+test('светлая тема: контраст и доступность', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Включить светлую тему' }).click();
+  for (const url of ['/', '/articles/scholarships/', '/resources/', '/community/']) {
+    await page.goto(url);
+    const result = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
+      .analyze();
+    expect(
+      result.violations.map((item) => ({
+        id: item.id,
+        nodes: item.nodes.map((node) => node.target),
+      })),
+      url,
+    ).toEqual([]);
+  }
+});
+
+test('тема и материалы работают при заблокированном localStorage', async ({ page }) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(window, 'localStorage', {
+      get: () => {
+        throw new DOMException('Blocked', 'SecurityError');
+      },
+    });
+  });
+  await page.goto('/');
+  await expect(page.locator('#browse-query')).toBeVisible();
+  await page.getByRole('button', { name: 'Включить светлую тему' }).click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+});
+
+test('страница категории сохраняет раздел, поиск и явный сброс после перезагрузки', async ({
+  page,
+}) => {
+  await page.goto('/topics/money/');
+  const cards = page.locator('.answer-card:visible');
+  await expect(page.locator('#feed-title')).toHaveText('Деньги');
+  expect(
+    await cards.evaluateAll((elements) =>
+      elements.every((element) => (element as HTMLElement).dataset.categoryId === 'money'),
+    ),
+  ).toBe(true);
+  await page.getByRole('searchbox', { name: 'Найти в справочнике' }).fill('стипендия');
+  await expect(page.locator('#feed-title')).toHaveText('Результаты поиска');
+  await page.locator('#browse-reset').click();
+  await expect(page.locator('#feed-title')).toHaveText('Нужно сейчас');
+  await page.reload();
+  await expect(page.locator('#feed-title')).toHaveText('Нужно сейчас');
+});
+
+test('главная: недоступный индекс оставляет рабочий поиск по названиям', async ({ page }) => {
+  await page.route('**/pagefind/pagefind.js', (route) => route.abort());
+  await page.goto('/');
+  await page.getByRole('searchbox', { name: 'Найти в справочнике' }).fill('стипенд');
+  await expect(page.locator('#browse-notice')).toContainText('поиск недоступен');
+  await expect(page.locator('.answer-card:visible').first()).toContainText(/стипенд/i);
+});
+
+test('быстрое двойное переключение темы не теряет выбор', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('#theme-toggle').click({ clickCount: 2, delay: 30 });
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await page.reload();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
 });

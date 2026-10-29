@@ -1,67 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { getCollection } from 'astro:content';
-import { categories, statusLabels, repository } from '../../lib/data';
-const articles = (await getCollection('articles')).sort((a, b) =>
-  a.data.title.localeCompare(b.data.title, 'ru'),
-);
+import Browse from '../../features/browse/Browse.astro';
 ---
 
 <Base title="Справочник">
-  <section class="page-intro wrap">
-    <span class="eyebrow">ОТВЕТЫ ВМЕСТО БЮРОКРАТИИ</span>
-    <h1>
-      Справочник<span class="title-dot">.</span>
-    </h1>
-    <p>
-      {articles.length} материалов об учёбе и жизни в Политехе. У каждого — источник и статус
-      проверки.
-    </p>
-    <button class="button-dark" data-open-search>
-      Найти ответ <span>⌘ K</span>
-    </button>
-  </section>
-  <div class="catalog-layout wrap">
-    <aside class="catalog-sidebar">
-      <nav aria-label="Разделы справочника">
-        {categories.map((c) => (
-          <a href={`#${c.id}`}>
-            {c.title}
-            <span>{articles.filter((a) => a.data.category === c.id).length}</span>
-          </a>
-        ))}
-      </nav>
-      <a class="sidebar-contribute" href={`${repository}/blob/main/CONTRIBUTING.md`}>
-        Не хватает ответа?
-        <br />
-        Добавь свой ↗
-      </a>
-    </aside>
-    <div>
-      {categories.map((c) => (
-        <section class="catalog-section" id={c.id}>
-          <div class="section-heading">
-            <h2>{c.title}</h2>
-            <span class="eyebrow">{c.symbol}</span>
-          </div>
-          <div class="article-list">
-            {articles
-              .filter((a) => a.data.category === c.id)
-              .map((a) => (
-                <a href={`/articles/${a.id}/`}>
-                  <div>
-                    <span class={`status status-${a.data.status}`}>
-                      {statusLabels[a.data.status]}
-                    </span>
-                    <h3>{a.data.title}</h3>
-                    <p>{a.data.description}</p>
-                  </div>
-                  <span aria-hidden="true">↗</span>
-                </a>
-              ))}
-          </div>
-        </section>
-      ))}
-    </div>
-  </div>
+  <Browse />
 </Base>
