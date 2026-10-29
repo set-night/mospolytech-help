@@ -1,0 +1,62 @@
+[
+  {
+    "title": "База знаний IT-службы",
+    "url": "https://help.mospolytech.ru/kb",
+    "description": "Официальные инструкции по ЕУЗ, Wi-Fi, почте и другим цифровым сервисам.",
+    "official": true
+  },
+  {
+    "title": "Техническая поддержка",
+    "url": "https://help.mospolytech.ru/ticket",
+    "description": "Открытая форма заявки на восстановление доступа и решение технических проблем.",
+    "official": true
+  },
+  {
+    "title": "Студенческие цифровые сервисы",
+    "url": "https://help.mospolytech.ru/article/134",
+    "description": "Перечень доступных сервисов и различия между их способами авторизации.",
+    "official": true
+  },
+  {
+    "title": "Wi-Fi университета",
+    "url": "https://help.mospolytech.ru/article/94",
+    "description": "Как подключиться к mospolytech-stud через единую учётную запись.",
+    "official": true
+  },
+  {
+    "title": "Международные стажировки",
+    "url": "https://mospolytech.ru/mejdunarodnaya-deyatelnost/akademicheskaya-mobilnost/",
+    "description": "Программы обмена, оформление стажировки и контакты международного отдела.",
+    "official": true
+  },
+  {
+    "title": "Доступная среда",
+    "url": "https://mospolytech.ru/sveden/ovz/",
+    "description": "Условия обучения, доступность площадок и поддержка студентов с инвалидностью и ОВЗ.",
+    "official": true
+  },
+  {
+    "title": "Медицинский центр",
+    "url": "https://mospolytech.ru/studencheskaya-zhizn/medical-help/medicinskaya-slujba/",
+    "description": "Адрес и часы медицинского пункта, контакты и университетские материалы.",
+    "official": true
+  },
+  {
+    "title": "Студенческие объединения",
+    "url": "https://mospolytech.ru/studencheskaya-zhizn/obschestvennaya-deyatelnost/",
+    "description": "Волонтёрский центр, кураторы, ОСО, комитет по качеству и студенческий медиацентр.",
+    "official": true
+  },
+  {
+    "title": "Спортивная деятельность",
+    "url": "https://mospolytech.ru/studencheskaya-zhizn/sportivnaya-deyatelnost/",
+    "description": "Секции, спортивный клуб, команды и ссылки для связи.",
+    "official": true
+  },
+  {
+    "title": "Обращения граждан",
+    "url": "https://mospolytech.ru/ob-universitete/obrashcheniya-grazhdan/",
+    "description": "Порядок подачи официального предложения или обращения университету.",
+    "official": true
+  }
+]

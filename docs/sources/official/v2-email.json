@@ -1,0 +1,72 @@
+{
+  "url": "https://help.mospolytech.ru/article/158",
+  "title": "База знаний Московского Политеха",
+  "retrievedAt": "2026-10-29",
+  "text": "Главная\n/\nБаза знаний\n/\nГлавная\nКорпоративная электронная почта\nОбновлено: 24.10.2026\n7 просмотров\nУ каждого сотрудника Московского Политех есть корпоративная электронная почта, вида\nлогин_как_ЕУЗ@mospolytech.ru\n(например, i.i.ivanov@mospolytech.ru). Пароль от почты совпадает с паролем от\nЕдиной учетной записи\n.\nДля входа в почту перейдите по\nссылке\n.\nДля настройки почтовых агентов:\n1. Перед настройкой вам необходимо обязательно войти в web-версию для активации почтового ящика.\n2. После активации используйте следующие параметры:\n2.1. Сервер исходящей почты:\nПочта:\ni.i.iavon@mospolytech.ru\nИмя пользователя:\ni.i.iavon@mospolytech.ru\nНастройки безопасности: использование SSL - должно быть включено.\nSMTP сервер (адрес сервера): mail.mospolytech.ru\nПорт: 465\n2.2. Сервер входящей почты:\nИмя пользователя:\ni.i.iavon@mospolytech.ru\nТип: IMAP\nНастройки безопасности: использование SSL - должно быть включено.\nIMAP сервер (адрес сервера): mail.mospolytech.ru\nПорт: 963\nЕсли вы не помните адреса или пароль, то вам необходимо\nобратиться в техническую поддержку\n.\nГлавная\nПохожие статьи\nСтатья\n_Перечень сервисов для сотрудников\nСтатья\n_Перечень сервисов для студентов\nСтатья\nБеспроводная сеть Wi-Fi\nСтатья\nВнутренние нормативные документы в сфере информационных технологий\nСтатья\nВопросы по электронным библиотечным системам (ЭБС)\nСтатья\nДистанционный доступ к АРМ",
+  "links": [
+    {
+      "title": "Главная",
+      "url": "https://help.mospolytech.ru/"
+    },
+    {
+      "title": "База знаний",
+      "url": "https://help.mospolytech.ru/kb"
+    },
+    {
+      "title": "Главная",
+      "url": "https://help.mospolytech.ru/category/213"
+    },
+    {
+      "title": "логин_как_ЕУЗ@mospolytech.ru",
+      "url": "mailto:логин_как_ЕУЗ@mospolytech.ru"
+    },
+    {
+      "title": "Единой учетной записи",
+      "url": "https://help.mospolytech.ru/article/117"
+    },
+    {
+      "title": "ссылке",
+      "url": "https://mail.mospolytech.ru/"
+    },
+    {
+      "title": "i.i.iavon@mospolytech.ru",
+      "url": "mailto:i.i.iavon@mospolytech.ru"
+    },
+    {
+      "title": "i.i.iavon@mospolytech.ru",
+      "url": "mailto:i.i.iavon@mospolytech.ru"
+    },
+    {
+      "title": "i.i.iavon@mospolytech.ru",
+      "url": "mailto:i.i.iavon@mospolytech.ru"
+    },
+    {
+      "title": "Главная",
+      "url": "https://help.mospolytech.ru/category/213"
+    },
+    {
+      "title": "Статья _Перечень сервисов для сотрудников",
+      "url": "https://help.mospolytech.ru/article/99"
+    },
+    {
+      "title": "Статья _Перечень сервисов для студентов",
+      "url": "https://help.mospolytech.ru/article/134"
+    },
+    {
+      "title": "Статья Беспроводная сеть Wi-Fi",
+      "url": "https://help.mospolytech.ru/article/94"
+    },
+    {
+      "title": "Статья Внутренние нормативные документы в сфере информационных технологий",
+      "url": "https://help.mospolytech.ru/article/126"
+    },
+    {
+      "title": "Статья Вопросы по электронным библиотечным системам (ЭБС)",
+      "url": "https://help.mospolytech.ru/article/87"
+    },
+    {
+      "title": "Статья Дистанционный доступ к АРМ",
+      "url": "https://help.mospolytech.ru/article/90"
+    }
+  ]
+}
