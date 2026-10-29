@@ -180,12 +180,7 @@ kbd {
   font-size: 25px;
   line-height: 1;
 }
-.brand-symbol small {
-  position: absolute;
-  right: 2px;
-  top: 1px;
-  font: 14px var(--body);
-}
+
 .desktop-nav {
   display: flex;
   gap: 26px;
@@ -1619,9 +1614,7 @@ mark {
     margin-right: 8px;
     font-size: 21px;
   }
-  .brand-symbol small {
-    font-size: 11px;
-  }
+
   .icon-button {
     min-width: 38px;
     min-height: 42px;

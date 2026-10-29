@@ -4,6 +4,7 @@ import '@fontsource-variable/golos-text';
 import '../styles/global.css';
 import Search from '../components/Search.astro';
 import Icon from '../components/Icon.astro';
+import BrandMark from '../components/BrandMark.astro';
 import { repository } from '../lib/data';
 interface Props {
   title?: string;
@@ -33,7 +34,7 @@ const nav = [
     <title>{title} — polytech.help</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
@@ -49,7 +50,7 @@ const nav = [
       <div class="header-inner wrap">
         <a class="brand" href="/" aria-label="polytech.help — на главную">
           <span class="brand-symbol" aria-hidden="true">
-            п<small>↗</small>
+            <BrandMark />
           </span>
           polytech<span>.help</span>
         </a>
