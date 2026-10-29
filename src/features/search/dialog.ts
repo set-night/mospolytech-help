@@ -4,6 +4,7 @@ const input = document.querySelector<HTMLInputElement>('#search-input')!;
 const category = document.querySelector<HTMLSelectElement>('#search-category')!;
 const results = document.querySelector<HTMLDivElement>('#search-results')!;
 const status = document.querySelector<HTMLParagraphElement>('#search-status')!;
+const hint = 'Ищите своими словами. Например: «общага», «справка», «пересдача».';
 let previousFocus: HTMLElement | null = null;
 let request = 0;
 let timer: ReturnType<typeof setTimeout>;
@@ -20,6 +21,8 @@ function closeSearch(): void {
   dialog.close();
 }
 dialog.addEventListener('close', () => {
+  clearTimeout(timer);
+  ++request;
   document.body.classList.remove('search-open');
   previousFocus?.focus();
 });
@@ -57,30 +60,36 @@ document.addEventListener('keydown', (event) => {
   }
   if (!dialog.open || !['ArrowDown', 'ArrowUp', 'Enter'].includes(event.key)) return;
   if (event.target === category) return;
+  if (event.key === 'Enter' && event.target === input) {
+    event.preventDefault();
+    // Flush a pending input delay and open only this query's completed results.
+    void runSearch().then((ready) => {
+      if (ready && dialog.open) results.querySelector<HTMLAnchorElement>('a')?.click();
+    });
+    return;
+  }
   const links = [...results.querySelectorAll<HTMLAnchorElement>('a')];
   if (!links.length) return;
   const current = links.indexOf(document.activeElement as HTMLAnchorElement);
-  if (event.key === 'Enter' && event.target === input) {
-    event.preventDefault();
-    links[0].click();
-  } else if (event.key !== 'Enter') {
+  if (event.key !== 'Enter') {
     event.preventDefault();
     links[(current + (event.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length].focus();
   }
 });
-async function runSearch(): Promise<void> {
+async function runSearch(): Promise<boolean> {
+  clearTimeout(timer);
   const id = ++request,
     query = input.value.trim();
   results.replaceChildren();
   if (!query) {
-    status.textContent = 'Ищите своими словами. Например: «общага», «справка», «пересдача».';
-    return;
+    status.textContent = hint;
+    return false;
   }
   status.textContent = 'Ищем…';
   try {
     const response = await searchArticles(query, category.value);
     const entries = await Promise.all(response.results.slice(0, 20).map((result) => result.data()));
-    if (id !== request) return;
+    if (id !== request) return false;
     status.textContent = entries.length
       ? `Найдено: ${response.results.length}${response.results.length > 20 ? '. Показываем первые 20.' : ''}`
       : 'Ничего не нашлось. Попробуйте короче или выберите другой раздел.';
@@ -105,15 +114,21 @@ async function runSearch(): Promise<void> {
       link.append(title, excerpt);
       results.append(link);
     }
+    return true;
   } catch {
     if (id === request)
       status.textContent =
         'Не удалось загрузить поиск. Попробуйте ещё раз или откройте все материалы по ссылке ниже.';
+    return false;
   }
 }
 input.addEventListener('input', () => {
   clearTimeout(timer);
   ++request;
+  // Old links must disappear before the debounce: otherwise keyboard users can
+  // focus a stale result that gets removed between ArrowDown and Enter.
+  results.replaceChildren();
+  status.textContent = input.value.trim() ? 'Ищем…' : hint;
   timer = setTimeout(() => void runSearch(), 120);
 });
 category.addEventListener('change', () => void runSearch());

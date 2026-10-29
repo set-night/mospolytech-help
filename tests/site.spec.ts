@@ -402,3 +402,48 @@ test('единая шапка и меню из кнопок на основны�
     await expect(menu).not.toBeVisible();
   }
 });
+
+test('смена запроса сразу убирает старые ответы и сохраняет переход с клавиатуры', async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/');
+  await page.keyboard.press('Control+k');
+  const input = page.getByRole('dialog').getByRole('searchbox');
+  await input.fill('стипендия');
+  await expect(page.locator('.search-result').first()).toContainText(/стипенд/i);
+  // Observe the same input event before its delayed search can run.
+  const staleLinks = await input.evaluate((element) => {
+    const field = element as HTMLInputElement;
+    field.value = 'Wi-Fi';
+    field.dispatchEvent(new Event('input', { bubbles: true }));
+    return document.querySelectorAll('.search-result').length;
+  });
+  expect(staleLinks).toBe(0);
+  await expect(page.locator('.search-result').first()).toContainText(/Wi-Fi/i);
+  await input.press('ArrowDown');
+  await expect(page.locator('.search-result').first()).toBeFocused();
+  const destination = new URL(
+    (await page.locator('.search-result').first().getAttribute('href'))!,
+    page.url(),
+  ).href;
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL(destination);
+});
+
+test('Enter сразу после ввода дожидается актуального результата', async ({ page }) => {
+  await page.goto('/');
+  await page.keyboard.press('Control+k');
+  await page
+    .getByRole('dialog')
+    .getByRole('searchbox')
+    .evaluate((element) => {
+      const field = element as HTMLInputElement;
+      field.value = 'вайфай';
+      field.dispatchEvent(new Event('input', { bubbles: true }));
+      field.dispatchEvent(
+        new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }),
+      );
+    });
+  await expect(page).toHaveURL(/\/articles\/campus-wifi\//);
+});
