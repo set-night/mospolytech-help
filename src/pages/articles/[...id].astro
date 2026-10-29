@@ -1,0 +1,128 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+import { categories, repository, statusLabels } from '../../lib/data';
+export async function getStaticPaths() {
+  return (await getCollection('articles')).map((article) => ({
+    params: { id: article.id },
+    props: { article },
+  }));
+}
+const { article } = Astro.props;
+const { Content, headings } = await render(article);
+const category = categories.find((c) => c.id === article.data.category)!;
+const related = (await getCollection('articles'))
+  .filter((a) => a.id !== article.id && a.data.category === article.data.category)
+  .slice(0, 3);
+const issueUrl = `${repository}/issues/new?template=correction.yml&title=${encodeURIComponent(`Поправка: ${article.data.title}`)}`;
+---
+
+<Base title={article.data.title} description={article.data.description}>
+  <div class="article-layout wrap">
+    <article data-pagefind-body>
+      <div class="article-header">
+        <a class="back-link" href={`/topics/${category.id}/`}>
+          ← {category.title}
+        </a>
+        <span data-pagefind-filter="category" class="sr-only">
+          {category.id}
+        </span>
+        <div class="article-meta">
+          <span class={`status status-${article.data.status}`}>
+            {statusLabels[article.data.status]}
+          </span>
+          <span>
+            {article.data.status === 'verified' ? 'Сверено с источником:' : 'Добавлено:'}{' '}
+            <time datetime={article.data.reviewedAt}>
+              {new Date(article.data.reviewedAt).toLocaleDateString('ru-RU', { timeZone: 'UTC' })}
+            </time>
+          </span>
+        </div>
+        <h1 data-pagefind-meta="title" data-pagefind-weight="10">
+          {article.data.title}
+        </h1>
+        <p class="article-lead">{article.data.description}</p>
+        <span class="sr-only" data-pagefind-weight="3">
+          {article.data.tags.join(' ')}
+        </span>
+      </div>
+      {article.data.status === 'needs-review' && (
+        <aside class="review-notice" data-pagefind-ignore>
+          <strong>Этот ответ ещё нужно проверить.</strong>
+          <p>
+            Материал перенесён из студенческого справочника. Перед подачей документов или важным
+            решением проверь правила по первоисточнику ниже.
+          </p>
+        </aside>
+      )}
+      {article.data.status === 'community' && (
+        <aside class="review-notice" data-pagefind-ignore>
+          <strong>Это опыт студентов.</strong>
+          <p>Он может помочь сориентироваться. Актуальные требования уточняй в университете.</p>
+        </aside>
+      )}
+      <div class="prose">
+        <Content />
+      </div>
+      <section class="sources" id="sources" data-pagefind-ignore>
+        <span class="eyebrow">ПЕРВОИСТОЧНИКИ И АТРИБУЦИЯ</span>
+        <h2>Откуда информация</h2>
+        <ul>
+          {article.data.sources.map((source) => (
+            <li>
+              <a href={source.url} target="_blank" rel="noopener noreferrer">
+                {source.title}
+                <span>↗</span>
+              </a>
+              <span class="source-host">{new URL(source.url).hostname}</span>
+            </li>
+          ))}
+        </ul>
+        <p>Пересказ сообщества. Официальные документы и объявления университета имеют приоритет.</p>
+      </section>
+      <div class="article-edit" data-pagefind-ignore>
+        <div>
+          <h2>Нашёл неточность?</h2>
+          <p>Помоги следующему человеку найти верный ответ.</p>
+        </div>
+        <a href={`${repository}/edit/main/src/content/articles/${article.id}.md`}>
+          Исправить на GitHub ↗
+        </a>
+        <a href={issueUrl}>Сообщить об ошибке ↗</a>
+      </div>
+    </article>
+    <aside class="article-sidebar">
+      <span class="eyebrow">В ЭТОЙ СТАТЬЕ</span>
+      <nav aria-label="Оглавление">
+        {headings
+          .filter((h) => h.depth <= 3)
+          .map((h) => (
+            <a href={`#${h.slug}`} class={h.depth === 3 ? 'subheading' : ''}>
+              {h.text}
+            </a>
+          ))}
+        <a href="#sources" class="sr-only">
+          Источники в конце статьи
+        </a>
+      </nav>
+      <a class="sidebar-contribute" href={`${repository}/blob/main/CONTRIBUTING.md`}>
+        Справочник открыт.
+        <br />
+        Добавить материал ↗
+      </a>
+    </aside>
+  </div>
+  {related.length > 0 && (
+    <section class="related wrap">
+      <span class="eyebrow">ПО ЭТОЙ ЖЕ ТЕМЕ</span>
+      <div class="related-grid">
+        {related.map((a) => (
+          <a href={`/articles/${a.id}/`}>
+            {a.data.title}
+            <span>↗</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+</Base>

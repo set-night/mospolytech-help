@@ -1,0 +1,690 @@
+[
+  {
+    "slug": "guide-academic-leave",
+    "title": "Как уйти в академический отпуск?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/academic-leave.html",
+    "category": "study",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-achievement-points-missing",
+    "title": "Что делать, если не начислили баллы за индивидуальные достижения?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/achievement-points-missing.html",
+    "category": "admission",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-admission-after-college",
+    "title": "Как поступить после колледжа?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/admission-after-college.html",
+    "category": "admission",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-admission-benefits",
+    "title": "Какие льготы есть при поступлении?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/admission-benefits.html",
+    "category": "admission",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-appeal",
+    "title": "Как подать апелляцию?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/appeal.html",
+    "category": "admission",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-applicant-account",
+    "title": "Как зайти в личный кабинет абитуриента?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/applicant-account.html",
+    "category": "admission",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-army-deferment",
+    "title": "Есть ли военная кафедра и как получить отсрочку?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/army-deferment.html",
+    "category": "start",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-before-graduation",
+    "title": "Что сделать перед выпуском?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/before-graduation.html",
+    "category": "study",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-budget-places",
+    "title": "Сколько бюджетных мест?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/budget-places.html",
+    "category": "money",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-campus-access",
+    "title": "Как пройти в корпус и можно ли передавать пропуск другому человеку?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/campus-access.html",
+    "category": "documents",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-campus-food",
+    "title": "Где в университете можно поесть?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/campus-food.html",
+    "category": "study",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-campus-locations",
+    "title": "Где находятся учебные корпуса и как до них добраться?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/campus-locations.html",
+    "category": "study",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-career-center",
+    "title": "Помогает ли вуз найти работу или стажировку?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/career-center.html",
+    "category": "career",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-change-priorities",
+    "title": "Как изменить приоритеты направлений?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/change-priorities.html",
+    "category": "admission",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-change-program",
+    "title": "Можно ли перевестись на другое направление или форму обучения?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/change-program.html",
+    "category": "study",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-choose-program",
+    "title": "Как выбрать направление в Московском Политехе?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/choose-program.html",
+    "category": "admission",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-class-duration",
+    "title": "Сколько длится пара и какие бывают занятия?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/class-duration.html",
+    "category": "study",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-competency-passport",
+    "title": "Что такое паспорт компетенций и где его получить?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/competency-passport.html",
+    "category": "career",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-competition-lists",
+    "title": "Где посмотреть конкурсные списки и когда будут окончательные?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/competition-lists.html",
+    "category": "admission",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-consent",
+    "title": "Как подать или отозвать согласие на зачисление?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/consent.html",
+    "category": "admission",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-contacts",
+    "title": "Куда обращаться с вопросом?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/contacts.html",
+    "category": "documents",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-creative-communities",
+    "title": "Какие творческие студии и коллективы есть в университете?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/creative-communities.html",
+    "category": "career",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-dermatology-certificate",
+    "title": "Какой врач нужен для справки из КВД?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/dermatology-certificate.html",
+    "category": "start",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-digital-libraries",
+    "title": "Какие электронные библиотеки доступны студентам?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/digital-libraries.html",
+    "category": "study",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-diploma-duplicate",
+    "title": "Как получить дубликат диплома?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/diploma-duplicate.html",
+    "category": "study",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-dorm-4-rooms",
+    "title": "Какие комнаты в общежитии №4?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/dorm-4-rooms.html",
+    "category": "campus",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-dorm-application-deadline",
+    "title": "До какого числа можно заявить о нуждаемости в общежитии?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/dorm-application-deadline.html",
+    "category": "campus",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-dorm-certificates",
+    "title": "Какие справки нужны для общежития, куда и когда их прикрепить?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/dorm-certificates.html",
+    "category": "campus",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-dorm-check-in-dates",
+    "title": "Когда заселение в общежитие и можно ли выбрать дату?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/dorm-check-in-dates.html",
+    "category": "campus",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-dorm-conditions",
+    "title": "Какие общежития у Политеха и сколько стоит жить?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/dorm-conditions.html",
+    "category": "campus",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-dorm-how-to-get",
+    "title": "Как получить общежитие и какой нужен балл?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/dorm-how-to-get.html",
+    "category": "campus",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-dorm-priorities",
+    "title": "Где и до какого числа расставить приоритеты общежитий?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/dorm-priorities.html",
+    "category": "campus",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-dorm-second-wave",
+    "title": "Будет ли вторая волна заселения в общежитие?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/dorm-second-wave.html",
+    "category": "campus",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-enhanced-scholarship",
+    "title": "Как получить повышенную академическую стипендию?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/enhanced-scholarship.html",
+    "category": "money",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-enrollment-order",
+    "title": "Когда выйдет приказ о зачислении?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/enrollment-order.html",
+    "category": "admission",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-entrance-exams",
+    "title": "Какие вступительные и как их сдают?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/entrance-exams.html",
+    "category": "admission",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-exam-admission",
+    "title": "Что нужно сделать, чтобы получить допуск к экзаменам?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/exam-admission.html",
+    "category": "study",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-exam-passport",
+    "title": "Нужен ли паспорт на онлайн-экзамене и что делать при смене паспорта?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/exam-passport.html",
+    "category": "admission",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-exam-retakes",
+    "title": "Что делать, если не сдал экзамен или получил академическую задолженность?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/exam-retakes.html",
+    "category": "study",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-expulsion",
+    "title": "Как отчислиться по собственному желанию?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/expulsion.html",
+    "category": "study",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-financial-aid",
+    "title": "Как получить материальную помощь или профсоюзную дотацию?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/financial-aid.html",
+    "category": "money",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-find-classroom",
+    "title": "Как найти нужную аудиторию и расшифровать её номер?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/find-classroom.html",
+    "category": "study",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-first-year-curator",
+    "title": "Кто такой куратор первокурсников и с какими вопросами к нему обращаться?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/first-year-curator.html",
+    "category": "study",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-first-year-projects",
+    "title": "Как устроена проектная деятельность на первом курсе?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/first-year-projects.html",
+    "category": "study",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-first-year-start",
+    "title": "Когда начинается учёба у первокурсников?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/first-year-start.html",
+    "category": "study",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-group-representative",
+    "title": "Кто такой староста и чем он занимается?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/group-representative.html",
+    "category": "study",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-how-to-apply",
+    "title": "Как подать документы в Московский Политех?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/how-to-apply.html",
+    "category": "admission",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-international-office",
+    "title": "Куда иностранному студенту обратиться по вопросам визы и миграционного учёта?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/international-office.html",
+    "category": "documents",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-internship",
+    "title": "Как оформить практику?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/internship.html",
+    "category": "career",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-library-borrowing",
+    "title": "Как пользоваться библиотекой и получить учебники?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/library-borrowing.html",
+    "category": "study",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-library-locations",
+    "title": "Где находятся библиотеки Политеха и какую выбрать?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/library-locations.html",
+    "category": "study",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-lms-login",
+    "title": "Как войти в LMS и что делать, если не получается?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/lms-login.html",
+    "category": "documents",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-magnetic-pass",
+    "title": "Как получить или восстановить пропуск в корпус?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/magnetic-pass.html",
+    "category": "documents",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-masters-admission",
+    "title": "Как поступить в магистратуру?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/masters-admission.html",
+    "category": "admission",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-medical-certificate-086",
+    "title": "Нужна ли справка 086/у для поступления?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/medical-certificate-086.html",
+    "category": "start",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-missed-exam",
+    "title": "Что делать, если заболел или пропустил экзамен по уважительной причине?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/missed-exam.html",
+    "category": "study",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-museums",
+    "title": "Какие музеи и выставочные площадки есть в Политехе?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/museums.html",
+    "category": "career",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-official-channels",
+    "title": "Где найти официальные новости и социальные сети университета?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/official-channels.html",
+    "category": "documents",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-open-days",
+    "title": "Когда день открытых дверей?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/open-days.html",
+    "category": "admission",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-own-project",
+    "title": "Можно ли предложить собственный проект в рамках проектной деятельности?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/own-project.html",
+    "category": "career",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-paid-admission",
+    "title": "Как поступить на платное обучение?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/paid-admission.html",
+    "category": "money",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-paid-student-scholarship",
+    "title": "Есть ли стипендия для студентов платного отделения?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/paid-student-scholarship.html",
+    "category": "money",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-passing-score",
+    "title": "Какой проходной балл в Московский Политех?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/passing-score.html",
+    "category": "admission",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-project-activity",
+    "title": "Что такое ПД (проектная деятельность)?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/project-activity.html",
+    "category": "career",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-psychological-support",
+    "title": "Где получить психологическую помощь в университете?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/psychological-support.html",
+    "category": "start",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-schedule",
+    "title": "Где посмотреть расписание занятий?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/schedule.html",
+    "category": "study",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-scholarship",
+    "title": "Какие стипендии есть и сколько платят?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/scholarship.html",
+    "category": "money",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-school-certificate-back",
+    "title": "Как забрать аттестат или диплом колледжа?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/school-certificate-back.html",
+    "category": "documents",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-session-and-grades",
+    "title": "Как устроена сессия и где посмотреть свои оценки?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/session-and-grades.html",
+    "category": "study",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-social-scholarship",
+    "title": "Кто может получать социальную стипендию?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/social-scholarship.html",
+    "category": "money",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-sports-club",
+    "title": "Как записаться в спортивную секцию или сборную университета?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/sports-club.html",
+    "category": "career",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-student-account",
+    "title": "Где личный кабинет студента и как узнать логин?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/student-account.html",
+    "category": "documents",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-student-campus-office",
+    "title": "Куда обратиться по вопросам проживания в общежитии?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/student-campus-office.html",
+    "category": "campus",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-student-communities",
+    "title": "Какие студенческие объединения и волонтёрские проекты есть в Политехе?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/student-communities.html",
+    "category": "career",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-student-id",
+    "title": "Как получить студенческий билет?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/student-id.html",
+    "category": "documents",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-student-register-missing",
+    "title": "Что делать, если меня нет в реестре студентов для карты москвича?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/student-register-missing.html",
+    "category": "documents",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-student-science",
+    "title": "Как заниматься наукой и участвовать в научных конференциях?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/student-science.html",
+    "category": "career",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-student-social-card",
+    "title": "Как оформить карту москвича для льготного проезда?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/student-social-card.html",
+    "category": "documents",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-student-union",
+    "title": "Чем занимается профсоюз студентов и как в него вступить?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/student-union.html",
+    "category": "career",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-study-certificates",
+    "title": "Как получить справку с места учёбы?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/study-certificates.html",
+    "category": "documents",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-study-plan",
+    "title": "Где посмотреть учебный план?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/study-plan.html",
+    "category": "study",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-transfer-from-another-university",
+    "title": "Как перевестись в Политех из другого вуза?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/transfer-from-another-university.html",
+    "category": "study",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-tuition-payment",
+    "title": "Когда и как платить за обучение?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/tuition-payment.html",
+    "category": "money",
+    "originalStatus": "Подтверждено",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-university-merch",
+    "title": "Где купить фирменный мерч Московского Политеха?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/university-merch.html",
+    "category": "career",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-university-mfc",
+    "title": "Что такое МФЦ университета и какие вопросы он решает?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/university-mfc.html",
+    "category": "documents",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  },
+  {
+    "slug": "guide-upload-passport-scan",
+    "title": "Как прикрепить скан паспорта в личном кабинете?",
+    "sourceUrl": "https://mospolyhelp.my-2ca.workers.dev/q/upload-passport-scan.html",
+    "category": "admission",
+    "originalStatus": "Опубликовано",
+    "importedStatus": "needs-review"
+  }
+]

@@ -1,0 +1,11 @@
+node_modules
+dist
+.astro
+.wrangler
+.playwright-cli
+output
+playwright-report
+test-results
+package-lock.json
+docs/sources/**/*.json
+docs/sources/**/*.xml

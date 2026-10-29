@@ -1,0 +1,17 @@
+name: Новый вопрос
+description: Какого ответа не хватает в справочнике?
+title: 'Вопрос: '
+labels: [content]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Вопрос
+      description: Опиши ситуацию без персональных данных.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Что уже удалось найти?
+      description: Ссылки на официальный сайт или другие источники, если есть.

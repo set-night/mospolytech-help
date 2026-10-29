@@ -1,0 +1,23 @@
+name: Исправить информацию
+description: Ошибка в статье, ссылка или поведение сайта
+title: 'Поправка: '
+labels: [correction]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Ссылка на страницу
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Что нужно исправить?
+      description: Для ошибки интерфейса укажи браузер, устройство и шаги воспроизведения.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Источник правильной информации
+      description: Ссылка или описание. Не прикладывай паспорт, студенческий и другие персональные данные.

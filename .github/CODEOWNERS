@@ -1,0 +1,9 @@
+# Changes affecting deployment or dependencies require the repository owner's review.
+/.github/ @set-night
+/scripts/ @set-night
+/package.json @set-night
+/package-lock.json @set-night
+/astro.config.mjs @set-night
+/wrangler.jsonc @set-night
+/public/_headers @set-night
+/src/content.config.ts @set-night

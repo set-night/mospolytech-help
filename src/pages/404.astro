@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Страница не найдена">
+  <section class="error-page wrap">
+    <span class="eyebrow">КАЖЕТСЯ, МЫ НЕ В ТОЙ АУДИТОРИИ</span>
+    <h1>
+      404<span class="title-dot">.</span>
+    </h1>
+    <h2>Такой страницы нет</h2>
+    <p>Возможно, ссылка изменилась. Найдём нужный ответ?</p>
+    <button class="button-dark" data-open-search>
+      Открыть поиск ↗
+    </button>{' '}
+    <a class="text-link" href="/">
+      На главную ↗
+    </a>
+  </section>
+</Base>

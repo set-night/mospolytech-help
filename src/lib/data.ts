@@ -1,0 +1,150 @@
+export const repository = 'https://github.com/set-night/mospolytech-help';
+export const categories = [
+  {
+    id: 'start',
+    title: 'Первый курс',
+    description: 'Всё, чтобы почувствовать себя своим',
+    symbol: '01',
+  },
+  { id: 'study', title: 'Учёба', description: 'Расписание, сессия и пересдачи', symbol: '02' },
+  {
+    id: 'campus',
+    title: 'Кампус и общежитие',
+    description: 'Корпуса, заселение и жизнь между парами',
+    symbol: '03',
+  },
+  {
+    id: 'money',
+    title: 'Деньги',
+    description: 'Стипендии, льготы и оплата обучения',
+    symbol: '04',
+  },
+  {
+    id: 'documents',
+    title: 'Документы и сервисы',
+    description: 'Справки, личный кабинет и заявления',
+    symbol: '05',
+  },
+  {
+    id: 'admission',
+    title: 'Поступление',
+    description: 'От подачи документов до зачисления',
+    symbol: '06',
+  },
+  {
+    id: 'career',
+    title: 'Возможности',
+    description: 'Проекты, практика и первая работа',
+    symbol: '07',
+  },
+  {
+    id: 'community',
+    title: 'Люди и поддержка',
+    description: 'Найти своих и получить помощь',
+    symbol: '08',
+  },
+] as const;
+export const statusLabels = {
+  verified: 'Проверено по источнику',
+  community: 'Опыт студентов',
+  'needs-review': 'Нужна проверка',
+};
+export const resources = [
+  {
+    title: 'МосРасписание',
+    subtitle: 'Какая пара следующая?',
+    url: 'https://mosrasp.ru',
+    label: 'Расписание',
+    official: false,
+    featured: true,
+  },
+  {
+    title: 'МПУ Навигатор',
+    subtitle: 'Найти аудиторию и не потеряться',
+    url: 'https://mpunav.ru',
+    label: 'Навигация',
+    official: false,
+    featured: true,
+  },
+  {
+    title: 'Сайт университета',
+    subtitle: 'Документы и объявления из первых рук',
+    url: 'https://mospolytech.ru/',
+    label: 'Университет',
+    official: true,
+    featured: false,
+  },
+  {
+    title: 'Личный кабинет',
+    subtitle: 'Твои заявления и учебные сервисы',
+    url: 'https://e.mospolytech.ru/',
+    label: 'ЛК',
+    official: true,
+    featured: false,
+  },
+];
+export const communities = [
+  {
+    title: 'Московский Политех',
+    url: 'https://t.me/mospolytech',
+    kind: 'Новости университета',
+    official: true,
+    chat: false,
+  },
+  {
+    title: 'Абитуриентам',
+    url: 'https://t.me/mospolyab',
+    kind: 'Поступление',
+    official: true,
+    chat: false,
+  },
+  {
+    title: 'Профком',
+    url: 'https://t.me/profkommospolytech',
+    kind: 'Поддержка и события',
+    official: true,
+    chat: false,
+  },
+  {
+    title: 'Работа и стажировки',
+    url: 'https://t.me/mospolywork',
+    kind: 'Карьера',
+    official: true,
+    chat: false,
+  },
+  {
+    title: 'Чат Политеха',
+    url: 'https://t.me/mospolychat',
+    kind: 'Чат студентов',
+    official: true,
+    chat: true,
+  },
+  {
+    title: 'Чат абитуриентов',
+    url: 'https://t.me/mospolyab_chat',
+    kind: 'Вопросы о поступлении',
+    official: true,
+    chat: true,
+  },
+  {
+    title: 'Подслушано',
+    url: 'https://t.me/mospolyoverheard',
+    kind: 'Студенческое медиа',
+    official: false,
+    chat: false,
+  },
+  {
+    title: 'Polytech Moscow',
+    url: 'https://t.me/Polytechmoscow',
+    kind: 'Студенческий канал',
+    official: false,
+    chat: false,
+  },
+  {
+    title: 'Студенческий чат',
+    url: 'https://t.me/+FnrRLqRwubY0MDFi',
+    kind: 'Чат сообщества · по приглашению',
+    official: false,
+    chat: true,
+  },
+];

@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import OfficialBadge from '../components/OfficialBadge.astro';
+import { communities } from '../lib/data';
+const groups = [
+  { title: 'Официальные каналы', official: true, chat: false },
+  { title: 'Официальные чаты', official: true, chat: true },
+  { title: 'Студенческие медиа', official: false, chat: false },
+  { title: 'Чат сообщества', official: false, chat: true },
+];
+---
+
+<Base title="Чаты и медиа">
+  <section class="page-intro wrap">
+    <span class="eyebrow">ЛЮДИ, КОТОРЫЕ ПОЙМУТ</span>
+    <h1>
+      На связи<span class="title-dot">.</span>
+    </h1>
+    <p>Задать вопрос, узнать новости и найти своих. Официальные ресурсы отмечены галочкой.</p>
+  </section>
+  {groups.map((group) => (
+    <section class="community-section wrap">
+      <div class="section-heading">
+        <h2>{group.title}</h2>
+        {group.official && <OfficialBadge />}
+      </div>
+      <div class="community-list">
+        {communities
+          .filter((c) => c.official === group.official && c.chat === group.chat)
+          .map((c) => (
+            <a class="community-item" href={c.url} target="_blank" rel="noopener noreferrer">
+              <div>
+                <h3>{c.title}</h3>
+                <p>{c.kind}</p>
+              </div>
+              <span aria-hidden="true">↗</span>
+            </a>
+          ))}
+      </div>
+    </section>
+  ))}
+  <p class="info-note wrap">
+    Официальность каналов указана по подборке автора проекта. Ответы участников чатов не заменяют
+    решения университета. Приглашение в закрытый студенческий чат может со временем измениться.
+  </p>
+</Base>

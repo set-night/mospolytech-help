@@ -1,0 +1,51 @@
+---
+import { categories } from '../lib/data';
+---
+
+<dialog id="search-dialog" aria-labelledby="search-title">
+  <div class="search-head">
+    <span class="eyebrow" id="search-title">
+      Поиск по справочнику
+    </span>
+    <button type="button" class="icon-button" id="close-search" aria-label="Закрыть поиск">
+      ×
+    </button>
+  </div>
+  <div class="search-input-wrap">
+    <span aria-hidden="true">↗</span>
+    <input
+      id="search-input"
+      type="search"
+      placeholder="Например, как получить стипендию"
+      autocomplete="off"
+      aria-label="Поиск по статьям"
+      aria-controls="search-results"
+    />
+    <kbd>esc</kbd>
+  </div>
+  <div class="search-filters">
+    <label for="search-category">Раздел</label>
+    <select id="search-category">
+      <option value="">Все разделы</option>
+      {categories.map((c) => (
+        <option value={c.id}>{c.title}</option>
+      ))}
+    </select>
+  </div>
+  <p id="search-status" role="status" aria-live="polite">
+    Ищите своими словами. Например: «общага», «справка», «пересдача».
+  </p>
+  <div id="search-results" role="region" aria-label="Результаты поиска"></div>
+  <div class="search-foot">
+    <span>
+      <kbd>↑</kbd> <kbd>↓</kbd> выбрать
+    </span>
+    <span>
+      <kbd>enter</kbd> открыть
+    </span>
+    <a href="/articles/">Все материалы →</a>
+  </div>
+</dialog>
+<script>
+  import '../lib/search';
+</script>

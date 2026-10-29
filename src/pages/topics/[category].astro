@@ -1,0 +1,44 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { categories, statusLabels } from '../../lib/data';
+export function getStaticPaths() {
+  return categories.map((category) => ({ params: { category: category.id }, props: { category } }));
+}
+const { category } = Astro.props;
+const articles = (await getCollection('articles'))
+  .filter((a) => a.data.category === category.id)
+  .sort(
+    (a, b) =>
+      Number(b.data.status === 'verified') - Number(a.data.status === 'verified') ||
+      a.data.title.localeCompare(b.data.title, 'ru'),
+  );
+---
+
+<Base title={category.title}>
+  <section class="page-intro wrap">
+    <a class="back-link" href="/articles/">
+      ← Весь справочник
+    </a>
+    <span class="eyebrow">РАЗДЕЛ {category.symbol}</span>
+    <h1>
+      {category.title}
+      <span class="title-dot">.</span>
+    </h1>
+    <p>
+      {category.description}. {articles.length} материалов.
+    </p>
+  </section>
+  <section class="wrap narrow-list article-list">
+    {articles.map((a) => (
+      <a href={`/articles/${a.id}/`}>
+        <div>
+          <span class={`status status-${a.data.status}`}>{statusLabels[a.data.status]}</span>
+          <h2>{a.data.title}</h2>
+          <p>{a.data.description}</p>
+        </div>
+        <span aria-hidden="true">↗</span>
+      </a>
+    ))}
+  </section>
+</Base>

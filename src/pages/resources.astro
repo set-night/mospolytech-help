@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import OfficialBadge from '../components/OfficialBadge.astro';
+import { resources } from '../lib/data';
+---
+
+<Base title="Полезные ресурсы">
+  <section class="page-intro wrap">
+    <span class="eyebrow">СОХРАНИ В ЗАКЛАДКИ</span>
+    <h1>
+      Всё под рукой<span class="title-dot">.</span>
+    </h1>
+    <p>
+      Расписание, навигация и сервисы университета. Короткий путь к тому, что нужно каждый день.
+    </p>
+  </section>
+  <section class="resource-grid wrap" aria-label="Ресурсы">
+    {resources.map((resource) => (
+      <a class="resource-item" href={resource.url} target="_blank" rel="noopener noreferrer">
+        <div class="resource-top">
+          <span class="eyebrow">{resource.label}</span>
+          {resource.official ? <OfficialBadge /> : <span class="eyebrow">СТУДЕНЧЕСКИЙ СЕРВИС</span>}
+        </div>
+        <h2>{resource.title} ↗</h2>
+        <p>{resource.subtitle}</p>
+      </a>
+    ))}
+  </section>
+</Base>
