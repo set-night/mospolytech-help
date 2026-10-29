@@ -2,7 +2,8 @@
 import { getCollection } from 'astro:content';
 import Icon, { type IconName } from '../../components/Icon.astro';
 import { categories, repository, resources, statusLabels } from '../../lib/data';
-import { quickTags, normalizeTag } from './topics';
+import { quickTags, normalizeTag, formatMaterialCount } from './topics';
+import Ribbon from './Ribbon.astro';
 interface Props {
   services?: boolean;
   category?: string;
@@ -44,188 +45,224 @@ const icons: Record<string, IconName> = {
 const serviceIcons: IconName[] = ['calendar', 'map', 'book', 'file'];
 ---
 
-<div class="hub wrap" data-browse data-initial-category={initialCategory}>
+<div
+  class:list={['hub', services ? 'hub-home' : 'wrap']}
+  data-browse
+  data-initial-category={initialCategory}
+>
   <h1 class="sr-only">Справочник студентов Московского Политеха</h1>
-  <form class="hub-search" role="search" action="/" data-enter>
-    <Icon name="search" size={26} />
-    <label class="sr-only" for="browse-query">
-      Найти в справочнике
-    </label>
-    <input
-      id="browse-query"
-      maxlength="200"
-      name="q"
-      type="search"
-      placeholder="Найти ответ или статью…"
-      autocomplete="off"
-    />
-    <span class="search-shortcut" aria-hidden="true">
-      <kbd>⌘</kbd>
-      <kbd>K</kbd>
-    </span>
-    <button type="submit" aria-label="Найти">
-      <Icon name="arrow" size={22} />
-    </button>
-  </form>
-  {services && (
-    <nav class="quick-services" aria-label="Полезные сервисы">
-      {resources.map((resource, index) => (
-        <a
-          href={resource.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          class:list={['service-link', { 'service-featured': index === 0 }]}
-          data-enter
-          data-spotlight
-        >
-          <span class="service-icon">
-            <Icon name={serviceIcons[index]} />
-          </span>
-          <span class="service-label">
-            <strong>{resource.title}</strong>
-            <span>
-              {
-                [
-                  'Расписание пар',
-                  'Корпуса и аудитории',
-                  'Новости и документы',
-                  'Справки и заявления',
-                ][index]
-              }
-            </span>
-          </span>
-          <Icon name="arrow" size={16} class="service-arrow" />
-        </a>
-      ))}
-    </nav>
-  )}
-  <div class="browse-layout">
-    <aside class="browse-sidebar" data-enter>
-      <nav class="category-nav" aria-label="Категории">
-        <a href="/articles/" data-category="" aria-current={initialCategory ? 'false' : 'true'}>
-          <Icon name="grid" size={18} />
-          <span>Все материалы</span>
-          <small>{articles.length}</small>
-        </a>
-        {categories.map((category) => (
-          <a
-            class="topic"
-            href={`/topics/${category.id}/`}
-            data-category={category.id}
-            aria-current={category.id === initialCategory ? 'true' : 'false'}
-          >
-            <Icon name={icons[category.id]} size={18} />
-            <span>{category.title}</span>
-            <small>{articles.filter((a) => a.data.category === category.id).length}</small>
-          </a>
-        ))}
-      </nav>
-      <div class="sidebar-helpers">
-        <a href="/community/">
-          <Icon name="chat" size={17} /> Чаты и помощь <Icon name="arrow" size={14} />
-        </a>
-        <a href={`${repository}/blob/main/CONTRIBUTING.md`}>
-          <Icon name="github" size={17} /> Дополнить справочник <Icon name="arrow" size={14} />
-        </a>
+  <section
+    class:list={[services ? 'search-stage' : 'directory-search']}
+    aria-label="Поиск и полезные ссылки"
+  >
+    {services && (
+      <div class="scene-art" data-scene-parallax aria-hidden="true">
+        <Ribbon class="scene-ribbon" />
+        <span class="scene-point point-one"></span>
+        <span class="scene-point point-two"></span>
+        <span class="scene-cross">+</span>
       </div>
-    </aside>
-    <section class="browse-content" aria-label="Материалы справочника">
-      <div class="tag-bar" aria-label="Популярные теги" data-enter>
-        <Icon name="file" size={16} />
-        {quickTags.map((tag) => (
-          <a
-            class="tag-chip"
-            href={`/?tag=${encodeURIComponent(tag)}`}
-            data-tag={normalizeTag(tag)}
-            aria-current="false"
-          >
-            #{tag}
-          </a>
-        ))}
-      </div>
-      <div class="feed-heading" data-enter>
-        <h2 id="feed-title">
-          {categories.find((item) => item.id === initialCategory)?.title ?? 'Нужно сейчас'}
-        </h2>
-        <span id="browse-count" role="status" aria-live="polite">
-          {articles.length} материалов
+    )}
+    <div class="stage-search-wrap">
+      <form class="hub-search" role="search" action="/" data-enter>
+        <Icon name="search" size={26} />
+        <label class="sr-only" for="browse-query">
+          Найти в справочнике
+        </label>
+        <input
+          id="browse-query"
+          maxlength="200"
+          name="q"
+          type="search"
+          placeholder="Найти ответ или статью…"
+          autocomplete="off"
+        />
+        <span class="search-shortcut" aria-hidden="true">
+          <kbd>⌘</kbd>
+          <kbd>K</kbd>
         </span>
-        <button id="browse-reset" hidden>
-          Сбросить <Icon name="close" size={13} />
+        <button type="submit" aria-label="Найти">
+          <Icon name="arrow" size={22} />
         </button>
-      </div>
-      <div id="browse-notice" role="status" aria-live="polite" hidden></div>
-      <div class="answer-grid" id="answer-grid">
-        {articles.map((article, index) => (
-          <article
-            class="answer-card"
-            hidden={initialCategory ? article.data.category !== initialCategory : undefined}
-            data-article={article.id}
-            data-category-id={article.data.category}
-            data-tags={JSON.stringify(article.data.tags.map(normalizeTag))}
-            data-enter={index < 8 ? true : undefined}
-            data-spotlight
-          >
-            <a href={`/articles/${article.id}/`} class="answer-main">
-              <span class="answer-meta">
-                <span class="answer-category">
-                  <Icon name={icons[article.data.category]} size={14} />
-                  {categories.find((c) => c.id === article.data.category)?.title}
+      </form>
+    </div>
+    {services && (
+      <>
+        <nav class="floating-services" aria-label="Полезные сервисы">
+          {resources.slice(0, 4).map((resource, index) => (
+            <div class={`float-anchor float-anchor-${index + 1}`} data-enter>
+              <a href={resource.url} target="_blank" rel="noopener noreferrer" class="float-link">
+                <span class="float-icon">
+                  <Icon name={serviceIcons[index]} />
                 </span>
-                {article.data.status === 'verified' && (
-                  <span class="verified-mark" role="img" aria-label={statusLabels.verified}>
-                    <Icon name="check" size={12} />
-                  </span>
-                )}
-              </span>
-              <h3>{article.data.title}</h3>
-              <span class="answer-arrow">
-                <Icon name="arrow" size={18} />
-              </span>
-            </a>
-            <div class="answer-tags">
-              {article.data.tags
-                .filter(
-                  (tag) =>
-                    ![
-                      'Учусь',
-                      'Первый курс',
-                      'Поступаю',
-                      'Московский Политех',
-                      'Живу',
-                      'Выпускаюсь',
-                      'Меняю планы',
-                    ].includes(tag),
-                )
-                .slice(0, 2)
-                .map((tag) => (
-                  <a href={`/?tag=${encodeURIComponent(tag)}`} data-tag={normalizeTag(tag)}>
-                    #{tag}
-                  </a>
-                ))}
+                <span>
+                  <strong>{resource.title}</strong>
+                  <small>
+                    {
+                      [
+                        'Какая следующая пара?',
+                        'Найти аудиторию',
+                        'Новости и документы',
+                        'Справки и заявления',
+                      ][index]
+                    }
+                  </small>
+                </span>
+                <Icon name="arrow" size={15} />
+              </a>
             </div>
-          </article>
-        ))}
+          ))}
+        </nav>
+        <a class="stage-more" href="#guide">
+          <span>К справочнику</span>
+          <Icon name="chevron" size={18} />
+        </a>
+        <span class="scene-caption" aria-hidden="true">
+          МОСКОВСКИЙ ПОЛИТЕХ / СТУДЕНТЫ — СТУДЕНТАМ
+        </span>
+      </>
+    )}
+  </section>
+  <section class:list={['guide-body', { wrap: services }]} id="guide" aria-label="Справочник">
+    {services && (
+      <div class="guide-intro" data-reveal>
+        <div>
+          <span class="eyebrow">СПРАВОЧНИК СООБЩЕСТВА</span>
+          <h2>Всё, что пригодится.</h2>
+        </div>
+        <a class="text-link" href="/resources/">
+          Все сервисы <Icon name="arrow" size={17} />
+        </a>
       </div>
-      <div class="browse-empty" id="browse-empty" hidden>
-        <Icon name="search" size={30} />
-        <h3>Ничего не нашлось</h3>
-        <p>Попробуй другое слово или убери фильтр.</p>
-        <button class="button-dark" id="browse-clear">
-          Сбросить фильтры
+    )}
+    <div class="browse-layout">
+      <aside class="browse-sidebar" data-enter>
+        <nav class="category-nav" aria-label="Категории">
+          <a href="/articles/" data-category="" aria-current={initialCategory ? 'false' : 'true'}>
+            <Icon name="grid" size={18} />
+            <span>Все материалы</span>
+            <small>{articles.length}</small>
+          </a>
+          {categories.map((category) => (
+            <a
+              class="topic"
+              href={`/topics/${category.id}/`}
+              data-category={category.id}
+              aria-current={category.id === initialCategory ? 'true' : 'false'}
+            >
+              <Icon name={icons[category.id]} size={18} />
+              <span>{category.title}</span>
+              <small>{articles.filter((a) => a.data.category === category.id).length}</small>
+            </a>
+          ))}
+        </nav>
+        <div class="sidebar-helpers">
+          <a href="/community/">
+            <Icon name="chat" size={17} /> Чаты и помощь <Icon name="arrow" size={14} />
+          </a>
+          <a href={`${repository}/blob/main/CONTRIBUTING.md`}>
+            <Icon name="github" size={17} /> Дополнить справочник <Icon name="arrow" size={14} />
+          </a>
+        </div>
+      </aside>
+      <section class="browse-content" aria-label="Материалы справочника">
+        <div class="tag-bar" aria-label="Популярные теги" data-enter>
+          <Icon name="file" size={16} />
+          {quickTags.map((tag) => (
+            <a
+              class="tag-chip"
+              href={`/?tag=${encodeURIComponent(tag)}`}
+              data-tag={normalizeTag(tag)}
+              aria-current="false"
+            >
+              #{tag}
+            </a>
+          ))}
+        </div>
+        <div class="feed-heading" data-enter>
+          <h2 id="feed-title">
+            {categories.find((item) => item.id === initialCategory)?.title ?? 'Нужно сейчас'}
+          </h2>
+          <span id="browse-count" role="status" aria-live="polite">
+            {formatMaterialCount(articles.length)}
+          </span>
+          <button id="browse-reset" hidden>
+            Сбросить <Icon name="close" size={13} />
+          </button>
+        </div>
+        <div id="browse-notice" role="status" aria-live="polite" hidden></div>
+        <div class="answer-grid" id="answer-grid">
+          {articles.map((article, index) => (
+            <article
+              class="answer-card"
+              hidden={initialCategory ? article.data.category !== initialCategory : undefined}
+              data-article={article.id}
+              data-category-id={article.data.category}
+              data-tags={JSON.stringify(article.data.tags.map(normalizeTag))}
+              data-reveal={index < 8 ? true : undefined}
+            >
+              <a href={`/articles/${article.id}/`} class="answer-main">
+                <span class="answer-meta">
+                  <span class="answer-category">
+                    <Icon name={icons[article.data.category]} size={14} />
+                    {categories.find((c) => c.id === article.data.category)?.title}
+                  </span>
+                  {article.data.status === 'verified' && (
+                    <span class="verified-mark" role="img" aria-label={statusLabels.verified}>
+                      <Icon name="check" size={12} />
+                    </span>
+                  )}
+                </span>
+                <h3>{article.data.title}</h3>
+                <span class="answer-arrow">
+                  <Icon name="arrow" size={18} />
+                </span>
+              </a>
+              <div class="answer-tags">
+                {article.data.tags
+                  .filter(
+                    (tag) =>
+                      ![
+                        'Учусь',
+                        'Первый курс',
+                        'Поступаю',
+                        'Московский Политех',
+                        'Живу',
+                        'Выпускаюсь',
+                        'Меняю планы',
+                      ].includes(tag),
+                  )
+                  .slice(0, 2)
+                  .map((tag) => (
+                    <a href={`/?tag=${encodeURIComponent(tag)}`} data-tag={normalizeTag(tag)}>
+                      #{tag}
+                    </a>
+                  ))}
+              </div>
+            </article>
+          ))}
+        </div>
+        <div class="browse-empty" id="browse-empty" hidden>
+          <Icon name="search" size={30} />
+          <h3>Ничего не нашлось</h3>
+          <p>Попробуй другое слово или убери фильтр.</p>
+          <button class="button-dark" id="browse-clear">
+            Сбросить фильтры
+          </button>
+        </div>
+        <button class="show-more" id="browse-more" hidden>
+          Показать ещё <Icon name="chevron" size={16} />
         </button>
-      </div>
-      <button class="show-more" id="browse-more" hidden>
-        Показать ещё <Icon name="chevron" size={16} />
-      </button>
-      <noscript>
-        <p class="info-note">
-          Для полнотекстового поиска нужен JavaScript. Все материалы доступны ниже и в разделах.
-        </p>
-      </noscript>
-    </section>
-  </div>
+        <noscript>
+          <p class="info-note">
+            Для полнотекстового поиска нужен JavaScript. Все материалы доступны ниже и в разделах.
+          </p>
+        </noscript>
+      </section>
+    </div>
+  </section>
 </div>
 <script>
   import './browse';
+  import './scene';
 </script>

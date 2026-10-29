@@ -49,7 +49,7 @@ test('поиск: шорткаты, синонимы, русская раскл�
 });
 
 test('поиск: пустые результаты, закрытие и возврат фокуса', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/resources/');
   await page.locator('.header-search').click();
   await page.getByRole('dialog').getByRole('searchbox').fill('фывапролджэщзхънесуществующий');
   await expect(page.locator('#search-status')).toContainText('Ничего не нашлось');
@@ -281,4 +281,57 @@ test('быстрое двойное переключение темы не те�
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
   await page.reload();
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+});
+
+test('поисковая сцена: простор, доступные ссылки и закрепление поля', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/');
+  const input = page.locator('#browse-query');
+  const before = await input.boundingBox();
+  const viewport = page.viewportSize()!;
+  expect(before!.y).toBeGreaterThan(viewport.height * 0.35);
+  expect(before!.y).toBeLessThan(viewport.height * 0.6);
+  const intro = await page.locator('.guide-intro').boundingBox();
+  expect(intro!.y).toBeGreaterThanOrEqual(viewport.height);
+  for (const link of await page.locator('.float-link').all()) {
+    const rect = await link.boundingBox();
+    expect(rect!.y).toBeGreaterThan(68);
+    expect(rect!.y + rect!.height).toBeLessThan(viewport.height);
+    expect(rect!.y + rect!.height <= before!.y || rect!.y >= before!.y + before!.height).toBe(true);
+    await link.click({ trial: true });
+  }
+  await page.locator('.stage-more').click();
+  await expect(page.locator('html')).toHaveClass(/search-docked/);
+  const docked = await input.boundingBox();
+  expect(docked!.y).toBeLessThan(145);
+  expect(docked!.y).toBeGreaterThan(0);
+  // Bounding boxes alone miss fields painted behind the fixed header.
+  expect(
+    await input.evaluate((element) => {
+      const rect = element.getBoundingClientRect();
+      return (
+        document.elementFromPoint(rect.x + rect.width / 2, rect.y + rect.height / 2) === element
+      );
+    }),
+  ).toBe(true);
+  await input.click();
+  await expect(input).toBeFocused();
+  await input.fill('вайфай');
+  await expect(page.locator('.answer-card:visible').first()).toContainText(/Wi-Fi/i);
+  await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+  await expect(page.locator('html')).not.toHaveClass(/search-docked/);
+  await page.locator('.float-link').first().click({ trial: true });
+});
+
+test('ссылка на тег сразу открывает материалы под поисковой сценой', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/?tag=Wi-Fi');
+  await expect(page.locator('html')).toHaveClass(/search-docked/);
+  await expect(page.locator('#feed-title')).toHaveText('#wi-fi');
+  const first = page.locator('.answer-card:visible').first();
+  await expect(first).toContainText(/Wi-Fi/i);
+  const rect = await first.boundingBox();
+  expect(rect!.y).toBeLessThan(page.viewportSize()!.height);
+  await first.locator('.answer-main').click();
+  await expect(page).toHaveURL(/\/articles\//);
 });

@@ -1,5 +1,5 @@
 import { searchArticles } from '../search/engine';
-import { normalizeTag } from './topics';
+import { normalizeTag, formatMaterialCount } from './topics';
 const root = document.querySelector<HTMLElement>('[data-browse]');
 if (root) {
   const query = root.querySelector<HTMLInputElement>('#browse-query')!;
@@ -69,7 +69,10 @@ if (root) {
         : category
           ? (categoryTitle ?? 'Материалы')
           : 'Нужно сейчас';
-    count.textContent = `${matches.length} из ${cards.length}`;
+    count.textContent =
+      matches.length === cards.length
+        ? formatMaterialCount(cards.length)
+        : `${matches.length} из ${cards.length}`;
     reset.hidden = !(query.value || category || tag);
     empty.hidden = matches.length > 0;
     more.hidden = matches.length <= limit;
@@ -138,7 +141,10 @@ if (root) {
         if (id === request) form.removeAttribute('aria-busy');
       }
     } else form.removeAttribute('aria-busy');
-    if (id === request) paint(matches, animate);
+    if (id === request) {
+      paint(matches, animate);
+      if (text || category || tag) root?.dispatchEvent(new CustomEvent('browse:results'));
+    }
   }
   function clear(): void {
     clearTimeout(timer);

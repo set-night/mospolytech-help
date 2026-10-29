@@ -5,6 +5,7 @@ import '../styles/global.css';
 import Search from '../components/Search.astro';
 import Icon from '../components/Icon.astro';
 import BrandMark from '../components/BrandMark.astro';
+import Ribbon from '../features/browse/Ribbon.astro';
 import { repository } from '../lib/data';
 interface Props {
   title?: string;
@@ -14,6 +15,7 @@ const {
   title = 'Справочник студентов Московского Политеха',
   description = 'Расписание, навигация, документы и ответы на вопросы студентов Московского Политеха. Открытый неофициальный справочник с источниками.',
 } = Astro.props;
+const isHome = Astro.url.pathname === '/';
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const nav = [
   { href: '/', title: 'Главная' },
@@ -24,17 +26,17 @@ const nav = [
 ---
 
 <!doctype html>
-<html lang="ru" data-theme="dark">
+<html lang="ru" data-theme="dark" class:list={{ 'home-page': isHome }}>
   <head>
     <meta charset="UTF-8" />
     <script is:inline src="/theme-init.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark light" />
-    <meta name="theme-color" content="#121214" />
+    <meta name="theme-color" content="#1e1e1e" />
     <title>{title} — polytech.help</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
@@ -52,7 +54,9 @@ const nav = [
           <span class="brand-symbol" aria-hidden="true">
             <BrandMark />
           </span>
-          polytech<span>.help</span>
+          <span class="brand-wordmark">
+            polytech<span>.help</span>
+          </span>
         </a>
         <nav class="desktop-nav" aria-label="Основная навигация">
           {nav.map((item) => (
@@ -100,19 +104,34 @@ const nav = [
       <slot />
     </main>
     <footer class="site-footer wrap">
-      <span class="footer-note">
-        polytech.help <span>· Неофициальный справочник</span>
-      </span>
-      <nav aria-label="Ссылки в подвале">
-        <a class="contribute" href={`${repository}/blob/main/CONTRIBUTING.md`}>
-          Дополнить <Icon name="arrow" size={13} />
+      <div class="footer-invitation" data-reveal>
+        <div>
+          <span class="eyebrow">ЭТОТ СПРАВОЧНИК МОЖЕТ СТАТЬ ЛУЧШЕ</span>
+          <p>С твоим ответом.</p>
+        </div>
+        <a class="contribute footer-cta" href={`${repository}/blob/main/CONTRIBUTING.md`}>
+          Дополнить справочник{' '}
+          <span>
+            <Icon name="arrow" size={25} />
+          </span>
         </a>
-        <a href={`${repository}/issues/new?template=correction.yml`}>Ошибка?</a>
-        <a href="/about/">О проекте</a>
-        <a href={repository}>
-          GitHub <Icon name="github" size={14} />
+        <Ribbon class="footer-ribbon" />
+      </div>
+      <div class="footer-bottom">
+        <a href="/" class="footer-wordmark">
+          polytech<span>.help</span>
         </a>
-      </nav>
+        <span class="footer-note">Неофициальный проект студентов</span>
+        <nav aria-label="Ссылки в подвале">
+          <a href="/articles/">Справочник</a>
+          <a href="/community/">Чаты и медиа</a>
+          <a href={`${repository}/issues/new?template=correction.yml`}>Ошибка?</a>
+          <a href="/about/">О проекте</a>
+          <a href={repository}>
+            GitHub <Icon name="github" size={14} />
+          </a>
+        </nav>
+      </div>
     </footer>
     <Search />
     <script>

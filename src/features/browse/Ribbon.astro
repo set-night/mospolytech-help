@@ -1,0 +1,24 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+// Original line sculpture: offset elliptical ribs, inspired by the university's spiral motif.
+const ribs = Array.from({ length: 40 }, (_, index) => {
+  const angle = index * 4.1;
+  const radius = 110 + index * 2.8;
+  return {
+    rx: radius,
+    ry: radius * 0.64,
+    transform: `translate(${Math.sin(index * 0.095) * 62} ${Math.cos(index * 0.075) * 22}) rotate(${angle})`,
+  };
+});
+---
+
+<svg viewBox="-360 -360 720 720" fill="none" class={className} aria-hidden="true">
+  <g stroke="currentColor" stroke-width=".7">
+    {ribs.map((rib) => (
+      <ellipse cx="0" cy="0" rx={rib.rx} ry={rib.ry} transform={rib.transform} />
+    ))}
+  </g>
+</svg>
