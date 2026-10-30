@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-10-30",
+  "articlesBefore": 122,
+  "studentGuide": {
+    "questionsInManifest": 86,
+    "missingSlugs": [],
+    "missingSourceAttributions": []
+  },
+  "faq": {
+    "questionsInSnapshot": 50,
+    "missingSourceAttributions": []
+  },
+  "articlesAfter": 128
+}

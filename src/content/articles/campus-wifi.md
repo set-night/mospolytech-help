@@ -5,7 +5,7 @@ category: 'campus'
 tags: ['Wi-Fi', 'вайфай', 'интернет', 'mospolytech-stud', 'сеть', 'ЕУЗ']
 sources:
   [{ 'title': 'База знаний Московского Политеха', 'url': 'https://help.mospolytech.ru/article/94' }]
-reviewedAt: '2026-10-29'
+reviewedAt: '2026-10-30'
 status: 'verified'
 ---
 

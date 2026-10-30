@@ -1,0 +1,424 @@
+[
+  {
+    "url": "https://mosrasp.ru",
+    "title": "МосРасписание",
+    "checkedAt": "2026-10-30",
+    "status": "covered",
+    "articles": [
+      "mosrasp-how-to",
+      "schedule",
+      "retakes"
+    ],
+    "topics": [
+      "Выбор группы и преподавателя",
+      "Расписание дня и недели, переключение периода",
+      "Выбор подгрупп и накладок",
+      "Поиск аудитории и маршрут в MPUNav",
+      "Избранное, оформление и синхронизация устройств",
+      "Подписка в календарь Apple/Google и сохранение недели картинкой"
+    ],
+    "limitations": [
+      "Данные расписания проверены на публичной учебной группе; корректность всех групп и дисциплин не подтверждается",
+      "Фактическое связывание двух устройств и подписка календарного приложения не выполнялись",
+      "Выбор отображаемого занятия в MosRasp не является официальной записью на дисциплину"
+    ],
+    "evidence": [
+      "https://mosrasp.ru/",
+      "https://mosrasp.ru/settings",
+      "https://mosrasp.ru/sync",
+      "https://mosrasp.ru/week/subscribe"
+    ]
+  },
+  {
+    "url": "https://mpunav.ru",
+    "title": "МПУ Навигатор",
+    "checkedAt": "2026-10-30",
+    "status": "covered",
+    "articles": [
+      "mpunav-how-to",
+      "campuses",
+      "accessible-education"
+    ],
+    "topics": [
+      "Локации, корпуса и этажи",
+      "Поиск аудитории и объектов",
+      "Маршрут от входа к аудитории",
+      "Избранное и ссылка на маршрут",
+      "Сообщение о проблеме и дополнительное расписание"
+    ],
+    "limitations": [
+      "Браузером проверены поиск А-100 и маршрут на Прянишникова к ПР-2810; проходимость реальных дверей и всех переходов не проверялась",
+      "В среде проверки отмечены ошибки сертификатов внешних ресурсов Яндекса и 404 промокартинки; основной поиск и текстовый маршрут работают",
+      "Полнота сведений об аудиториях различается; отсутствие расписания в карточке не является подтверждением свободной аудитории"
+    ],
+    "evidence": [
+      "https://mpunav.ru/",
+      "https://mpunav.ru/search",
+      "https://mpunav.ru/?space=a-100",
+      "https://mpunav.ru/?from=pr-enter-temp&to=pr-2810"
+    ]
+  },
+  {
+    "url": "https://mospolytech.ru/",
+    "title": "Сайт университета",
+    "checkedAt": "2026-10-30",
+    "status": "partial",
+    "articles": [
+      "schedule",
+      "retakes",
+      "mfc",
+      "student-certificate",
+      "student-account",
+      "scholarships",
+      "dormitories",
+      "campuses",
+      "project-work",
+      "practice",
+      "career",
+      "tuition-payment",
+      "academic-leave",
+      "transfer",
+      "library",
+      "psychological-help",
+      "military-registration",
+      "international-students",
+      "science",
+      "student-documents",
+      "digital-department-admission"
+    ],
+    "topics": [
+      "Основные студенческие разделы, документы и маршруты обращения",
+      "Расписание, сессия и пересдачи",
+      "Оплата, стипендии, общежития",
+      "Проекты, практика, работа и дополнительные программы",
+      "Последнее обновление о восстановлении ЛК/LMS"
+    ],
+    "limitations": [
+      "Главная и выбранные студенческие разделы не равны всему домену: архив новостей, все образовательные программы и вложенные приказы не импортированы",
+      "Ежегодные тарифы, медицинские и правовые требования из исходных студенческих материалов не получили массового независимого подтверждения",
+      "Часть статей прежнего импорта остаётся needs-review",
+      "Датированный набор «Цифровой кафедры» 2026 года не объявлен ежегодным или бессрочным"
+    ],
+    "evidence": [
+      "https://mospolytech.ru/",
+      "https://mospolytech.ru/obuchauschimsya/raspisaniya/",
+      "https://mospolytech.ru/obuchauschimsya/uslugi-mnogofunkcionalnogo-centra/",
+      "https://mospolytech.ru/news/o-rabote-tsifrovykh-servisov-moskovskogo-politekha-posle-globalnogo-sboya/",
+      "https://mospolytech.ru/news/moskovskiy-politekh-priglashaet-studentov-na-besplatnoe-obuchenie-v-tsifrovoy-kafedre/"
+    ]
+  },
+  {
+    "url": "https://e.mospolytech.ru/",
+    "title": "Личный кабинет",
+    "checkedAt": "2026-10-30",
+    "status": "covered",
+    "articles": [
+      "student-account",
+      "guide-student-account",
+      "euz-password-recovery",
+      "digital-service-accounts",
+      "it-support-request"
+    ],
+    "topics": [
+      "Публичная форма входа через ЕУЗ",
+      "Поиск логина и помощь со входом",
+      "Новый и старый дизайн, адрес старого кабинета",
+      "Услуги студента по публичным инструкциям МФЦ"
+    ],
+    "limitations": [
+      "Проверены только открытые страницы: вход в аккаунт не выполнялся",
+      "Точный состав данных, пользовательские ошибки и операции после авторизации не проверены",
+      "Объявление от 29.10 сообщает о восстановлении, но на старом кабинете остаётся предупреждение о технических работах; работоспособность индивидуальных услуг не гарантируется",
+      "Публичная страница помощи ведёт на старую страницу восстановления, где вместо формы указан канал обращения в поддержку"
+    ],
+    "evidence": [
+      "https://e.mospolytech.ru/#/login",
+      "https://e.mospolytech.ru/#/cant-access",
+      "https://old-e.mospolytech.ru/index.php?p=restore_ad_pass",
+      "https://help.mospolytech.ru/ticket",
+      "https://mospolytech.ru/obuchauschimsya/uslugi-mnogofunkcionalnogo-centra/"
+    ]
+  },
+  {
+    "url": "https://help.mospolytech.ru/kb",
+    "title": "База знаний IT-службы",
+    "checkedAt": "2026-10-30",
+    "status": "covered",
+    "articles": [
+      "digital-service-accounts",
+      "euz-password-recovery",
+      "campus-wifi",
+      "it-support-request",
+      "university-email-access",
+      "guide-lms-login",
+      "library",
+      "accessible-library-services"
+    ],
+    "topics": [
+      "Отдельный перечень сервисов для студентов",
+      "ЕУЗ, Wi-Fi, поддержка, доступы к СДО и ЛК",
+      "Различие студенческих и сотруднических инструкций",
+      "Куда обращаться с вопросами электронных библиотек"
+    ],
+    "limitations": [
+      "В базе 34 элемента, включая категории и инструкции для сотрудников: кадровые процессы, VPN/RDP, корпоративное ПО и электронные подписи не перенесены как студенческие",
+      "Полный текст вложенных служебных файлов не импортирован",
+      "Страница корпоративной почты обещает ящики сотрудникам; выдача всем студентам не подтверждена"
+    ],
+    "evidence": [
+      "https://help.mospolytech.ru/kb",
+      "https://help.mospolytech.ru/article/134",
+      "https://help.mospolytech.ru/article/117",
+      "https://help.mospolytech.ru/article/219",
+      "https://help.mospolytech.ru/article/220",
+      "https://help.mospolytech.ru/article/158",
+      "https://help.mospolytech.ru/article/87"
+    ]
+  },
+  {
+    "url": "https://help.mospolytech.ru/ticket",
+    "title": "Техническая поддержка",
+    "checkedAt": "2026-10-30",
+    "status": "covered",
+    "articles": [
+      "it-support-request",
+      "euz-password-recovery",
+      "campus-wifi",
+      "guide-lms-login"
+    ],
+    "topics": [
+      "Официальная форма и альтернативная почта",
+      "Поля заявки, локация и описание проблемы",
+      "Прикрепление файлов",
+      "Контекст ошибки без публикации секретов"
+    ],
+    "limitations": [
+      "Форма проверена без заполнения персональных данных и отправки заявки",
+      "Срок решения конкретного обращения и работа очередей не проверены"
+    ],
+    "evidence": [
+      "https://help.mospolytech.ru/ticket",
+      "https://help.mospolytech.ru/article/220"
+    ]
+  },
+  {
+    "url": "https://help.mospolytech.ru/article/134",
+    "title": "Студенческие цифровые сервисы",
+    "checkedAt": "2026-10-30",
+    "status": "covered",
+    "articles": [
+      "digital-service-accounts",
+      "student-account",
+      "euz-password-recovery",
+      "campus-wifi",
+      "guide-lms-login"
+    ],
+    "topics": [
+      "Все четыре позиции перечня: Wi-Fi, ЕУЗ, СДО/LMS, ЛК",
+      "ЕУЗ для основных сервисов и собственная авторизация СДО",
+      "Маршрут восстановления и поддержки"
+    ],
+    "limitations": [
+      "У двух описаний в таблице — СДО и ЛК — нет самостоятельной активной ссылки на подробную инструкцию; использованы публичная форма ЛК и инструкции IT-службы",
+      "Ни одна операция после студенческой авторизации не выполнялась",
+      "Публичный адрес online.mospolytech.ru в среде проверки не получен из-за проверки сертификата; это не доказательство глобальной недоступности"
+    ],
+    "evidence": [
+      "https://help.mospolytech.ru/article/134",
+      "https://help.mospolytech.ru/article/117",
+      "https://help.mospolytech.ru/article/94",
+      "https://e.mospolytech.ru/#/login",
+      "https://mospolytech.ru/news/o-rabote-tsifrovykh-servisov-moskovskogo-politekha-posle-globalnogo-sboya/"
+    ]
+  },
+  {
+    "url": "https://help.mospolytech.ru/article/94",
+    "title": "Wi-Fi университета",
+    "checkedAt": "2026-10-30",
+    "status": "covered",
+    "articles": [
+      "campus-wifi",
+      "euz-password-recovery",
+      "it-support-request"
+    ],
+    "topics": [
+      "Студенческая сеть mospolytech-stud",
+      "Авторизация ЕУЗ",
+      "Локация и описание проблемы для IT-поддержки",
+      "Время гарантированной поддержки"
+    ],
+    "limitations": [
+      "Физическое подключение из кампуса и покрытие сети не проверялись",
+      "Сотруднические сети и настройки принтеров/IoT не представлены как инструкция студенту",
+      "Старая ссылка zvk.mospolytech.ru не использована как основной канал: есть актуальная инструкция подачи заявок"
+    ],
+    "evidence": [
+      "https://help.mospolytech.ru/article/94",
+      "https://help.mospolytech.ru/article/117",
+      "https://help.mospolytech.ru/article/220",
+      "https://help.mospolytech.ru/ticket"
+    ]
+  },
+  {
+    "url": "https://mospolytech.ru/mejdunarodnaya-deyatelnost/akademicheskaya-mobilnost/",
+    "title": "Международные стажировки",
+    "checkedAt": "2026-10-30",
+    "status": "covered",
+    "articles": [
+      "academic-mobility"
+    ],
+    "topics": [
+      "Поиск действующего анонса",
+      "Заявка, CV, сопроводительное письмо, успеваемость",
+      "Стажировка по запросу",
+      "Контакт международных программ и условия, требующие уточнения"
+    ],
+    "limitations": [
+      "Исходный URL перенаправляется на новый официальный адрес",
+      "Архивные программы разных лет не объявлены открытыми",
+      "Внешняя регистрация, финансирование, визы и зачёт результатов конкретной программы не проверялись"
+    ],
+    "evidence": [
+      "https://mospolytech.ru/mejdunarodnaya-deyatelnost/mezhdunarodnye-stazhirovki/",
+      "https://vk.com/mpoip"
+    ]
+  },
+  {
+    "url": "https://mospolytech.ru/sveden/ovz/",
+    "title": "Доступная среда",
+    "checkedAt": "2026-10-30",
+    "status": "covered",
+    "articles": [
+      "accessible-education",
+      "accessible-library-services",
+      "physical-education-and-sport",
+      "mpunav-how-to"
+    ],
+    "topics": [
+      "Запрос специальных условий и индивидуального плана",
+      "Уточнение доступного маршрута и сопровождения",
+      "Помощь библиотеки и доступные форматы",
+      "Организация учебной физкультуры"
+    ],
+    "limitations": [
+      "Исходный URL перенаправляется на раздел для поступающих и студентов с ОВЗ",
+      "Фактическая доступность зданий и назначение индивидуальных условий не проверялись",
+      "Исторические акты и старые годовые правила поступления не объявлены действующими условиями для любого года"
+    ],
+    "evidence": [
+      "https://mospolytech.ru/postupayushchim/invalidam-i-licam-s-ovz/",
+      "https://help.mospolytech.ru/article/87"
+    ]
+  },
+  {
+    "url": "https://mospolytech.ru/studencheskaya-zhizn/medical-help/medicinskaya-slujba/",
+    "title": "Медицинский центр",
+    "checkedAt": "2026-10-30",
+    "status": "covered",
+    "articles": [
+      "medical-point",
+      "psychological-help"
+    ],
+    "topics": [
+      "Адрес А-107 и контакт медпункта",
+      "Опубликованные часы работы",
+      "Проверка порядка обращения и нужного документа",
+      "Отдельный маршрут к психологической службе"
+    ],
+    "limitations": [
+      "Перенесены только контакты и организационные действия; диагностика, лечение, правила страхования и медицинские требования не пересказывались",
+      "Очный приём, актуальное состояние кабинета и оформление медицинских документов не проверялись",
+      "На странице есть старые медицинские документы; их наличие не подтверждает актуальность каждого требования"
+    ],
+    "evidence": [
+      "https://mospolytech.ru/studencheskaya-zhizn/medical-help/medicinskaya-slujba/"
+    ]
+  },
+  {
+    "url": "https://mospolytech.ru/studencheskaya-zhizn/obschestvennaya-deyatelnost/",
+    "title": "Студенческие объединения",
+    "checkedAt": "2026-10-30",
+    "status": "covered",
+    "articles": [
+      "guide-student-communities",
+      "volunteering-school",
+      "become-first-year-curator",
+      "student-self-government",
+      "education-quality-feedback",
+      "student-media-team",
+      "pedagogical-team-nebo"
+    ],
+    "topics": [
+      "Все шесть основных объединений проверенной страницы",
+      "Волонтёрский центр и Школа волонтёра",
+      "Школа кураторов",
+      "ОСО и Комитет качества",
+      "Медиацентр и педагогический отряд Небо"
+    ],
+    "limitations": [
+      "Текущие наборы, персональные контакты активистов и закрытые сообщества не проверялись",
+      "Для отряда Небо и некоторых органов не опубликована постоянная форма вступления: указано уточнять маршрут",
+      "Исторические примеры мероприятий не перенесены как будущие поездки"
+    ],
+    "evidence": [
+      "https://mospolytech.ru/studencheskaya-zhizn/obschestvennaya-deyatelnost/",
+      "https://vk.com/volunteer_mp",
+      "https://vk.com/kuratortv",
+      "https://t.me/mospolymedia"
+    ]
+  },
+  {
+    "url": "https://mospolytech.ru/studencheskaya-zhizn/sportivnaya-deyatelnost/",
+    "title": "Спортивная деятельность",
+    "checkedAt": "2026-10-30",
+    "status": "covered",
+    "articles": [
+      "guide-sports-club",
+      "physical-education-and-sport",
+      "yacht-school",
+      "polet-student-trips"
+    ],
+    "topics": [
+      "Перечень секций и контакт спортивного клуба",
+      "Как уточнить набор и требования к первой тренировке",
+      "Связь внеучебного спорта и учебной физкультуры",
+      "Яхт-клуб и Школа яхтенного рулевого",
+      "Центр Полёт и организованные выезды"
+    ],
+    "limitations": [
+      "Тренировки, свободные места, отборы и индивидуальный зачёт физкультуры не проверялись",
+      "Бесплатность яхтенного обучения не объявлена оплатой всех поездок",
+      "Исторический COVID-документ Полёта не выдан за текущую памятку"
+    ],
+    "evidence": [
+      "https://mospolytech.ru/studencheskaya-zhizn/sportivnaya-deyatelnost/",
+      "https://mospolytech.ru/studencheskaya-zhizn/sportivnaya-deyatelnost/yaht-klub/",
+      "https://mospolytech.ru/studencheskaya-zhizn/sportivnaya-deyatelnost/obrazovatelnyy-kulturnyy-i-sportivno-tehnicheskiy-centr-polet/",
+      "https://t.me/cckmospolytech"
+    ]
+  },
+  {
+    "url": "https://mospolytech.ru/ob-universitete/obrashcheniya-grazhdan/",
+    "title": "Обращения граждан",
+    "checkedAt": "2026-10-30",
+    "status": "covered",
+    "articles": [
+      "public-appeals",
+      "education-quality-feedback",
+      "student-self-government"
+    ],
+    "topics": [
+      "Где находится официальная форма",
+      "Какие сведения включить в обращение",
+      "Какие студенческие заявления должны идти другим каналом",
+      "Различие формального обращения и студенческой инициативы"
+    ],
+    "limitations": [
+      "Обращение не отправлялось; юридическая оценка отдельных случаев и фактические сроки ответов не проверялись",
+      "Заказ справки, перевод и отчисление перенаправлены к профильным процедурам; форма обращений их не заменяет"
+    ],
+    "evidence": [
+      "https://mospolytech.ru/ob-universitete/obrashcheniya-grazhdan/"
+    ]
+  }
+]

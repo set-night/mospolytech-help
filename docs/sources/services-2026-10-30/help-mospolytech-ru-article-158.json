@@ -1,0 +1,79 @@
+{
+  "url": "https://help.mospolytech.ru/article/158",
+  "checkedAt": "2026-10-30",
+  "httpStatus": 200,
+  "finalUrl": "https://help.mospolytech.ru/article/158",
+  "redirects": [],
+  "title": "База знаний Московского Политеха",
+  "bytes": 7621,
+  "text": "Главная\n/\nБаза знаний\n/\nЧасто встречающиеся вопросы\nКорпоративная электронная почта\nОбновлено: 24.10.2026\n7 просмотров\nУ каждого сотрудника Московского Политех есть корпоративная электронная почта, вида\nлогин_как_ЕУЗ@mospolytech.ru\n(например, i.i.ivanov@mospolytech.ru). Пароль от почты совпадает с паролем от\nЕдиной учетной записи\n.\nДля входа в почту перейдите по\nссылке\n.\nДля настройки почтовых агентов:\n1. Перед настройкой вам необходимо обязательно войти в web-версию для активации почтового ящика.\n2. После активации используйте следующие параметры:\n2.1. Сервер исходящей почты:\nПочта:\ni.i.iavon@mospolytech.ru\nИмя пользователя:\ni.i.iavon@mospolytech.ru\nНастройки безопасности: использование SSL - должно быть включено.\nSMTP сервер (адрес сервера): mail.mospolytech.ru\nПорт: 465\n2.2. Сервер входящей почты:\nИмя пользователя:\ni.i.iavon@mospolytech.ru\nТип: IMAP\nНастройки безопасности: использование SSL - должно быть включено.\nIMAP сервер (адрес сервера): mail.mospolytech.ru\nПорт: 963\nЕсли вы не помните адреса или пароль, то вам необходимо\nобратиться в техническую поддержку\n.\nЧасто встречающиеся вопросы\nПохожие статьи\nСтатья\n_Перечень сервисов для сотрудников\nСтатья\n_Перечень сервисов для студентов\nСтатья\nИспользование программного обеспечения RuDesktop\nСтатья\nКак подать заявку в техническую поддержку? (переходный период)\nСтатья\nЛогин и пароль от единой учетной записи (переходный период)\nСтатья\nПодключение к терминальному серверу",
+  "links": [
+    {
+      "title": "Главная",
+      "url": "https://help.mospolytech.ru/"
+    },
+    {
+      "title": "База знаний",
+      "url": "https://help.mospolytech.ru/kb"
+    },
+    {
+      "title": "Часто встречающиеся вопросы",
+      "url": "https://help.mospolytech.ru/category/200"
+    },
+    {
+      "title": "логин_как_ЕУЗ@mospolytech.ru",
+      "url": "mailto:логин_как_ЕУЗ@mospolytech.ru"
+    },
+    {
+      "title": "Единой учетной записи",
+      "url": "https://help.mospolytech.ru/article/117"
+    },
+    {
+      "title": "ссылке",
+      "url": "https://mail.mospolytech.ru/"
+    },
+    {
+      "title": "i.i.iavon@mospolytech.ru",
+      "url": "mailto:i.i.iavon@mospolytech.ru"
+    },
+    {
+      "title": "i.i.iavon@mospolytech.ru",
+      "url": "mailto:i.i.iavon@mospolytech.ru"
+    },
+    {
+      "title": "i.i.iavon@mospolytech.ru",
+      "url": "mailto:i.i.iavon@mospolytech.ru"
+    },
+    {
+      "title": "Часто встречающиеся вопросы",
+      "url": "https://help.mospolytech.ru/category/200"
+    },
+    {
+      "title": "Статья _Перечень сервисов для сотрудников",
+      "url": "https://help.mospolytech.ru/article/99"
+    },
+    {
+      "title": "Статья _Перечень сервисов для студентов",
+      "url": "https://help.mospolytech.ru/article/134"
+    },
+    {
+      "title": "Статья Использование программного обеспечения RuDesktop",
+      "url": "https://help.mospolytech.ru/article/116"
+    },
+    {
+      "title": "Статья Как подать заявку в техническую поддержку? (переходный период)",
+      "url": "https://help.mospolytech.ru/article/220"
+    },
+    {
+      "title": "Статья Логин и пароль от единой учетной записи (переходный период)",
+      "url": "https://help.mospolytech.ru/article/219"
+    },
+    {
+      "title": "Статья Подключение к терминальному серверу",
+      "url": "https://help.mospolytech.ru/article/221"
+    }
+  ],
+  "scripts": [
+    "/assets/app.js?v=1791872257"
+  ]
+}

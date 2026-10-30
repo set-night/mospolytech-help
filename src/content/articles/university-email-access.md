@@ -18,7 +18,7 @@ sources:
       'url': 'https://help.mospolytech.ru/article/220',
     },
   ]
-reviewedAt: '2026-10-29'
+reviewedAt: '2026-10-30'
 status: 'verified'
 ---
 

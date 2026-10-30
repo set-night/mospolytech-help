@@ -13,6 +13,10 @@ sources:
       'title': 'Справочник первокурсника 2025, страница 40',
       'url': 'https://mospolytech.ru/upload/iblock/810/8vjsfiw3rzitkau9o1avvibcbyefo9nc/Spravochnik-pervokursnika-2025.pdf#page=40',
     },
+    {
+      'title': 'Общественная деятельность Московского Политеха',
+      'url': 'https://mospolytech.ru/studencheskaya-zhizn/obschestvennaya-deyatelnost/',
+    },
   ]
 reviewedAt: '2026-10-29'
 status: 'needs-review'
@@ -27,3 +31,15 @@ status: 'needs-review'
 ## Перед обращением
 
 Это редакционный пересказ студенческого справочника. Связанные официальные страницы приведены в источниках; проверьте действующие требования для своего года, программы и ситуации.
+
+## Где найти подробные инструкции
+
+Публичный [официальный раздел общественной деятельности](https://mospolytech.ru/studencheskaya-zhizn/obschestvennaya-deyatelnost/) сейчас отдельно описывает Волонтёрский центр, кураторов, ОСО, Комитет по качеству образования, отряд «Небо» и «Политех Медиа».
+
+- [Стать волонтёром](/articles/volunteering-school/).
+- [Стать куратором](/articles/become-first-year-curator/).
+- [Присоединиться к медиацентру](/articles/student-media-team/).
+- [Узнать об отряде «Небо»](/articles/pedagogical-team-nebo/).
+- [Передать инициативу через ОСО](/articles/student-self-government/).
+
+Названия из старого студенческого справочника, которых нет на текущей странице, не означают подтверждённый открытый набор: наличие команды и условия участия нужно уточнить.

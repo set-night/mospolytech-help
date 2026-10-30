@@ -1,0 +1,39 @@
+{
+  "url": "https://help.mospolytech.ru/article/87",
+  "checkedAt": "2026-10-30",
+  "httpStatus": 200,
+  "finalUrl": "https://help.mospolytech.ru/article/87",
+  "redirects": [],
+  "title": "База знаний Московского Политеха",
+  "bytes": 4410,
+  "text": "Главная\n/\nБаза знаний\n/\nОстальные вопросы\nВопросы по электронным библиотечным системам (ЭБС)\nОбновлено: 29.09.2025\n2 просмотров\nДля вопросов, касающихся подключения и работы с ЭБС необходимо обратиться в\nБиблиотечно-информационный центр\nПодробная информация по подключению на\nстранице\nКонтактная электронная почта: library@mospolytech.ru.\nКонтактный телефон: (495) 223-05-23, доб.: 4103.\nОстальные вопросы",
+  "links": [
+    {
+      "title": "Главная",
+      "url": "https://help.mospolytech.ru/"
+    },
+    {
+      "title": "База знаний",
+      "url": "https://help.mospolytech.ru/kb"
+    },
+    {
+      "title": "Остальные вопросы",
+      "url": "https://help.mospolytech.ru/category/203"
+    },
+    {
+      "title": "Библиотечно-информационный центр",
+      "url": "https://lib.mospolytech.ru/lib/ebs_n"
+    },
+    {
+      "title": "странице",
+      "url": "https://lib.mospolytech.ru/lib/ebs"
+    },
+    {
+      "title": "Остальные вопросы",
+      "url": "https://help.mospolytech.ru/category/203"
+    }
+  ],
+  "scripts": [
+    "/assets/app.js?v=1791872257"
+  ]
+}

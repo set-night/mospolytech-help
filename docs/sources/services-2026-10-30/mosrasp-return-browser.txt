@@ -1,0 +1,11 @@
+- main [ref=e3]:
+  - generic [ref=e4]:
+    - generic [ref=e7]:
+      - generic [ref=e8]: mosrasp · расписание Мосполитеха
+      - heading "Что показывать на главной?" [level=1] [ref=e11]
+    - generic [ref=e12]:
+      - searchbox "Группа или преподаватель" [ref=e15]
+      - paragraph [ref=e17]:
+        - text: Уже пользуетесь mosrasp на другом устройстве?
+        - link "Связать, чтобы не настраивать заново" [ref=e18] [cursor=pointer]:
+          - /url: /sync

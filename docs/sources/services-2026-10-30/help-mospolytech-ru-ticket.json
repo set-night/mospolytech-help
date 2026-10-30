@@ -1,0 +1,14 @@
+{
+  "url": "https://help.mospolytech.ru/ticket",
+  "checkedAt": "2026-10-30",
+  "httpStatus": 200,
+  "finalUrl": "https://help.mospolytech.ru/ticket",
+  "redirects": [],
+  "title": "База знаний Московского Политеха",
+  "bytes": 165343,
+  "text": "База знаний Московского Политеха\nПодать заявку в техподдержку\nФИО *\nЭлектронная почта *\nМобильный телефон *\nНаправление *\nСервис *\nТиповая заявка *\nАдрес услуги (локация) *\nОписание *\nПрикрепить файл\nМаксимальный размер файла — 50 МБ. Основные форматы: изображения (JPG, JPEG, PNG, GIF, BMP, WEBP, HEIC, TIFF), документы (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, TXT, RTF, CSV, ODT, ODS, ODP) и архивы (ZIP, GZ, BZ2).\nОтправить",
+  "links": [],
+  "scripts": [
+    "/assets/app.js?v=1791872257"
+  ]
+}

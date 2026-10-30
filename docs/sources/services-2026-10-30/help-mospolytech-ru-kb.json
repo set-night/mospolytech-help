@@ -1,0 +1,171 @@
+{
+  "url": "https://help.mospolytech.ru/kb",
+  "checkedAt": "2026-10-30",
+  "httpStatus": 200,
+  "finalUrl": "https://help.mospolytech.ru/kb",
+  "redirects": [],
+  "title": "База знаний Московского Политеха",
+  "bytes": 11021,
+  "text": "База знаний\n34 статей\nГлавная\n· 34\nИнформационные технологии · 10\nКадры · 7\nОстальные вопросы · 1\nЧасто встречающиеся вопросы · 12\n_Перечень сервисов для сотрудников\n_Перечень сервисов для студентов\nБеспроводная сеть Wi-Fi\nВнутренние нормативные документы в сфере информационных технологий\nВопросы по электронным библиотечным системам (ЭБС)\nДистанционный доступ к АРМ\nЕдиная учетная запись\nИнформационные технологии\nИспользование программного обеспечения RuDesktop\nКадровый электронный документооборот\nКадры\nКак подать заявку в техническую поддержку? (переходный период)\nКонтур.Диадок\nКонтур.Экстерн\nКорпоративная электронная почта\nЛНА\nЛНА об электронном взаимодействии с работниками для ознакомления при приеме\nЛНА по антикоррупции  для ознакомления при приеме\nЛНА, регулирующие социально-трудовые отношения, для ознакомления при приеме\nЛогин и пароль от единой учетной записи (переходный период)\nЛокальные нормативные акты о системе оценки показателей эффективности трудовой деятельности\nНормативные документы в сфере ИТ\nОстальные вопросы\nПодключение к терминальному серверу\nПодключение по RDP к рабочему компьютеру\nПодключение через VPN (упрощенная инструкция)\nПодписание табелей учета использования  рабочего времени\nПолучение квалифицированной электронной подписи (КЭП) в Удостоверяющем центре Федерального казначейства (УЦ ФК)\nПолучение неквалифицированной электронной подписи (НЭП) для Directum RX\nСЭД Directum RX (переходный период)\nСервисы\nСистема бронирования аудиторий (SimpleOffice)\nЧасто встречающиеся вопросы\nЭлектронная подпись",
+  "links": [
+    {
+      "title": "Главная · 34",
+      "url": "https://help.mospolytech.ru/category/213"
+    },
+    {
+      "title": "Информационные технологии · 10",
+      "url": "https://help.mospolytech.ru/category/206"
+    },
+    {
+      "title": "Кадры · 7",
+      "url": "https://help.mospolytech.ru/category/207"
+    },
+    {
+      "title": "Остальные вопросы · 1",
+      "url": "https://help.mospolytech.ru/category/203"
+    },
+    {
+      "title": "Часто встречающиеся вопросы · 12",
+      "url": "https://help.mospolytech.ru/category/200"
+    },
+    {
+      "title": "_Перечень сервисов для сотрудников",
+      "url": "https://help.mospolytech.ru/article/99"
+    },
+    {
+      "title": "_Перечень сервисов для студентов",
+      "url": "https://help.mospolytech.ru/article/134"
+    },
+    {
+      "title": "Беспроводная сеть Wi-Fi",
+      "url": "https://help.mospolytech.ru/article/94"
+    },
+    {
+      "title": "Внутренние нормативные документы в сфере информационных технологий",
+      "url": "https://help.mospolytech.ru/article/126"
+    },
+    {
+      "title": "Вопросы по электронным библиотечным системам (ЭБС)",
+      "url": "https://help.mospolytech.ru/article/87"
+    },
+    {
+      "title": "Дистанционный доступ к АРМ",
+      "url": "https://help.mospolytech.ru/article/90"
+    },
+    {
+      "title": "Единая учетная запись",
+      "url": "https://help.mospolytech.ru/article/117"
+    },
+    {
+      "title": "Информационные технологии",
+      "url": "https://help.mospolytech.ru/article/206"
+    },
+    {
+      "title": "Использование программного обеспечения RuDesktop",
+      "url": "https://help.mospolytech.ru/article/116"
+    },
+    {
+      "title": "Кадровый электронный документооборот",
+      "url": "https://help.mospolytech.ru/article/104"
+    },
+    {
+      "title": "Кадры",
+      "url": "https://help.mospolytech.ru/article/207"
+    },
+    {
+      "title": "Как подать заявку в техническую поддержку? (переходный период)",
+      "url": "https://help.mospolytech.ru/article/220"
+    },
+    {
+      "title": "Контур.Диадок",
+      "url": "https://help.mospolytech.ru/article/123"
+    },
+    {
+      "title": "Контур.Экстерн",
+      "url": "https://help.mospolytech.ru/article/101"
+    },
+    {
+      "title": "Корпоративная электронная почта",
+      "url": "https://help.mospolytech.ru/article/158"
+    },
+    {
+      "title": "ЛНА",
+      "url": "https://help.mospolytech.ru/article/205"
+    },
+    {
+      "title": "ЛНА об электронном взаимодействии с работниками для ознакомления при приеме",
+      "url": "https://help.mospolytech.ru/article/84"
+    },
+    {
+      "title": "ЛНА по антикоррупции  для ознакомления при приеме",
+      "url": "https://help.mospolytech.ru/article/142"
+    },
+    {
+      "title": "ЛНА, регулирующие социально-трудовые отношения, для ознакомления при приеме",
+      "url": "https://help.mospolytech.ru/article/119"
+    },
+    {
+      "title": "Логин и пароль от единой учетной записи (переходный период)",
+      "url": "https://help.mospolytech.ru/article/219"
+    },
+    {
+      "title": "Локальные нормативные акты о системе оценки показателей эффективности трудовой деятельности",
+      "url": "https://help.mospolytech.ru/article/93"
+    },
+    {
+      "title": "Нормативные документы в сфере ИТ",
+      "url": "https://help.mospolytech.ru/article/201"
+    },
+    {
+      "title": "Остальные вопросы",
+      "url": "https://help.mospolytech.ru/article/203"
+    },
+    {
+      "title": "Подключение к терминальному серверу",
+      "url": "https://help.mospolytech.ru/article/221"
+    },
+    {
+      "title": "Подключение по RDP к рабочему компьютеру",
+      "url": "https://help.mospolytech.ru/article/133"
+    },
+    {
+      "title": "Подключение через VPN (упрощенная инструкция)",
+      "url": "https://help.mospolytech.ru/article/217"
+    },
+    {
+      "title": "Подписание табелей учета использования  рабочего времени",
+      "url": "https://help.mospolytech.ru/article/132"
+    },
+    {
+      "title": "Получение квалифицированной электронной подписи (КЭП) в Удостоверяющем центре Федерального казначейства (УЦ ФК)",
+      "url": "https://help.mospolytech.ru/article/149"
+    },
+    {
+      "title": "Получение неквалифицированной электронной подписи (НЭП) для Directum RX",
+      "url": "https://help.mospolytech.ru/article/151"
+    },
+    {
+      "title": "СЭД Directum RX (переходный период)",
+      "url": "https://help.mospolytech.ru/article/222"
+    },
+    {
+      "title": "Сервисы",
+      "url": "https://help.mospolytech.ru/article/204"
+    },
+    {
+      "title": "Система бронирования аудиторий (SimpleOffice)",
+      "url": "https://help.mospolytech.ru/article/92"
+    },
+    {
+      "title": "Часто встречающиеся вопросы",
+      "url": "https://help.mospolytech.ru/article/200"
+    },
+    {
+      "title": "Электронная подпись",
+      "url": "https://help.mospolytech.ru/article/160"
+    }
+  ],
+  "scripts": [
+    "/assets/app.js?v=1791872257"
+  ]
+}

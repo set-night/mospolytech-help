@@ -1,0 +1,39 @@
+- generic [ref=e4]:
+  - generic [ref=e7]:
+    - img "Logo" [ref=e9]
+    - generic [ref=e11]:
+      - link [ref=e12] [cursor=pointer]:
+        - /url: "#/feedback"
+        - button "Обратная связь" [ref=e13]
+      - link [ref=e19] [cursor=pointer]:
+        - /url: "#/get-your-login"
+        - button "Узнать свой логин ЕУЗ" [ref=e20]
+      - link [ref=e25] [cursor=pointer]:
+        - /url: "#/memo-freshmen"
+        - button "Вниманию студентов 1 курса!" [ref=e26]
+      - link [ref=e32] [cursor=pointer]:
+        - /url: "#/cant-access"
+        - button "Не получается войти" [ref=e33]
+    - generic [ref=e38]:
+      - link "Перейти к старому дизайну" [ref=e39] [cursor=pointer]:
+        - /url: https://old-e.mospolytech.ru/index.php
+      - link "🔁 Старый ЛК переехал на old-e.mospolytech.ru" [ref=e44] [cursor=pointer]:
+        - /url: https://old-e.mospolytech.ru
+        - generic [ref=e45]: 🔁
+        - generic [ref=e46]: Старый ЛК переехал на old-e.mospolytech.ru
+  - generic [ref=e49]:
+    - generic [ref=e50]:
+      - heading "Личный кабинет" [level=3] [ref=e52]
+      - generic [ref=e54]: обучающегося и сотрудника
+    - generic [ref=e56]:
+      - heading "Вход" [level=4] [ref=e58]
+      - generic [ref=e60]: Вход в личный кабинет происходит через единую учетную запись (ЕУЗ)
+      - generic [ref=e61]:
+        - heading "Логин" [level=5] [ref=e63]
+        - textbox "Введите логин" [ref=e65]
+      - generic [ref=e66]:
+        - heading "Пароль" [level=5] [ref=e68]
+        - textbox "Введите пароль" [ref=e70]
+        - button [ref=e71] [cursor=pointer]
+      - generic [ref=e76] [cursor=pointer]: Оставаться в системе
+    - button "Вход" [ref=e81] [cursor=pointer]

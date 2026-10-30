@@ -11,7 +11,7 @@ sources:
     },
     { 'title': 'База знаний Московского Политеха', 'url': 'https://help.mospolytech.ru/ticket' },
   ]
-reviewedAt: '2026-10-29'
+reviewedAt: '2026-10-30'
 status: 'verified'
 ---
 

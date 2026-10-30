@@ -1,0 +1,152 @@
+- generic [ref=e56]:
+  - banner [ref=e57]:
+    - link "mosrasp.ru" [ref=e59] [cursor=pointer]:
+      - /url: /
+    - 'button "241-321: переключить избранное" [ref=e60] [cursor=pointer]':
+      - generic [ref=e63]: 241-321
+    - search [ref=e66]:
+      - 'combobox "Поиск: группа, преподаватель, аудитория" [ref=e67]'
+  - complementary [ref=e68]:
+    - navigation "Разделы" [ref=e69]:
+      - link "Расписание" [ref=e70] [cursor=pointer]:
+        - /url: /
+      - link "Предметы , нужно выбрать" [ref=e78] [cursor=pointer]:
+        - /url: /subjects
+        - generic [ref=e81]: Предметы
+        - generic [ref=e82]:
+          - generic [aria-hidden] [ref=e83]: "6"
+          - generic [ref=e84]: ", нужно выбрать"
+    - link "Настройки" [active] [ref=e87] [cursor=pointer]:
+      - /url: /settings
+  - main [ref=e92]:
+    - generic [ref=e467]:
+      - heading "Настройки" [level=1] [ref=e470]
+      - generic [ref=e471]:
+        - region [ref=e472]:
+          - heading "Избранное" [level=2] [ref=e475]
+          - list "Избранное" [ref=e476]:
+            - listitem [ref=e477]:
+              - generic [ref=e478]:
+                - generic [ref=e479]:
+                  - generic [ref=e480]: 241-321
+                  - generic [ref=e481]: группа
+                - 'button "241-321: убрать" [ref=e483] [cursor=pointer]'
+            - listitem [ref=e486]:
+              - button "Добавить" [ref=e487] [cursor=pointer]
+        - region [ref=e490]:
+          - heading "Оформление" [level=2] [ref=e493]
+          - generic [ref=e494]:
+            - list "Оформление" [ref=e496]:
+              - listitem [ref=e497]:
+                - generic [ref=e498]:
+                  - generic [ref=e499]: Тема
+                  - group "Тема" [ref=e500]:
+                    - button "Системная" [pressed] [ref=e502] [cursor=pointer]
+                    - button "Светлая" [ref=e503] [cursor=pointer]
+                    - button "Тёмная" [ref=e504] [cursor=pointer]
+              - listitem [ref=e505]:
+                - generic [ref=e506]:
+                  - generic [ref=e507]: Вид тёмной темы
+                  - group "Вид тёмной темы" [ref=e508]:
+                    - button "Тёплая" [pressed] [ref=e510] [cursor=pointer]
+                    - button "Нейтральная" [ref=e511] [cursor=pointer]
+                    - button "OLED" [ref=e512] [cursor=pointer]
+              - listitem [ref=e513]:
+                - generic [ref=e514]:
+                  - generic [ref=e515]: Цвета занятий
+                  - group "Цвета занятий" [ref=e516]:
+                    - button "Обычные" [pressed] [ref=e518] [cursor=pointer]
+                    - button "Дальтонизм" [ref=e519] [cursor=pointer]
+                    - button "Без цвета" [ref=e520] [cursor=pointer]
+              - listitem [ref=e521]:
+                - generic [ref=e522]:
+                  - generic [ref=e523]: Цвет каждого вида
+                  - list "Цвета занятий" [ref=e524]:
+                    - listitem [ref=e525]:
+                      - button "Лекция" [ref=e526] [cursor=pointer]
+                    - listitem [ref=e530]:
+                      - button "Практика" [ref=e531] [cursor=pointer]
+                    - listitem [ref=e535]:
+                      - button "Лаб. работа" [ref=e536] [cursor=pointer]
+                    - listitem [ref=e540]:
+                      - button "Экзамен" [ref=e541] [cursor=pointer]
+                    - listitem [ref=e545]:
+                      - button "Зачёт" [ref=e546] [cursor=pointer]
+                    - listitem [ref=e550]:
+                      - button "ЭОР" [ref=e551] [cursor=pointer]
+            - list "Пример кольца дня" [ref=e556]:
+              - listitem [ref=e557]:
+                - generic [ref=e558]:
+                  - 'img "Пример кольца дня, 5 пар: 9:00, 10:40, 12:20, 14:30, 16:10; ЭОР: 17:50" [ref=e560]':
+                    - generic [aria-hidden] [ref=e563]: "0"
+                    - generic [aria-hidden] [ref=e564]: "3"
+                    - generic [aria-hidden] [ref=e565]: "6"
+                    - generic [aria-hidden] [ref=e566]: "9"
+                    - generic [aria-hidden] [ref=e567]: "12"
+                    - generic [aria-hidden] [ref=e568]: "15"
+                    - generic [aria-hidden] [ref=e569]: "18"
+                    - generic [aria-hidden] [ref=e570]: "21"
+                    - generic [aria-hidden]:
+                      - generic: 2:57
+                      - generic: сейчас
+                  - button "Сбросить цвета" [disabled] [ref=e572]
+        - region [ref=e573]:
+          - heading "День и неделя" [level=2] [ref=e576]
+          - list "День и неделя" [ref=e577]:
+            - listitem [ref=e578]:
+              - generic [ref=e579]:
+                - generic [ref=e580]: Кольцо дня
+                - group "Кольцо дня" [ref=e581]:
+                  - button "12 часов" [ref=e583] [cursor=pointer]
+                  - button "24 часа" [pressed] [ref=e584] [cursor=pointer]
+                  - button "Как на часах" [ref=e585] [cursor=pointer]
+            - listitem [ref=e586]:
+              - generic [ref=e587]:
+                - generic [ref=e588]: Время пар в сетке недели
+                - group "Время пар в сетке недели" [ref=e589]:
+                  - button "Только на шкале" [pressed] [ref=e591] [cursor=pointer]
+                  - button "И в каждой паре" [ref=e592] [cursor=pointer]
+                - generic [aria-hidden]:
+                  - generic:
+                    - generic:
+                      - generic: 9:00
+                      - generic:
+                        - generic: Лекция
+                        - generic: Теория вероятностей
+                        - generic: Пр1311
+                    - generic:
+                      - generic: 10:40
+                      - generic:
+                        - generic: Практика
+                        - generic: Иностранный язык
+                        - generic: Н210
+            - listitem [ref=e593]:
+              - generic [ref=e594]:
+                - generic [ref=e595]: Фраза дня
+                - switch "Фраза дня" [checked] [ref=e596] [cursor=pointer]
+        - region [ref=e598]:
+          - heading "Синхронизация" [level=2] [ref=e601]
+          - list "Синхронизация" [ref=e602]:
+            - listitem [ref=e603]:
+              - link "Связать с другим устройством Избранное, выбор занятий и оформление — одинаковые на всех ваших устройствах" [ref=e604] [cursor=pointer]:
+                - /url: /sync
+                - generic [ref=e605]:
+                  - generic [ref=e606]: Связать с другим устройством
+                  - generic [ref=e607]: Избранное, выбор занятий и оформление — одинаковые на всех ваших устройствах
+        - region [ref=e610]:
+          - heading "О сервисе" [level=2] [ref=e613]
+          - list "О сервисе" [ref=e614]:
+            - listitem [ref=e615]:
+              - link "Новости 21 октября 2026" [ref=e616] [cursor=pointer]:
+                - /url: /settings/news
+                - generic [ref=e617]:
+                  - generic [ref=e618]: Новости
+                  - generic [ref=e619]: 21 октября 2026
+          - heading "Разработчики" [level=2] [ref=e624]
+          - list "Разработчики" [ref=e625]:
+            - listitem [ref=e626]:
+              - link "Данил Погонцев" [ref=e627] [cursor=pointer]:
+                - /url: https://t.me/Data_Name_ID
+            - listitem [ref=e630]:
+              - link "Pigeon" [ref=e631] [cursor=pointer]:
+                - /url: https://t.me/Xx_Pigeon_xX

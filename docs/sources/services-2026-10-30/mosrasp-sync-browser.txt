@@ -1,0 +1,43 @@
+- generic [ref=e56]:
+  - banner [ref=e57]:
+    - link "mosrasp.ru" [ref=e59] [cursor=pointer]:
+      - /url: /
+    - 'button "241-321: переключить избранное" [ref=e60] [cursor=pointer]':
+      - generic [ref=e63]: 241-321
+    - search [ref=e66]:
+      - 'combobox "Поиск: группа, преподаватель, аудитория" [ref=e67]'
+  - complementary [ref=e68]:
+    - navigation "Разделы" [ref=e69]:
+      - link "Расписание" [ref=e70] [cursor=pointer]:
+        - /url: /
+      - link "Предметы , нужно выбрать" [ref=e78] [cursor=pointer]:
+        - /url: /subjects
+        - generic [ref=e81]: Предметы
+        - generic [ref=e82]:
+          - generic [aria-hidden] [ref=e83]: "6"
+          - generic [ref=e84]: ", нужно выбрать"
+    - link "Настройки" [ref=e87] [cursor=pointer]:
+      - /url: /settings
+  - main [ref=e92]:
+    - generic [ref=e634]:
+      - button "Назад" [ref=e636] [cursor=pointer]
+      - generic [ref=e640]:
+        - heading "Связать с телефоном" [level=1] [ref=e641]
+        - paragraph [ref=e642]: Избранное, выбор занятий и оформление станут общими
+      - generic [ref=e643]:
+        - img "QR-код для связывания, код [временный код удалён]" [ref=e647]
+        - generic [ref=e651]:
+          - generic [ref=e652]:
+            - generic "[временный код удалён]" [ref=e653]: [временный код удалён]
+            - generic [ref=e654]: Код обновится через 9 минут
+          - list "Как связать" [ref=e655]:
+            - listitem [ref=e656]: На телефоне откройте mosrasp → Настройки → Синхронизация
+            - listitem [ref=e657]: Нажмите «Сканировать код» и наведите камеру на этот код
+          - paragraph [ref=e658]: На iPhone сканируйте из приложения mosrasp, не камерой
+      - heading "Другие способы" [level=2] [ref=e661]
+      - list "Другие способы" [ref=e662]:
+        - listitem [ref=e663]:
+          - button "Ввести код с телефона" [ref=e664] [cursor=pointer]
+        - listitem [ref=e673]:
+          - button "Сканировать камерой компьютера" [ref=e674] [cursor=pointer]
+      - generic [ref=e683]: Данные шифруются — прочитать их могут только ваши устройства

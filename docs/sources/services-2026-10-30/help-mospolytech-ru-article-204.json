@@ -1,0 +1,55 @@
+{
+  "url": "https://help.mospolytech.ru/article/204",
+  "checkedAt": "2026-10-30",
+  "httpStatus": 200,
+  "finalUrl": "https://help.mospolytech.ru/article/204",
+  "redirects": [],
+  "title": "База знаний Московского Политеха",
+  "bytes": 5144,
+  "text": "Главная\n/\nБаза знаний\n/\nИнформационные технологии\nСервисы\nОбновлено: 22.09.2026\n1 просмотров\nИнформационные технологии\nПохожие статьи\nСтатья\nБеспроводная сеть Wi-Fi\nСтатья\nВнутренние нормативные документы в сфере информационных технологий\nСтатья\nДистанционный доступ к АРМ\nСтатья\nЕдиная учетная запись\nСтатья\nКонтур.Диадок\nСтатья\nКонтур.Экстерн",
+  "links": [
+    {
+      "title": "Главная",
+      "url": "https://help.mospolytech.ru/"
+    },
+    {
+      "title": "База знаний",
+      "url": "https://help.mospolytech.ru/kb"
+    },
+    {
+      "title": "Информационные технологии",
+      "url": "https://help.mospolytech.ru/category/206"
+    },
+    {
+      "title": "Информационные технологии",
+      "url": "https://help.mospolytech.ru/category/206"
+    },
+    {
+      "title": "Статья Беспроводная сеть Wi-Fi",
+      "url": "https://help.mospolytech.ru/article/94"
+    },
+    {
+      "title": "Статья Внутренние нормативные документы в сфере информационных технологий",
+      "url": "https://help.mospolytech.ru/article/126"
+    },
+    {
+      "title": "Статья Дистанционный доступ к АРМ",
+      "url": "https://help.mospolytech.ru/article/90"
+    },
+    {
+      "title": "Статья Единая учетная запись",
+      "url": "https://help.mospolytech.ru/article/117"
+    },
+    {
+      "title": "Статья Контур.Диадок",
+      "url": "https://help.mospolytech.ru/article/123"
+    },
+    {
+      "title": "Статья Контур.Экстерн",
+      "url": "https://help.mospolytech.ru/article/101"
+    }
+  ],
+  "scripts": [
+    "/assets/app.js?v=1791872257"
+  ]
+}

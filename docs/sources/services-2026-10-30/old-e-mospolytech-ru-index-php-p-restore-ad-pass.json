@@ -1,0 +1,65 @@
+{
+  "url": "https://old-e.mospolytech.ru/index.php?p=restore_ad_pass",
+  "checkedAt": "2026-10-30",
+  "httpStatus": 200,
+  "finalUrl": "https://old-e.mospolytech.ru/index.php?p=restore_ad_pass",
+  "redirects": [],
+  "title": "Личный кабинет обучающегося и сотрудника Московского Политеха",
+  "bytes": 16428,
+  "text": "Личный кабинет обучающегося и сотрудника Московского Политеха\nНа сервере ведутся технические работы, некоторая часть загруженных данных на данный момент недоступна. Ведутся работы по их восстановлению.\nУважаемые пользователи!\nДоступна\nновая версия\nличного кабинета!\nКАТЕГОРИИ\nАвторизация\nКонкурс ППС\nЗаявки на проекты\nМногофункциональный центр\nЭлектронная библиотека Московского Политеха\nБиблиотечно-информационный центр\nОбратная связь\nВосстановление доступа\nчерез ЕУЗ\nДля сброса пароля для единой учетной записи (ЕУЗ) обращайтесь на почту\nhelp@mospolytech.ru\n, при этом укажите в сообщении свои ФИО полностью, дату рождения, место работы или учебную группу.",
+  "links": [
+    {
+      "title": "новая версия",
+      "url": "https://e.mospolytech.ru"
+    },
+    {
+      "title": "Авторизация",
+      "url": "https://old-e.mospolytech.ru/index.php?p=login"
+    },
+    {
+      "title": "Конкурс ППС",
+      "url": "https://study.mospolytech.ru/workmospolytech"
+    },
+    {
+      "title": "Заявки на проекты",
+      "url": "https://old-e.mospolytech.ru/index.php?p=get_project"
+    },
+    {
+      "title": "Многофункциональный центр",
+      "url": "https://old-e.mospolytech.ru/index.php?p=centers"
+    },
+    {
+      "title": "Электронная библиотека Московского Политеха",
+      "url": "https://online.mospolytech.ru/course/view.php?id=7621"
+    },
+    {
+      "title": "Библиотечно-информационный центр",
+      "url": "https://mospolytech.ru/obuchauschimsya/biblioteka/"
+    },
+    {
+      "title": "Обратная связь",
+      "url": "https://old-e.mospolytech.ru/index.php?p=contact"
+    },
+    {
+      "title": "help@mospolytech.ru",
+      "url": "mailto:help@mospolytech.ru"
+    },
+    {
+      "title": "",
+      "url": "https://old-e.mospolytech.ru/index.php?p=restore_ad_pass#header"
+    }
+  ],
+  "scripts": [
+    "js/jquery-1.4.2.min.js",
+    "js/adm.js",
+    "js/jquery_dev.js",
+    "js/jquery.timers.js",
+    "js/jquery.scrollFollow.js",
+    "js/message.js",
+    "js/jquery.reveal.js?4",
+    "highslide/highslide.js",
+    "js/ie_png.js",
+    "js/html5.js",
+    "jqtransform/jqtransformplugin/jquery.jqtransform.js"
+  ]
+}

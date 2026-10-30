@@ -7,16 +7,16 @@ sources:
   [
     {
       'title': 'Международные стажировки',
-      'url': 'https://mospolytech.ru/mejdunarodnaya-deyatelnost/akademicheskaya-mobilnost/',
+      'url': 'https://mospolytech.ru/mejdunarodnaya-deyatelnost/mezhdunarodnye-stazhirovki/',
     },
   ]
-reviewedAt: '2026-10-29'
+reviewedAt: '2026-10-30'
 status: 'verified'
 ---
 
 ## Где искать программы
 
-Откройте [раздел международных стажировок](https://mospolytech.ru/mejdunarodnaya-deyatelnost/akademicheskaya-mobilnost/) и [официальное сообщество отдела](https://vk.com/mpoip).
+Откройте [раздел международных стажировок](https://mospolytech.ru/mejdunarodnaya-deyatelnost/mezhdunarodnye-stazhirovki/) и [официальное сообщество отдела](https://vk.com/mpoip).
 
 На странице встречаются анонсы разных лет. Открывайте конкретную программу и проверяйте год, сроки подачи, требования к языку, участникам и оплате. Наличие старой карточки не означает, что набор продолжается.
 

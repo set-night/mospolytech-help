@@ -1,0 +1,302 @@
+- generic [ref=e56]:
+  - banner [ref=e57]:
+    - link "mosrasp.ru" [ref=e59] [cursor=pointer]:
+      - /url: /
+    - 'button "241-321: переключить избранное" [ref=e60] [cursor=pointer]':
+      - generic [ref=e63]: 241-321
+    - search [ref=e66]:
+      - 'combobox "Поиск: группа, преподаватель, аудитория" [ref=e67]'
+  - complementary [ref=e68]:
+    - navigation "Разделы" [ref=e69]:
+      - link "Расписание" [ref=e70] [cursor=pointer]:
+        - /url: /
+      - link "Предметы , нужно выбрать" [ref=e78] [cursor=pointer]:
+        - /url: /subjects
+        - generic [ref=e81]: Предметы
+        - generic [ref=e82]:
+          - generic [aria-hidden] [ref=e83]: "6"
+          - generic [ref=e84]: ", нужно выбрать"
+    - link "Настройки" [ref=e87] [cursor=pointer]:
+      - /url: /settings
+  - main [ref=e92]:
+    - generic [ref=e93]:
+      - generic [ref=e94]:
+        - region "Сегодня" [ref=e97]:
+          - heading "Пятница, 30 октября" [level=2] [ref=e100]
+          - 'img "4 пары: 14:30 Пр2810, 16:10 Пр2506, 17:50 Пр2411, 19:30 Пр2411" [ref=e102] [cursor=pointer]':
+            - generic [aria-hidden] [ref=e105]: "0"
+            - generic [aria-hidden] [ref=e106]: "3"
+            - generic [aria-hidden] [ref=e107]: "6"
+            - generic [aria-hidden] [ref=e108]: "9"
+            - generic [aria-hidden] [ref=e109]: "12"
+            - generic [aria-hidden] [ref=e110]: "15"
+            - generic [aria-hidden] [ref=e111]: "18"
+            - generic [aria-hidden] [ref=e112]: "21"
+            - generic [aria-hidden]:
+              - generic: в 14:30
+          - paragraph [ref=e114]: Сегодня последняя лабораторная по ИТИПП2
+          - generic [ref=e115]:
+            - generic [ref=e116]:
+              - heading "Сегодня" [level=2] [ref=e118]
+              - generic [ref=e119]: 4 пары, до 21:00
+            - generic [ref=e120]:
+              - generic [ref=e121]:
+                - generic [ref=e122]: Лаб. работа
+                - generic [ref=e123]: 14:30–16:00
+              - button "Индексирование текстов и информационный поиск, п/г 2" [ref=e124] [cursor=pointer]
+              - generic [ref=e125]:
+                - generic [ref=e126]: Пр2810
+                - generic [ref=e129]: Воробьев Н.Г.
+              - generic [ref=e130]:
+                - link "Маршрут" [ref=e131] [cursor=pointer]:
+                  - /url: https://mpunav.ru/?from=pr-enter-temp&to=pr-2810&utm_source=mosrasp
+                - generic [ref=e132]: через 11 ч 27 мин
+            - region "Дальше" [ref=e133]:
+              - heading "Дальше" [level=2] [ref=e136]
+              - list [ref=e137]:
+                - listitem [ref=e138]:
+                  - button "16:10, Индексирование текстов и информационный поиск" [ref=e139] [cursor=pointer]:
+                    - generic [ref=e140]:
+                      - text: 16:10
+                      - generic [ref=e141]: 17:40
+                    - generic [ref=e143]:
+                      - generic [ref=e144]: Индексирование текстов и информационный поиск
+                      - generic [ref=e145]:
+                        - generic [ref=e146]: Практика
+                        - generic [ref=e147]: Пр2506
+                - listitem [ref=e150]:
+                  - generic [ref=e151]:
+                    - text: 17:50
+                    - generic [ref=e152]: 19:20
+                  - generic [ref=e153]:
+                    - generic [ref=e154]: 2 пары в одно время
+                    - button "17:50, Веб-аналитика, п/г 2, в одно время с другой парой" [ref=e155] [cursor=pointer]:
+                      - generic [ref=e157]:
+                        - generic [ref=e158]: Веб-аналитика, п/г 2
+                        - generic [ref=e159]:
+                          - generic [ref=e160]: Лаб. работа
+                          - generic [ref=e161]: Пр2411
+                    - button "17:50, Основы разработки мобильных приложений, п/г 1, в одно время с другой парой" [ref=e164] [cursor=pointer]:
+                      - generic [ref=e166]:
+                        - generic [ref=e167]: Основы разработки мобильных приложений, п/г 1
+                        - generic [ref=e168]:
+                          - generic [ref=e169]: Лаб. работа
+                          - generic [ref=e170]: Пр2503
+                - listitem [ref=e173]:
+                  - generic [ref=e174]:
+                    - text: 19:30
+                    - generic [ref=e175]: 21:00
+                  - generic [ref=e176]:
+                    - generic [ref=e177]: 2 пары в одно время
+                    - button "19:30, Веб-аналитика, п/г 1, в одно время с другой парой" [ref=e178] [cursor=pointer]:
+                      - generic [ref=e180]:
+                        - generic [ref=e181]: Веб-аналитика, п/г 1
+                        - generic [ref=e182]:
+                          - generic [ref=e183]: Лаб. работа
+                          - generic [ref=e184]: Пр2411
+                    - button "19:30, Основы разработки мобильных приложений, п/г 2, в одно время с другой парой" [ref=e187] [cursor=pointer]:
+                      - generic [ref=e189]:
+                        - generic [ref=e190]: Основы разработки мобильных приложений, п/г 2
+                        - generic [ref=e191]:
+                          - generic [ref=e192]: Лаб. работа
+                          - generic [ref=e193]: Пр2503
+          - generic [ref=e196]:
+            - generic [ref=e197]:
+              - generic [ref=e198]:
+                - generic [ref=e199]: Лаб. работа
+                - generic [ref=e200]: 17:50–19:20
+              - generic [ref=e201]:
+                - generic [ref=e202]: Веб-аналитика, п/г 2
+                - generic [ref=e203]: В это время два занятия. Выберите своё
+              - radiogroup "В это время два занятия. Выберите своё" [ref=e204]:
+                - generic [ref=e205]:
+                  - radio "Веб-аналитика" [ref=e206]
+                  - generic [ref=e207]:
+                    - generic [ref=e208]: Веб-аналитика
+                    - generic [ref=e209]: Лаб. работа · 2 п/г · Пр2411
+                - generic [ref=e213]:
+                  - radio "Основы разработки мобильных приложений" [ref=e214]
+                  - generic [ref=e215]:
+                    - generic [ref=e216]: Основы разработки мобильных приложений
+                    - generic [ref=e217]: Лаб. работа · 1 п/г · Пр2503
+              - generic [ref=e221]:
+                - button "Не знаю, показывать оба" [ref=e222] [cursor=pointer]
+                - button "Не хожу на это занятие" [ref=e223] [cursor=pointer]
+              - generic [ref=e224]: Запомним до конца семестра. Изменить можно в настройках
+            - generic [ref=e225]:
+              - generic [ref=e226]:
+                - generic [ref=e227]: Лаб. работа
+                - generic [ref=e228]: 19:30–21:00
+              - generic [ref=e229]:
+                - generic [ref=e230]: Веб-аналитика, п/г 1
+                - generic [ref=e231]: В это время два занятия. Выберите своё
+              - radiogroup "В это время два занятия. Выберите своё" [ref=e232]:
+                - generic [ref=e233]:
+                  - radio "Веб-аналитика" [ref=e234]
+                  - generic [ref=e235]:
+                    - generic [ref=e236]: Веб-аналитика
+                    - generic [ref=e237]: Лаб. работа · 1 п/г · Пр2411
+                - generic [ref=e241]:
+                  - radio "Основы разработки мобильных приложений" [ref=e242]
+                  - generic [ref=e243]:
+                    - generic [ref=e244]: Основы разработки мобильных приложений
+                    - generic [ref=e245]: Лаб. работа · 2 п/г · Пр2503
+              - generic [ref=e249]:
+                - button "Не знаю, показывать оба" [ref=e250] [cursor=pointer]
+                - button "Не хожу на это занятие" [ref=e251] [cursor=pointer]
+              - generic [ref=e252]: Запомним до конца семестра. Изменить можно в настройках
+        - button "Свернуть колонку с кольцом" [expanded] [ref=e257] [cursor=pointer]
+      - region "Неделя" [ref=e261]:
+        - generic [ref=e263]:
+          - generic [ref=e265]:
+            - button "Выбрать дату" [ref=e266] [cursor=pointer]
+            - generic [ref=e269]:
+              - heading "26–31 октября" [level=1] [ref=e270]
+              - generic [ref=e271]: 9-я неделя · до конца занятий 71 день
+          - group "Неделя или периоды" [ref=e273]:
+            - button "Неделя" [pressed] [ref=e275] [cursor=pointer]
+            - button "Периоды" [ref=e276] [cursor=pointer]
+          - generic [ref=e278]:
+            - button "Предыдущая неделя" [ref=e279] [cursor=pointer]
+            - button "Следующая неделя" [ref=e282] [cursor=pointer]
+          - button "Ещё" [ref=e286] [cursor=pointer]
+        - generic [ref=e288]:
+          - region "9-я неделя, 26–31 октября" [ref=e289]:
+            - generic [ref=e290]:
+              - generic [ref=e293]: Пн 26
+              - generic [aria-hidden] [ref=e294]:
+                - generic [ref=e295]: Вт 27
+                - generic [ref=e296]: весь день онлайн
+              - generic [ref=e298]: Ср 28
+              - generic [aria-hidden] [ref=e299]:
+                - generic [ref=e300]: Чт 29
+                - generic [ref=e301]: нет занятий
+              - generic [aria-hidden] [ref=e302]:
+                - generic [ref=e303]: Пт 30
+                - generic [ref=e304]: сегодня
+              - generic [aria-hidden] [ref=e305]:
+                - generic [ref=e306]: Сб 31
+                - generic [ref=e307]: весь день онлайн
+            - generic [ref=e308]:
+              - generic [aria-hidden] [ref=e309]:
+                - generic [ref=e310]: 9:00
+                - generic [ref=e311]: 10:40
+                - generic [ref=e312]: 12:20
+                - generic [ref=e313]: 14:30
+                - generic [ref=e314]: 16:10
+                - generic [ref=e315]: 17:50
+                - generic [ref=e316]: 19:30
+                - generic [ref=e317]: 22:00
+              - generic [ref=e318]:
+                - group "Пн 26," [ref=e319]:
+                  - button "Практика, Проектная деятельность, 12:20–13:50, выбрать проект" [ref=e321] [cursor=pointer]:
+                    - generic [ref=e322]:
+                      - generic [ref=e323]: Практика
+                      - generic [ref=e324]: Проектная деятельность
+                      - generic [ref=e325]: выбрать проект
+                - group "Вт 27, весь день онлайн" [ref=e326]:
+                  - generic [ref=e327]:
+                    - button "Лекция, Основы разработки мобильных приложений, 12:20–13:50, вебинар, Васильев Денис Борисович" [ref=e328] [cursor=pointer]:
+                      - generic [ref=e329]:
+                        - generic [ref=e330]: Лекция
+                        - generic [ref=e331]: Основы разработки мобильных приложений
+                        - generic [ref=e332]: вебинар
+                        - generic [ref=e336]: Васильев Д.Б.
+                    - button "Лекция, Основы разработки мобильных приложений, 14:30–16:00, вебинар, Васильев Денис Борисович" [ref=e337] [cursor=pointer]:
+                      - generic [ref=e338]:
+                        - generic [ref=e339]: Лекция
+                        - generic [ref=e340]: Основы разработки мобильных приложений
+                        - generic [ref=e341]: вебинар
+                        - generic [ref=e345]: Васильев Д.Б.
+                    - button "Лекция, Индексирование текстов и информационный поиск, 16:10–17:40, вебинар, Пшехотская Екатерина Александровна" [ref=e346] [cursor=pointer]:
+                      - generic [ref=e347]:
+                        - generic [ref=e348]: Лекция
+                        - generic [ref=e349]: Индексирование текстов и информационный поиск
+                        - generic [ref=e350]: вебинар
+                        - generic [ref=e354]: Пшехотская Е.А.
+                    - button "Лекция, Веб-аналитика, 17:50–19:20, вебинар, Темникова Ксения Николаевна" [ref=e355] [cursor=pointer]:
+                      - generic [ref=e356]:
+                        - generic [ref=e357]: Лекция
+                        - generic [ref=e358]: Веб-аналитика
+                        - generic [ref=e359]: вебинар
+                        - generic [ref=e363]: Темникова К.Н.
+                - group "Ср 28," [ref=e364]:
+                  - generic [ref=e365]:
+                    - button "Лекция, Математические методы анализа данных, 9:00–10:30, вебинар, Бритвина Валентина Валентиновна" [ref=e366] [cursor=pointer]:
+                      - generic [ref=e367]:
+                        - generic [ref=e368]: Лекция
+                        - generic [ref=e369]: Математические методы анализа данных
+                        - generic [ref=e370]: вебинар
+                        - generic [ref=e374]: Бритвина В.В.
+                    - button "Лекция, Безопасность информационных ресурсов в Интернет, 10:40–13:50, вебинар, Бритвина Валентина Валентиновна" [ref=e375] [cursor=pointer]:
+                      - generic [ref=e376]:
+                        - generic [ref=e377]: Лекция
+                        - generic [ref=e378]: Безопасность информационных ресурсов в Интернет
+                        - generic [ref=e379]: вебинар
+                        - generic [ref=e383]: Бритвина В.В.
+                    - button "Практика, Проектная деятельность, 14:30–16:00, выбрать проект" [ref=e384] [cursor=pointer]:
+                      - generic [ref=e385]:
+                        - generic [ref=e386]: Практика
+                        - generic [ref=e387]: Проектная деятельность
+                        - generic [ref=e388]: выбрать проект
+                - group "Чт 29, нет занятий" [ref=e389]
+                - group "Пт 30, сегодня" [ref=e391]:
+                  - generic [ref=e392]:
+                    - button "Лаб. работа, Индексирование текстов и информационный поиск, п/г 2, 14:30–16:00, Пр2810, Воробьев Никита Григорьевич" [ref=e393] [cursor=pointer]:
+                      - generic [ref=e394]:
+                        - generic [ref=e395]: Лаб. работа
+                        - generic [ref=e396]: Индексирование текстов и информационный поиск, п/г 2
+                        - generic [ref=e397]: Пр2810
+                        - generic [ref=e401]: Воробьев Н.Г.
+                    - button "Практика, Индексирование текстов и информационный поиск, 16:10–17:40, Пр2506, Воробьев Никита Григорьевич" [ref=e402] [cursor=pointer]:
+                      - generic [ref=e403]:
+                        - generic [ref=e404]: Практика
+                        - generic [ref=e405]: Индексирование текстов и информационный поиск
+                        - generic [ref=e406]: Пр2506
+                        - generic [ref=e410]: Воробьев Н.Г.
+                    - 'button "Лаб. работа, 17:50–19:20, Веб-аналитика, п/г 2 · Пр2411 · Темникова К.Н., Основы разработки мобильных приложений, п/г 1 · Пр2503 · Васильев Д.Б., накладка: две пары в одно время" [ref=e411] [cursor=pointer]':
+                      - generic [ref=e412]:
+                        - generic [ref=e413]:
+                          - generic [ref=e414]: Лаб. работа
+                          - generic [aria-hidden] [ref=e415]: +1 пара
+                        - generic [ref=e416]:
+                          - generic [ref=e417]: Веб-аналитика, п/г 2
+                          - generic [ref=e418]:
+                            - generic [ref=e421]: Пр2411
+                            - text: ·
+                            - generic [ref=e422]: Темникова К.Н.
+                        - generic [ref=e423]:
+                          - generic [ref=e424]: Основы разработки мобильных приложений, п/г 1
+                          - generic [ref=e425]:
+                            - generic [ref=e428]: Пр2503
+                            - text: ·
+                            - generic [ref=e429]: Васильев Д.Б.
+                    - 'button "Лаб. работа, 19:30–21:00, Веб-аналитика, п/г 1 · Пр2411 · Темникова К.Н., Основы разработки мобильных приложений, п/г 2 · Пр2503 · Васильев Д.Б., накладка: две пары в одно время" [ref=e430] [cursor=pointer]':
+                      - generic [ref=e431]:
+                        - generic [ref=e432]:
+                          - generic [ref=e433]: Лаб. работа
+                          - generic [aria-hidden] [ref=e434]: +1 пара
+                        - generic [ref=e435]:
+                          - generic [ref=e436]: Веб-аналитика, п/г 1
+                          - generic [ref=e437]:
+                            - generic [ref=e440]: Пр2411
+                            - text: ·
+                            - generic [ref=e441]: Темникова К.Н.
+                        - generic [ref=e442]:
+                          - generic [ref=e443]: Основы разработки мобильных приложений, п/г 2
+                          - generic [ref=e444]:
+                            - generic [ref=e447]: Пр2503
+                            - text: ·
+                            - generic [ref=e448]: Васильев Д.Б.
+                    - status [ref=e449]:
+                      - generic [ref=e450]: Это пара по подгруппам
+                      - generic [ref=e451]: Нажмите на неё и выберите свою подгруппу — чужая скроется.
+                      - button "Понятно" [ref=e452] [cursor=pointer]
+                - group "Сб 31, весь день онлайн" [ref=e453]:
+                  - button "Лекция, Вероятностные основы веб-аналитики, 9:00–10:30, вебинар, Бритвина Валентина Валентиновна" [ref=e455] [cursor=pointer]:
+                    - generic [ref=e456]:
+                      - generic [ref=e457]: Лекция
+                      - generic [ref=e458]: Вероятностные основы веб-аналитики
+                      - generic [ref=e459]: вебинар
+                      - generic [ref=e463]: Бритвина В.В.
+          - generic [aria-hidden] [ref=e464] [cursor=pointer]

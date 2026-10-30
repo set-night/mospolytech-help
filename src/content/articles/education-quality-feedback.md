@@ -14,7 +14,7 @@ sources:
       'url': 'https://mospolytech.ru/ob-universitete/obrashcheniya-grazhdan/',
     },
   ]
-reviewedAt: '2026-10-29'
+reviewedAt: '2026-10-30'
 status: 'verified'
 ---
 

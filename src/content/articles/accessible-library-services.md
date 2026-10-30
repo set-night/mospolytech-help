@@ -7,7 +7,7 @@ sources:
   [
     {
       'title': 'Поступление для лиц с ОВЗ, инвалидов',
-      'url': 'https://mospolytech.ru/sveden/ovz/',
+      'url': 'https://mospolytech.ru/postupayushchim/invalidam-i-licam-s-ovz/',
     },
     { 'title': 'Библиотека', 'url': 'https://mospolytech.ru/obuchauschimsya/biblioteka/' },
     {
@@ -15,7 +15,7 @@ sources:
       'url': 'https://help.mospolytech.ru/article/87',
     },
   ]
-reviewedAt: '2026-10-29'
+reviewedAt: '2026-10-30'
 status: 'verified'
 ---
 

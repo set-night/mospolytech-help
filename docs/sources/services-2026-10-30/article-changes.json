@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-10-30",
+  "new": [
+    "mosrasp-how-to",
+    "mpunav-how-to",
+    "pedagogical-team-nebo",
+    "yacht-school",
+    "polet-student-trips",
+    "digital-department-admission"
+  ],
+  "updated": [
+    "academic-mobility",
+    "accessible-education",
+    "accessible-library-services",
+    "medical-point",
+    "public-appeals",
+    "volunteering-school",
+    "become-first-year-curator",
+    "student-media-team",
+    "education-quality-feedback",
+    "student-self-government",
+    "physical-education-and-sport",
+    "campus-wifi",
+    "digital-service-accounts",
+    "university-email-access",
+    "it-support-request",
+    "student-account",
+    "guide-student-account",
+    "guide-lms-login",
+    "euz-password-recovery",
+    "guide-sports-club",
+    "guide-student-communities",
+    "retakes",
+    "schedule",
+    "campuses",
+    "library"
+  ],
+  "dateKeptForPartiallyRefreshed": [
+    "schedule",
+    "campuses",
+    "guide-student-communities",
+    "library"
+  ]
+}

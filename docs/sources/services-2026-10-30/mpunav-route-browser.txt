@@ -1,0 +1,257 @@
+- generic [ref=e2]:
+  - generic [ref=e8]:
+    - complementary "Политех Навигация" [ref=e9]:
+      - generic [ref=e12]:
+        - generic [ref=e14]:
+          - generic [ref=e15]: Политех Навигация
+          - generic [ref=e16]: Карта корпусов и расписание Московского Политеха
+        - generic [ref=e18]:
+          - heading "Маршрут" [level=2] [ref=e25]
+          - generic [ref=e26]:
+            - button "Завершить" [ref=e27] [cursor=pointer]
+            - button "8-й этаж" [ref=e33] [cursor=pointer]
+          - generic [ref=e41]:
+            - generic [ref=e42]:
+              - button "Временный вход на Прянишникова" [ref=e44] [cursor=pointer]
+              - button "Поменять начало и конец маршрута" [ref=e55] [cursor=pointer]
+              - button "ПР-2810" [ref=e64] [cursor=pointer]
+            - generic [ref=e77]:
+              - list [ref=e78]:
+                - listitem [ref=e79]:
+                  - button "Временный вход на Прянишникова" [ref=e80] [cursor=pointer]
+                - listitem [ref=e87]:
+                  - button "Дойти до лестницы, подняться на 8-й этаж" [ref=e88] [cursor=pointer]
+                - listitem [ref=e101]:
+                  - button "Дойти до ПР-2810" [ref=e102] [cursor=pointer]
+                - listitem [ref=e114]:
+                  - button "ПР-2810" [ref=e115] [cursor=pointer]
+              - generic "Примерно 3 минуты, примерно 70 метров" [ref=e123]:
+                - generic [aria-hidden] [ref=e124]: 3 минуты, 70 метров
+              - generic [ref=e131]:
+                - button "Поделиться" [ref=e132] [cursor=pointer]
+                - button "В избранное" [ref=e137] [cursor=pointer]
+          - generic [aria-hidden]:
+            - generic:
+              - generic:
+                - button [ref=e144] [cursor=pointer]:
+                  - generic [ref=e145]: Временный вход на Прянишникова
+                - button
+                - button [ref=e156] [cursor=pointer]:
+                  - generic [ref=e157]: ПР-2810
+        - button "Расписание" [ref=e168] [cursor=pointer]
+        - region [ref=e171]:
+          - heading [level=2] [ref=e172]:
+            - button "Локации" [ref=e173] [cursor=pointer]
+          - generic [ref=e182]:
+            - generic [ref=e183] [cursor=pointer]:
+              - generic [ref=e184]: на Автозаводской
+              - generic:
+                - generic:
+                  - generic [ref=e187]:
+                    - paragraph [ref=e188]: "Обозначение: АВ"
+                    - paragraph [ref=e189]: "Адрес: ул. Автозаводская, д. 16"
+                  - generic [ref=e190]: "Корпуса:"
+                  - generic [ref=e191]:
+                    - button "1-2" [ref=e192]
+                    - button "4" [ref=e194]
+                    - button "5" [ref=e196]
+                    - button "6" [ref=e198]
+            - generic [ref=e200] [cursor=pointer]:
+              - generic [ref=e201]: на Большой Семёновской
+              - generic:
+                - generic:
+                  - generic [ref=e204]:
+                    - paragraph [ref=e205]: "Обозначение: БС"
+                    - paragraph [ref=e206]: "Адрес: ул. Большая Семёновская, д. 38"
+                  - generic [ref=e207]: "Корпуса:"
+                  - generic [ref=e208]:
+                    - button "А" [ref=e209]
+                    - button "Б" [ref=e211]
+                    - button "Н" [ref=e213]
+                    - button "НД" [ref=e215]
+                    - button "В" [ref=e217]
+                  - button "Территория" [ref=e220]
+            - generic [ref=e227] [cursor=pointer]:
+              - generic [ref=e228]: на Михалковской
+              - generic:
+                - generic:
+                  - generic [ref=e231]:
+                    - paragraph [ref=e232]: "Обозначение: М"
+                    - paragraph [ref=e233]: "Адрес: ул. Михалковская, д. 7"
+                  - generic [ref=e234]: "Корпуса:"
+                  - generic [ref=e235]:
+                    - button "М" [ref=e236]
+                    - button "Спорткомплекс" [ref=e238]
+            - generic [ref=e240] [cursor=pointer]:
+              - generic [ref=e241]: на Павла Корчагина
+              - generic:
+                - generic:
+                  - generic [ref=e244]:
+                    - paragraph [ref=e245]: "Обозначение: ПК"
+                    - paragraph [ref=e246]: "Адрес: ул. Павла Корчагина, д. 22"
+                  - generic [ref=e247]: "Корпуса:"
+                  - button "Главный" [ref=e249]
+            - generic [ref=e251] [cursor=pointer]:
+              - generic [ref=e252]: на Прянишникова
+              - generic:
+                - generic:
+                  - generic [ref=e255]:
+                    - paragraph [ref=e256]: "Обозначение: ПР"
+                    - paragraph [ref=e257]: "Адрес: ул. Прянишникова, д. 2А"
+                  - generic [ref=e258]: "Корпуса:"
+                  - generic [ref=e259]:
+                    - button "1" [ref=e260]
+                    - button "2" [ref=e262]
+          - generic [aria-hidden] [ref=e264] [cursor=pointer]
+        - region [ref=e265]:
+          - heading [level=2] [ref=e266]:
+            - button "Избранное" [disabled] [ref=e267] [cursor=pointer]
+          - generic [ref=e272]: В избранном пока ничего нет.
+        - region [ref=e275]:
+          - heading [level=2] [ref=e276]:
+            - button "Главная" [ref=e277] [cursor=pointer]
+          - generic [ref=e288]:
+            - generic [ref=e290]:
+              - button "🏛️ Главная" [ref=e291] [cursor=pointer]
+              - button "👥 Партнёры" [ref=e293] [cursor=pointer]
+              - button "🎓 Проекты" [ref=e295] [cursor=pointer]
+            - generic [ref=e298]:
+              - generic [ref=e299]:
+                - 'link "Подготовка к ЕГЭ и поступлению — 2027 Курсы по школьным предметам и внутренним вступительным: очно и онлайн" [ref=e300] [cursor=pointer]':
+                  - /url: https://mospolytech.ru/dovuzovskoe-obrazovanie-i-podgotovka-k-ege/news/kursy-ege-i-podgotovki-k-vnutrennim-vstupitelnym-dlya-postupayushchikh-v-2027/?utm_source=mpunav
+                  - generic [ref=e302]:
+                    - generic [ref=e303]: Подготовка к ЕГЭ и поступлению — 2027
+                    - generic [ref=e304]: "Курсы по школьным предметам и внутренним вступительным: очно и онлайн"
+                - link "Карьерный портал SuperJob Платформа с вакансиями для студентов Московского Политеха" [ref=e305] [cursor=pointer]:
+                  - /url: https://mospolytech.ru/obuchauschimsya/trudoustrojstvo/?utm_source=mpunav
+                  - generic [ref=e307]:
+                    - generic [ref=e308]: Карьерный портал SuperJob
+                    - generic [ref=e309]: Платформа с вакансиями для студентов Московского Политеха
+                - link "Дайджест вакансий Подборка актуальных вакансий по факультетам" [ref=e310] [cursor=pointer]:
+                  - /url: https://vk.ru/@mospolywork-daidzhestvakansii1?utm_source=mpunav
+                  - generic [ref=e312]:
+                    - generic [ref=e313]: Дайджест вакансий
+                    - generic [ref=e314]: Подборка актуальных вакансий по факультетам
+                - link "Поступающим Главная информация для абитуриентов" [ref=e315] [cursor=pointer]:
+                  - /url: https://mospolytech.ru/postupayushchim/?utm_source=mpunav
+                  - generic [ref=e317]:
+                    - generic [ref=e318]: Поступающим
+                    - generic [ref=e319]: Главная информация для абитуриентов
+                - link "Целевое обучение Поступление по договору с заказчиком" [ref=e320] [cursor=pointer]:
+                  - /url: https://mospolytech.ru/postupayushchim/celevoe-obuchenie/?utm_source=mpunav
+                  - generic [ref=e322]:
+                    - generic [ref=e323]: Целевое обучение
+                    - generic [ref=e324]: Поступление по договору с заказчиком
+                - link "Курсы ДПО Повышение квалификации и переподготовка" [ref=e325] [cursor=pointer]:
+                  - /url: https://mospolytech.ru/povyshenie-kvalifikacii-i-professionalnaya-perepodgotovka/courses/?utm_source=mpunav
+                  - generic [ref=e327]:
+                    - generic [ref=e328]: Курсы ДПО
+                    - generic [ref=e329]: Повышение квалификации и переподготовка
+                - link "Как найти работу мечты ещё в вузе? Статья Московского Политеха в Дзене" [ref=e330] [cursor=pointer]:
+                  - /url: https://dzen.ru/a/aju_f0PTCzxlffez?utm_source=mpunav
+                  - generic [ref=e332]:
+                    - generic [ref=e333]: Как найти работу мечты ещё в вузе?
+                    - generic [ref=e334]: Статья Московского Политеха в Дзене
+                - link "Московский Политех в MAX Главные новости Московского Политеха" [ref=e335] [cursor=pointer]:
+                  - /url: https://max.ru/id7719455553_biz?utm_source=mpunav
+                  - generic [ref=e337]:
+                    - generic [ref=e338]: Московский Политех в MAX
+                    - generic [ref=e339]: Главные новости Московского Политеха
+              - generic [ref=e340]:
+                - link "Центр карьеры Московского Политеха Твой помощник в построении карьеры" [ref=e341] [cursor=pointer]:
+                  - /url: https://www.superjob.ru/start/mospolytech/vacancies/?utm_source=mpunav
+                  - generic [ref=e343]:
+                    - generic [ref=e344]: Центр карьеры Московского Политеха
+                    - generic [ref=e345]: Твой помощник в построении карьеры
+                - link "Построй карьерную траекторию Твой путь от проекта до оффера" [ref=e346] [cursor=pointer]:
+                  - /url: https://mospolytech.ru/obuchauschimsya/trudoustrojstvo/yourcareertrajectory/?utm_source=mpunav&utm_medium=banner&utm_campaign=yourcareertrajectory
+                  - generic [ref=e348]:
+                    - generic [ref=e349]: Построй карьерную траекторию
+                    - generic [ref=e350]: Твой путь от проекта до оффера
+                - link "Московский Политех в ТОП-30 вузов по мнению студентов Ежегодное исследование карьерной платформы Changellenge" [ref=e351] [cursor=pointer]:
+                  - /url: https://changellenge.com/tpage/top2026/?utm_source=mpunav
+                  - generic [ref=e353]:
+                    - generic [ref=e354]: Московский Политех в ТОП-30 вузов по мнению студентов
+                    - generic [ref=e355]: Ежегодное исследование карьерной платформы Changellenge
+                - link "Довузовское образование Программы подготовки для инженерных и гуманитарных специальностей" [ref=e356] [cursor=pointer]:
+                  - /url: https://mospolytech.ru/dovuzovskoe-obrazovanie/o-dovuzovskom-obrazovanii/?utm_source=mpunav
+                  - generic [ref=e358]:
+                    - generic [ref=e359]: Довузовское образование
+                    - generic [ref=e360]: Программы подготовки для инженерных и гуманитарных специальностей
+                - link "Бакалавриат Направления и профили обучения" [ref=e361] [cursor=pointer]:
+                  - /url: https://mospolytech.ru/postupayushchim/programmy-obucheniya/bakalavriat/?utm_source=mpunav
+                  - generic [ref=e363]:
+                    - generic [ref=e364]: Бакалавриат
+                    - generic [ref=e365]: Направления и профили обучения
+                - link "Общежития Московского Политеха Всё о проживании в общежитии" [ref=e366] [cursor=pointer]:
+                  - /url: https://vkvideo.ru/video-33991085_456240881?utm_source=mpunav
+                  - generic [ref=e368]:
+                    - generic [ref=e369]: Общежития Московского Политеха
+                    - generic [ref=e370]: Всё о проживании в общежитии
+                - link "Канал Политех Навигации в MAX Главные новости навигации в университете" [ref=e371] [cursor=pointer]:
+                  - /url: https://max.ru/id7719455553_gos13?utm_source=mpunav
+                  - generic [ref=e373]:
+                    - generic [ref=e374]: Канал Политех Навигации в MAX
+                    - generic [ref=e375]: Главные новости навигации в университете
+          - generic [aria-hidden] [ref=e376] [cursor=pointer]
+        - region [ref=e378]:
+          - heading [level=2] [ref=e379]:
+            - button "Меню" [ref=e380] [cursor=pointer]
+          - generic [ref=e388]:
+            - generic [ref=e389]:
+              - button "Настройки" [ref=e390] [cursor=pointer]
+              - link "Наш бот в Telegram 🕊️" [ref=e397] [cursor=pointer]:
+                - /url: https://t.me/mospolyna_bot
+              - button "О сервисе" [ref=e406] [cursor=pointer]
+              - link "наш бот в Max" [ref=e413] [cursor=pointer]:
+                - /url: https://max.ru/id9717192052_bot
+              - button "Сообщить о проблеме" [ref=e419] [cursor=pointer]
+            - generic [ref=e428]:
+              - region "Наши соцсети:" [ref=e429]:
+                - heading "Наши соцсети:" [level=3] [ref=e430]
+                - generic [ref=e431]:
+                  - 'link "Наши соцсети: — VK" [ref=e432] [cursor=pointer]':
+                    - /url: https://vk.ru/mospolynavigation
+                  - 'link "Наши соцсети: — Telegram" [ref=e436] [cursor=pointer]':
+                    - /url: https://t.me/mospolynavigation
+                  - 'link "Наши соцсети: — MAX" [ref=e441] [cursor=pointer]':
+                    - /url: https://max.ru/id7719455553_gos13
+              - region "Соцсети Московского Политеха:" [ref=e445]:
+                - heading "Соцсети Московского Политеха:" [level=3] [ref=e446]
+                - generic [ref=e447]:
+                  - 'link "Соцсети Московского Политеха: — VK" [ref=e448] [cursor=pointer]':
+                    - /url: https://vk.ru/moscowpolytech
+                  - 'link "Соцсети Московского Политеха: — Telegram" [ref=e452] [cursor=pointer]':
+                    - /url: https://t.me/mospolytech
+                  - 'link "Соцсети Московского Политеха: — MAX" [ref=e457] [cursor=pointer]':
+                    - /url: https://max.ru/id7719455553_biz
+          - generic [aria-hidden] [ref=e461] [cursor=pointer]
+    - generic [ref=e463]:
+      - generic:
+        - button "ПР, Корпус 2, 1-й этаж" [ref=e464] [cursor=pointer]
+        - generic:
+          - generic:
+            - button "1"
+            - button "2"
+            - button "3"
+            - button "4"
+            - button "5"
+            - button "6"
+            - button "7"
+            - button "8"
+          - generic [ref=e466]:
+            - button "Увеличить масштаб" [ref=e467] [cursor=pointer]
+            - button "Уменьшить масштаб" [ref=e471] [cursor=pointer]
+      - link "Перейти на сайт Московского Политеха":
+        - /url: https://mospolytech.ru/?utm_source=mpunav
+        - img "Московский Политех"
+      - complementary "QR-код текущей страницы" [ref=e478]:
+        - generic [ref=e479]:
+          - generic [ref=e480]:
+            - paragraph [ref=e481]: Мобильная версия
+            - button "Закрыть" [ref=e482] [cursor=pointer]
+          - img "Открыть текущую страницу на телефоне" [ref=e487]
+  - generic:
+    - generic:
+      - status [aria-hidden]
+  - status "Загрузка" [ref=e3]

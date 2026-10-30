@@ -1,0 +1,25 @@
+- main [ref=e3]:
+  - generic [ref=e4]:
+    - generic [ref=e7]:
+      - generic [ref=e8]: mosrasp · расписание Мосполитеха
+      - heading "Что показывать на главной?" [level=1] [ref=e11]
+    - generic [ref=e12]:
+      - generic [ref=e14]:
+        - searchbox "Группа или преподаватель" [active] [ref=e15]: 241-321
+        - button "Очистить" [ref=e19] [cursor=pointer]
+      - list "Найдено" [ref=e22]:
+        - listitem [ref=e23]:
+          - button "241-321 3 курс" [ref=e24] [cursor=pointer]:
+            - generic [ref=e29]:
+              - generic [ref=e30]: 241-321
+              - generic [ref=e31]: 3 курс
+        - listitem [ref=e34]:
+          - button "241-3210 3 курс" [ref=e35] [cursor=pointer]:
+            - generic [ref=e40]:
+              - generic [ref=e41]: 241-3210
+              - generic [ref=e42]: 3 курс
+        - listitem [ref=e45]:
+          - button "241-3211 3 курс" [ref=e46] [cursor=pointer]:
+            - generic [ref=e51]:
+              - generic [ref=e52]: 241-3211
+              - generic [ref=e53]: 3 курс

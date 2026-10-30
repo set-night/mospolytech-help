@@ -10,7 +10,7 @@ sources:
       'url': 'https://mospolytech.ru/studencheskaya-zhizn/medical-help/medicinskaya-slujba/',
     },
   ]
-reviewedAt: '2026-10-29'
+reviewedAt: '2026-10-30'
 status: 'verified'
 ---
 
