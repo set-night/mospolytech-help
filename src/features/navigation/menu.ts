@@ -18,6 +18,7 @@ function setMenu(open: boolean): void {
     );
 }
 button.addEventListener('click', () => setMenu(nav.hidden !== false));
+document.addEventListener('search:open', () => setMenu(false));
 document.addEventListener('click', (event) => {
   if (
     !nav.hidden &&
@@ -30,6 +31,7 @@ document.addEventListener('click', (event) => {
 document.addEventListener('keydown', (event) => {
   if (
     event.key === 'Escape' &&
+    !event.defaultPrevented &&
     !nav.hidden &&
     !document.querySelector<HTMLDialogElement>('#search-dialog')?.open
   ) {

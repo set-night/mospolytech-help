@@ -11,6 +11,7 @@ let timer: ReturnType<typeof setTimeout>;
 export function openSearch(query?: string): void {
   if (dialog.open) return;
   previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+  document.dispatchEvent(new Event('search:open'));
   dialog.showModal();
   document.body.classList.add('search-open');
   if (query !== undefined) input.value = query;
@@ -24,7 +25,8 @@ dialog.addEventListener('close', () => {
   clearTimeout(timer);
   ++request;
   document.body.classList.remove('search-open');
-  previousFocus?.focus();
+  if (previousFocus?.getClientRects().length) previousFocus.focus();
+  else document.querySelector<HTMLElement>('.header-search')?.focus();
 });
 document.querySelector('#close-search')?.addEventListener('click', closeSearch);
 dialog.addEventListener('click', (event) => {
@@ -73,7 +75,14 @@ document.addEventListener('keydown', (event) => {
   const current = links.indexOf(document.activeElement as HTMLAnchorElement);
   if (event.key !== 'Enter') {
     event.preventDefault();
-    links[(current + (event.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length].focus();
+    const down = event.key === 'ArrowDown';
+    const next =
+      current < 0
+        ? down
+          ? 0
+          : links.length - 1
+        : (current + (down ? 1 : -1) + links.length) % links.length;
+    links[next].focus();
   }
 });
 async function runSearch(): Promise<boolean> {

@@ -101,7 +101,19 @@ if (root) {
       });
     }
   }
-  async function update(animate = true): Promise<void> {
+  function setBusy(busy: boolean): void {
+    grid.inert = busy;
+    if (busy) {
+      form.setAttribute('aria-busy', 'true');
+      grid.setAttribute('aria-busy', 'true');
+      count.textContent = 'Ищем…';
+    } else {
+      form.removeAttribute('aria-busy');
+      grid.removeAttribute('aria-busy');
+    }
+  }
+  async function update(animate = true): Promise<boolean> {
+    clearTimeout(timer);
     const id = ++request;
     const text = query.value.trim();
     notice.hidden = true;
@@ -111,11 +123,11 @@ if (root) {
         (!tag || cardTags.get(card)?.includes(tag)),
     );
     if (text) {
-      form.setAttribute('aria-busy', 'true');
+      setBusy(true);
       try {
         const response = await searchArticles(text, category);
         const entries = await Promise.all(response.results.map((result) => result.data()));
-        if (id !== request) return;
+        if (id !== request) return false;
         const ranks = new Map(
           entries.map((entry, index) => [
             decodeURIComponent(new URL(entry.url, location.origin).pathname)
@@ -131,20 +143,21 @@ if (root) {
             (a, b) => (ranks.get(a.dataset.article) ?? 0) - (ranks.get(b.dataset.article) ?? 0),
           );
       } catch {
-        if (id !== request) return;
+        if (id !== request) return false;
         notice.textContent = 'Полнотекстовый поиск недоступен. Пока ищем по названиям и тегам.';
         notice.hidden = false;
         matches = matches.filter((card) =>
           normalizeTag(`${card.textContent} ${card.dataset.tags}`).includes(normalizeTag(text)),
         );
-      } finally {
-        if (id === request) form.removeAttribute('aria-busy');
       }
-    } else form.removeAttribute('aria-busy');
+    }
     if (id === request) {
       paint(matches, animate);
+      setBusy(false);
       if (text || category || tag) root?.dispatchEvent(new CustomEvent('browse:results'));
+      return true;
     }
+    return false;
   }
   function clear(): void {
     clearTimeout(timer);
@@ -183,7 +196,10 @@ if (root) {
     clearTimeout(timer);
     limit = 8;
     writeURL();
-    timer = setTimeout(() => void update(), 140);
+    if (query.value.trim()) {
+      setBusy(true);
+      timer = setTimeout(() => void update(), 140);
+    } else void update();
   });
   query.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && query.value) {
@@ -194,7 +210,12 @@ if (root) {
     }
     if (event.key === 'ArrowDown') {
       event.preventDefault();
-      root.querySelector<HTMLAnchorElement>('.answer-card:not([hidden]) .answer-main')?.focus();
+      const focusFirst = (): void => {
+        if (document.activeElement === query)
+          grid.querySelector<HTMLAnchorElement>('.answer-card:not([hidden]) .answer-main')?.focus();
+      };
+      if (grid.inert) void update().then((ready) => ready && focusFirst());
+      else focusFirst();
     }
   });
   form.addEventListener('submit', (event) => {
@@ -208,7 +229,8 @@ if (root) {
   more.addEventListener('click', () => {
     const previous = limit;
     limit += 12;
-    void update(true).then(() => {
+    void update(true).then((ready) => {
+      if (!ready) return;
       grid
         .querySelectorAll<HTMLAnchorElement>('.answer-card:not([hidden]) .answer-main')
         [previous]?.focus({ preventScroll: true });

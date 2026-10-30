@@ -26,27 +26,23 @@ npm ci
 npm run dev
 ```
 
-Сайт откроется по адресу, который покажет терминал. Код разбит по задачам:
+Открой адрес из терминала. Полнотекстовый поиск проверяй в готовой сборке: `npm run build` → `npm run preview`.
 
-| Что меняешь              | Где искать                                                |
-| ------------------------ | --------------------------------------------------------- |
-| Статьи                   | `src/content/articles/`                                   |
-| Главная, категории, теги | `src/features/browse/`                                    |
-| Полнотекстовый поиск     | `src/features/search/`                                    |
-| Тема и анимации          | `src/features/theme/`, `src/features/motion/`             |
-| Общая навигация          | `src/features/navigation/`, `src/layouts/Base.astro`      |
-| Айдентика и favicon      | `src/features/brand/`, `public/favicon.svg`               |
-| Стили и цвета            | `src/styles/global.css`                                   |
-| Ссылки и разделы         | `src/features/services/resources.json`, `src/lib/data.ts` |
-| SEO и Sitemap            | `src/features/seo/`, `src/pages/sitemap.xml.ts`           |
-| Проверки интерфейса      | `tests/`                                                  |
+Код разбит по задачам:
 
-Для проверки полного поиска нужен собранный индекс:
-
-```sh
-npm run verify
-npm run preview
-```
+| Что меняешь               | Где искать                                           |
+| ------------------------- | ---------------------------------------------------- |
+| Статьи                    | `src/content/articles/`                              |
+| Главная, категории, теги  | `src/features/browse/`                               |
+| Полнотекстовый поиск      | `src/features/search/`                               |
+| Тема и анимации           | `src/features/theme/`, `src/features/motion/`        |
+| Общая навигация           | `src/features/navigation/`, `src/layouts/Base.astro` |
+| Айдентика и favicon       | `src/features/brand/`, `public/favicon.svg`          |
+| Стили и цвета             | `src/styles/global.css`                              |
+| Сервисы, баннеры и ссылки | `src/features/services/`                             |
+| Категории и чаты          | `src/lib/data.ts`                                    |
+| SEO и Sitemap             | `src/features/seo/`, `src/pages/sitemap.xml.ts`      |
+| Проверки интерфейса       | `tests/`                                             |
 
 ## Перед PR
 
@@ -57,7 +53,7 @@ npx playwright install chromium
 npm test
 ```
 
-Для изменения текста достаточно PR из браузера: CI выполнит проверки сам. Для интерфейса проверь телефон, обе темы и клавиатуру; приложи скриншот.
+Для изменения текста достаточно PR из браузера: CI выполнит проверки сам. Для интерфейса проверь телефон, обе темы и клавиатуру; приложи скриншот. Регрессии поиска и фокуса проверяются в `tests/interactions.spec.ts`.
 
 PR не получает секреты публикации. Отчёт браузерных тестов и сборку можно скачать в Actions. Подробности эксплуатации вынесены в [документацию](docs/README.md).
 

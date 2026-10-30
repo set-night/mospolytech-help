@@ -76,7 +76,7 @@ const guideLinks = [
     title: 'Все сервисы',
     url: '/resources/',
     icon: 'grid' as const,
-    hint: `${resources.length} полезных ресурсов`,
+    hint: `${resources.length} сервисов`,
   },
   { title: 'Чаты и медиа', url: '/community/', icon: 'chat' as const, hint: 'Спросить у своих' },
 ];
@@ -118,7 +118,7 @@ const guideLinks = [
           maxlength="200"
           name="q"
           type="search"
-          placeholder="Найти ответ или статью…"
+          placeholder="Найти ответ…"
           autocomplete="off"
         />
         <span class="search-shortcut" aria-hidden="true">
@@ -213,9 +213,6 @@ const guideLinks = [
           <span>К справочнику</span>
           <Icon name="chevron" size={18} />
         </a>
-        <span class="scene-caption" aria-hidden="true">
-          МОСКОВСКИЙ ПОЛИТЕХ / СТУДЕНТЫ — СТУДЕНТАМ
-        </span>
       </>
     )}
   </section>
@@ -223,13 +220,7 @@ const guideLinks = [
     {services && (
       <div class="guide-intro" data-reveal>
         <Artwork id="directory-fan" motif="fan" class="guide-artwork" />
-        <div>
-          <span class="eyebrow">СПРАВОЧНИК СООБЩЕСТВА</span>
-          <h2>Всё, что пригодится.</h2>
-        </div>
-        <a class="text-link" href="/resources/">
-          Все сервисы <Icon name="arrow" size={17} />
-        </a>
+        <h2>Справочник</h2>
       </div>
     )}
     <div class="browse-layout">

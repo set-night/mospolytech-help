@@ -79,7 +79,7 @@ const articles = new Map((await getCollection('articles')).map((article) => [art
         </div>
         <p>{resource.subtitle}</p>
         <nav class="resource-guides" aria-label={`Инструкции: ${resource.title}`}>
-          <span>В НАШЕМ СПРАВОЧНИКЕ</span>
+          <span>Инструкции</span>
           {resourceArticles(resource)
             .slice(0, 3)
             .map((id) => (
