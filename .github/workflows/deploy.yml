@@ -76,7 +76,8 @@ jobs:
           const [rawKey, sitemap] = await Promise.all([get(keyLocation), get(`${origin}/sitemap.xml`)]);
           const key = rawKey.trim();
           if (!/^[a-f0-9]{32}$/.test(key)) throw new Error('Invalid public IndexNow verification file');
-          const since = Date.parse(process.env.SOURCE_UPDATED_AT ?? '') - 1000;
+          // Retry recent changes too, including a first-time key validation.
+          const since = Date.parse(process.env.SOURCE_UPDATED_AT ?? '') - 24 * 60 * 60 * 1000;
           const entries = [...sitemap.matchAll(/<url>(.*?)<\/url>/gs)].map(match => ({
             url: match[1].match(/<loc>([^<]+)<\/loc>/)?.[1].replaceAll('&amp;', '&'),
             modified: match[1].match(/<lastmod>([^<]+)<\/lastmod>/)?.[1],

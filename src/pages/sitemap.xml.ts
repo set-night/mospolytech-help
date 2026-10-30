@@ -9,13 +9,23 @@ export async function GET(): Promise<Response> {
   const collectionModified = modifiedAt([
     'src/pages',
     'src/features/browse',
+    'src/features/services/resources.json',
     'src/lib/data.ts',
     'src/content/articles',
   ]);
   const entries = [
     { path: '/', date: collectionModified },
     { path: '/articles/', date: collectionModified },
-    { path: '/resources/', date: modifiedAt(['src/pages/resources.astro', 'src/lib/data.ts']) },
+    {
+      path: '/resources/',
+      date: modifiedAt([
+        'src/pages/resources.astro',
+        'src/lib/data.ts',
+        'src/features/services',
+        'src/assets/services',
+        'docs/sources/services-2026-10-30/coverage.json',
+      ]),
+    },
     { path: '/community/', date: modifiedAt(['src/pages/community.astro', 'src/lib/data.ts']) },
     { path: '/about/', date: modifiedAt(['src/pages/about.astro']) },
     ...categories.map((category) => ({
