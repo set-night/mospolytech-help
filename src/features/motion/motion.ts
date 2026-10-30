@@ -28,6 +28,9 @@ const curls = new IntersectionObserver(
   { threshold: 0.05 },
 );
 document.querySelectorAll('[data-curl]').forEach((element) => curls.observe(element));
+document.addEventListener('visibilitychange', () =>
+  document.documentElement.classList.toggle('document-hidden', document.hidden),
+);
 reduced.addEventListener('change', () => {
   if (reduced.matches) document.getAnimations().forEach((animation) => animation.cancel());
 });

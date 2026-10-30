@@ -18,6 +18,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           persist-credentials: false
+          fetch-depth: 0 # Sitemap dates use actual content/template history.
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
           node-version: '24'
@@ -25,6 +26,7 @@ jobs:
       - run: npm ci
       - run: npm run format:check
       - run: npm run check:content
+      - run: npm run check:coverage
       - run: npm run check
       - run: npm audit --audit-level=high
       - run: npm run build

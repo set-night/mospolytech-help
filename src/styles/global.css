@@ -1691,83 +1691,6 @@ mark {
     0 0 0 3px var(--red-soft),
     0 20px 70px #0002;
 }
-.floating-services {
-  position: absolute;
-  width: min(1120px, 100%);
-  height: min(610px, 76svh);
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  opacity: clamp(0, calc(1 - var(--scene-progress, 0) * 1.4), 1);
-}
-.float-anchor {
-  position: absolute;
-}
-.float-anchor-1 {
-  left: 5%;
-  top: 8%;
-  --float-delay: 0s;
-  --float-angle: -7deg;
-}
-.float-anchor-2 {
-  right: 4%;
-  top: 4%;
-  --float-delay: -2s;
-  --float-angle: 6deg;
-}
-.float-anchor-3 {
-  left: 9%;
-  bottom: 9%;
-  --float-delay: -4s;
-  --float-angle: 4deg;
-}
-.float-anchor-4 {
-  right: 7%;
-  bottom: 3%;
-  --float-delay: -1s;
-  --float-angle: -5deg;
-}
-.float-link {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 16px 20px;
-  min-height: 76px;
-  border: 1px solid var(--line);
-  border-radius: 11px;
-  background: var(--paper);
-  transform: rotate(var(--float-angle));
-  box-shadow: 0 10px 28px #0001;
-  transition:
-    border-color 0.3s,
-    box-shadow 0.3s;
-}
-.float-icon {
-  color: var(--red);
-  display: flex;
-}
-.float-link strong {
-  display: block;
-  font: 600 14px var(--display);
-  letter-spacing: -0.02em;
-}
-.float-link small {
-  display: block;
-  font-size: 11px;
-  color: var(--muted);
-  margin-top: 6px;
-}
-.float-link > svg {
-  color: var(--muted);
-  margin-left: 12px;
-}
-.float-link:hover {
-  border-color: var(--red);
-  box-shadow: 0 15px 40px #0002;
-}
-.float-link:hover > svg {
-  color: var(--ink);
-}
 .stage-more {
   position: absolute;
   bottom: 44px;
@@ -2023,27 +1946,11 @@ mark {
   color: var(--ink);
 }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .float-anchor {
-    animation: link-float 7s ease-in-out infinite;
-    animation-delay: var(--float-delay);
-  }
   .scene-ribbon {
     animation: ribbon-drift 35s ease-in-out infinite alternate;
   }
-  .float-anchor:hover,
-  .float-anchor:focus-within,
-  .search-docked .float-anchor,
   .search-docked .scene-ribbon {
     animation-play-state: paused;
-  }
-}
-@keyframes link-float {
-  0%,
-  100% {
-    translate: 0 0;
-  }
-  50% {
-    translate: 0 -10px;
   }
 }
 @keyframes ribbon-drift {
@@ -2057,18 +1964,6 @@ mark {
 @media (max-width: 1050px) {
   .home-page {
     scroll-padding-top: 188px;
-  }
-  .float-anchor-1 {
-    left: 6%;
-  }
-  .float-anchor-2 {
-    right: 6%;
-  }
-  .float-anchor-3 {
-    left: 6%;
-  }
-  .float-anchor-4 {
-    right: 6%;
   }
   .browse-layout {
     gap: 36px;
@@ -2093,24 +1988,6 @@ mark {
   }
   .search-stage .hub-search input {
     font-size: 18px;
-  }
-  .floating-services {
-    height: 70svh;
-    max-height: 560px;
-  }
-  .float-link {
-    padding: 14px 16px;
-    gap: 10px;
-    min-height: 68px;
-  }
-  .float-link strong {
-    font-size: 13px;
-  }
-  .float-link small {
-    font-size: 10px;
-  }
-  .float-link > svg {
-    margin-left: 4px;
   }
   .scene-art {
     width: 90vw;
@@ -2181,51 +2058,6 @@ mark {
   .search-stage .hub-search button {
     width: 35px;
     height: 36px;
-  }
-  .floating-services {
-    height: 68svh;
-    max-height: 570px;
-    min-height: 450px;
-  }
-  .float-anchor-1 {
-    left: 7%;
-    top: 8%;
-    --float-angle: -5deg;
-  }
-  .float-anchor-2 {
-    right: 5%;
-    top: 27%;
-    --float-angle: 5deg;
-  }
-  .float-anchor-3 {
-    left: 6%;
-    bottom: 18%;
-    --float-angle: 4deg;
-  }
-  .float-anchor-4 {
-    right: 6%;
-    bottom: 0%;
-    --float-angle: -4deg;
-  }
-  .float-link {
-    padding: 11px 13px;
-    min-height: 61px;
-    gap: 10px;
-    border-radius: 9px;
-  }
-  .float-link strong {
-    font-size: 12px;
-  }
-  .float-link small {
-    font-size: 9px;
-    margin-top: 5px;
-  }
-  .float-icon svg {
-    width: 17px;
-    height: 17px;
-  }
-  .float-link > svg {
-    display: none;
   }
   .scene-art {
     width: 140vw;
@@ -2334,12 +2166,8 @@ mark {
   .scene-art {
     transition: none;
   }
-  .scene-ribbon,
-  .float-anchor {
+  .scene-ribbon {
     animation: none;
-  }
-  .float-link {
-    transform: none;
   }
 }
 @media print {

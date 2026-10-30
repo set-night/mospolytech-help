@@ -2,22 +2,103 @@
 import Base from '../layouts/Base.astro';
 import OfficialBadge from '../components/OfficialBadge.astro';
 import { resources } from '../lib/data';
+import { Image } from 'astro:assets';
+import Icon from '../components/Icon.astro';
+import { getCollection } from 'astro:content';
+import { resourceArticles } from '../features/services/resources';
+import { previews } from '../features/services/previews';
+import '../features/services/services.css';
+const articles = new Map((await getCollection('articles')).map((article) => [article.id, article]));
 ---
 
-<Base title="Полезные ресурсы">
+<Base
+  title="Полезные сервисы для студентов"
+  description="Расписание занятий, навигатор по корпусам, личный кабинет, IT-поддержка и другие сервисы Московского Политеха. Официальные ссылки и понятные инструкции."
+  kind="CollectionPage"
+>
   <section class="page-intro wrap">
     <h1>Полезные сервисы</h1>
   </section>
+  <section class="service-previews wrap" aria-label="Превью полезных сервисов">
+    {previews.map((preview) => {
+      const resource = resources.find((item) => item.id === preview.id)!;
+      const guide = resourceArticles(resource)[0];
+      return (
+        <article class="service-preview" data-reveal>
+          <a
+            class="service-preview-image"
+            href={resource.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Открыть ${resource.title}`}
+          >
+            <Image
+              src={preview.image}
+              alt={preview.alt}
+              widths={[480, 800, 1200]}
+              sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1240px) calc((100vw - 96px) / 2), 560px"
+              width={1200}
+              format="webp"
+              quality={80}
+              loading="lazy"
+            />
+          </a>
+          <div class="service-preview-copy">
+            <div>
+              <h2>{resource.title}</h2>
+              <p>{preview.note}</p>
+            </div>
+            <a href={`/articles/${guide}/`}>
+              Как пользоваться <Icon name="arrow" size={14} />
+            </a>
+          </div>
+        </article>
+      );
+    })}
+  </section>
+  <div class="section-heading wrap">
+    <h2>Все сервисы</h2>
+    <span>{resources.length} ресурсов</span>
+  </div>
   <section class="resource-grid wrap" aria-label="Ресурсы">
     {resources.map((resource) => (
-      <a class="resource-item" href={resource.url} target="_blank" rel="noopener noreferrer">
+      <article class="resource-item" data-resource={resource.id}>
         <div class="resource-top">
           <span class="eyebrow">{resource.label}</span>
           {resource.official ? <OfficialBadge /> : <span class="eyebrow">СТУДЕНЧЕСКИЙ СЕРВИС</span>}
         </div>
-        <h2>{resource.title} ↗</h2>
+        <div class="resource-heading">
+          {resource.logo && (
+            <img src={resource.logo} width="32" height="32" alt="" loading="lazy" />
+          )}
+          <h2>
+            <a href={resource.url} target="_blank" rel="noopener noreferrer">
+              {resource.title} ↗
+            </a>
+          </h2>
+        </div>
         <p>{resource.subtitle}</p>
-      </a>
+        <nav class="resource-guides" aria-label={`Инструкции: ${resource.title}`}>
+          <span>В НАШЕМ СПРАВОЧНИКЕ</span>
+          {resourceArticles(resource)
+            .slice(0, 3)
+            .map((id) => (
+              <a href={`/articles/${id}/`}>{articles.get(id)!.data.title}</a>
+            ))}
+          {resourceArticles(resource).length > 3 && (
+            <details>
+              <summary>Ещё {resourceArticles(resource).length - 3} инструкций</summary>
+              <div>
+                {resourceArticles(resource)
+                  .slice(3)
+                  .map((id) => (
+                    <a href={`/articles/${id}/`}>{articles.get(id)!.data.title}</a>
+                  ))}
+              </div>
+            </details>
+          )}
+        </nav>
+      </article>
     ))}
   </section>
 </Base>

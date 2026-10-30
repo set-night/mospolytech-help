@@ -1,0 +1,141 @@
+---
+export type Motif = 'orbits' | 'wave' | 'rosette' | 'route' | 'fan';
+interface Props {
+  id: string;
+  motif: Motif;
+  class?: string;
+}
+const { id, motif, class: className } = Astro.props;
+const dots = Array.from({ length: 108 }, (_, index) => {
+  const angle = index * 2.399963;
+  const radius = Math.sqrt(index) * 17;
+  return {
+    x: 280 + Math.cos(angle) * radius,
+    y: 280 + Math.sin(angle) * radius,
+    opacity: 0.16 + (0.84 * index) / 108,
+  };
+});
+---
+
+<svg
+  class:list={['brand-artwork', className]}
+  viewBox="0 0 560 560"
+  fill="none"
+  aria-hidden="true"
+  data-curl
+  data-motif={motif}
+>
+  <defs>
+    <linearGradient id={id} x1="65" y1="425" x2="465" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="currentColor" stop-opacity="0" />
+      <stop offset=".45" stop-color="currentColor" stop-opacity=".3" />
+      <stop offset="1" stop-color="currentColor" />
+    </linearGradient>
+  </defs>
+  {motif === 'orbits' && (
+    <>
+      <g class="art-motion orbit-forward">
+        <ellipse
+          cx="280"
+          cy="280"
+          rx="200"
+          ry="88"
+          transform="rotate(-34 280 280)"
+          stroke={`url(#${id})`}
+          stroke-width="9"
+        />
+        <circle cx="445" cy="170" r="9" fill="currentColor" />
+      </g>
+      <g class="art-motion orbit-backward">
+        <ellipse
+          cx="280"
+          cy="280"
+          rx="152"
+          ry="185"
+          transform="rotate(28 280 280)"
+          stroke={`url(#${id})`}
+          stroke-width="2"
+        />
+        <circle cx="175" cy="140" r="5" fill="currentColor" />
+      </g>
+      <circle cx="280" cy="280" r="40" stroke="currentColor" stroke-width="1" opacity=".15" />
+    </>
+  )}
+  {motif === 'wave' && (
+    <g class="art-motion wave-drift">
+      {Array.from({ length: 5 }, (_, index) => (
+        <path
+          d="M32 300C90 300 110 140 180 175S270 390 350 335S420 135 528 205"
+          transform={`translate(0 ${index * 17 - 34})`}
+          stroke={`url(#${id})`}
+          stroke-width={index === 2 ? 17 : 2}
+          opacity={1 - Math.abs(2 - index) * 0.23}
+          stroke-linecap="round"
+        />
+      ))}
+    </g>
+  )}
+  {motif === 'rosette' && (
+    <g class="art-motion rosette-breathe">
+      {dots.map((dot, index) => (
+        <circle
+          cx={dot.x}
+          cy={dot.y}
+          r={2.4 + (index % 3) * 0.4}
+          fill="currentColor"
+          opacity={dot.opacity}
+        />
+      ))}
+      <circle
+        cx="280"
+        cy="280"
+        r="194"
+        stroke={`url(#${id})`}
+        stroke-width="2"
+        stroke-dasharray="2 12"
+      />
+    </g>
+  )}
+  {motif === 'route' && (
+    <>
+      <path
+        d="M70 400H175Q220 400 220 355V210Q220 165 265 165H465"
+        stroke="currentColor"
+        stroke-width="1"
+        opacity=".15"
+      />
+      <path
+        class="art-motion route-draw"
+        d="M70 400H175Q220 400 220 355V210Q220 165 265 165H465"
+        pathLength="1"
+        stroke={`url(#${id})`}
+        stroke-width="17"
+        stroke-linecap="round"
+      />
+      <path
+        d="M90 240H370Q410 240 410 280V420"
+        stroke={`url(#${id})`}
+        stroke-width="2"
+        stroke-dasharray="3 9"
+      />
+      <g class="art-motion route-beacons" fill="currentColor">
+        <circle cx="70" cy="400" r="7" />
+        <circle cx="465" cy="165" r="10" />
+        <circle cx="410" cy="420" r="5" />
+      </g>
+    </>
+  )}
+  {motif === 'fan' && (
+    <g class="art-motion fan-open">
+      {Array.from({ length: 6 }, (_, index) => (
+        <path
+          d={`M85 440C${80 + index * 24} ${240 - index * 20} ${150 + index * 36} ${95 + index * 14} ${200 + index * 51} ${74 + index * 47}`}
+          stroke={`url(#${id})`}
+          stroke-width={index === 3 ? 14 : 2}
+          stroke-linecap="round"
+        />
+      ))}
+      <circle cx="85" cy="440" r="8" fill="currentColor" />
+    </g>
+  )}
+</svg>

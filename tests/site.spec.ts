@@ -6,15 +6,20 @@ test('главная: сервисы, разделы, участие и отсу
   page.on('pageerror', (error) => errors.push(error.message));
   await page.goto('/');
   await expect(page.locator('#browse-query')).toBeVisible();
+  await expect(page.locator('.hero-cluster')).toHaveCount(2);
+  await expect(page.locator('.float-link')).toHaveCount(6);
+  await expect(page.locator('.cluster-daily img')).toHaveCount(2);
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
-  await expect(page.getByRole('link', { name: /МосРасписание/ })).toHaveAttribute(
-    'href',
-    'https://mosrasp.ru',
-  );
-  await expect(page.getByRole('link', { name: /МПУ Навигатор/ })).toHaveAttribute(
-    'href',
-    'https://mpunav.ru',
-  );
+  await expect(
+    page
+      .getByRole('navigation', { name: 'На каждый день' })
+      .getByRole('link', { name: /МосРасписание/ }),
+  ).toHaveAttribute('href', 'https://mosrasp.ru');
+  await expect(
+    page
+      .getByRole('navigation', { name: 'На каждый день' })
+      .getByRole('link', { name: /МПУ Навигатор/ }),
+  ).toHaveAttribute('href', 'https://mpunav.ru');
   await expect(page.locator('.topic')).toHaveCount(8);
   await expect(page.locator('.sidebar-helpers a').last()).toHaveAttribute(
     'href',
@@ -446,4 +451,43 @@ test('Enter сразу после ввода дожидается актуаль
       );
     });
   await expect(page).toHaveURL(/\/articles\/campus-wifi\//);
+});
+
+test('сервисы: баннеры и инструкции связаны с действующими статьями', async ({ page }) => {
+  await page.goto('/resources/');
+  await expect(page.locator('.service-preview')).toHaveCount(4);
+  await expect(page.locator('.resource-item')).toHaveCount(14);
+  const images = page.locator('.service-preview-image img');
+  for (const image of await images.all()) {
+    await image.scrollIntoViewIfNeeded();
+    await expect
+      .poll(() => image.evaluate((element) => (element as HTMLImageElement).naturalWidth))
+      .toBeGreaterThan(0);
+    await expect(image).toHaveAttribute('src', /\.webp/);
+  }
+  for (const card of await page.locator('.resource-item').all())
+    expect(await card.locator('.resource-guides a').count()).toBeGreaterThan(0);
+  await page.locator('[data-resource="mpunav"] .resource-guides a').first().click();
+  await expect(page).toHaveURL(/\/articles\/mpunav-how-to\//);
+});
+
+test('разделы используют разные рисунки с разным движением', async ({ page }) => {
+  for (const [path, motif] of [
+    ['/articles/schedule/', 'orbits'],
+    ['/resources/', 'route'],
+    ['/community/', 'rosette'],
+    ['/topics/study/', 'fan'],
+    ['/about/', 'wave'],
+  ]) {
+    await page.goto(path);
+    await expect(page.locator('.page-identity [data-motif]')).toHaveAttribute('data-motif', motif);
+  }
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/community/');
+  expect(
+    await page.evaluate(
+      () =>
+        document.getAnimations().filter((animation) => animation.playState === 'running').length,
+    ),
+  ).toBe(0);
 });

@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Clean-param: q&tag&category&utm_source&utm_medium&utm_campaign /
 Sitemap: https://polytech.help/sitemap.xml

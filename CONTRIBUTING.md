@@ -28,17 +28,18 @@ npm run dev
 
 Сайт откроется по адресу, который покажет терминал. Код разбит по задачам:
 
-| Что меняешь              | Где искать                                           |
-| ------------------------ | ---------------------------------------------------- |
-| Статьи                   | `src/content/articles/`                              |
-| Главная, категории, теги | `src/features/browse/`                               |
-| Полнотекстовый поиск     | `src/features/search/`                               |
-| Тема и анимации          | `src/features/theme/`, `src/features/motion/`        |
-| Общая навигация          | `src/features/navigation/`, `src/layouts/Base.astro` |
-| Айдентика и favicon      | `src/features/brand/`, `public/favicon.svg`          |
-| Стили и цвета            | `src/styles/global.css`                              |
-| Ссылки и разделы         | `src/lib/data.ts`                                    |
-| Проверки интерфейса      | `tests/`                                             |
+| Что меняешь              | Где искать                                                |
+| ------------------------ | --------------------------------------------------------- |
+| Статьи                   | `src/content/articles/`                                   |
+| Главная, категории, теги | `src/features/browse/`                                    |
+| Полнотекстовый поиск     | `src/features/search/`                                    |
+| Тема и анимации          | `src/features/theme/`, `src/features/motion/`             |
+| Общая навигация          | `src/features/navigation/`, `src/layouts/Base.astro`      |
+| Айдентика и favicon      | `src/features/brand/`, `public/favicon.svg`               |
+| Стили и цвета            | `src/styles/global.css`                                   |
+| Ссылки и разделы         | `src/features/services/resources.json`, `src/lib/data.ts` |
+| SEO и Sitemap            | `src/features/seo/`, `src/pages/sitemap.xml.ts`           |
+| Проверки интерфейса      | `tests/`                                                  |
 
 Для проверки полного поиска нужен собранный индекс:
 

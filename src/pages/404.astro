@@ -2,7 +2,11 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="Страница не найдена">
+<Base
+  title="Страница не найдена"
+  description="Такой страницы в справочнике polytech.help нет. Найдите нужный вопрос через поиск или вернитесь на главную."
+  indexable={false}
+>
   <section class="error-page wrap">
     <span class="eyebrow">КАЖЕТСЯ, МЫ НЕ В ТОЙ АУДИТОРИИ</span>
     <h1>

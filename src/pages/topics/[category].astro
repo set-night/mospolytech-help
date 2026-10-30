@@ -8,6 +8,15 @@ export function getStaticPaths() {
 const { category } = Astro.props;
 ---
 
-<Base title={category.title}>
+<Base
+  title={`${category.title}: вопросы и инструкции студентам`}
+  description={`${category.description}. Ответы для студентов Московского Политеха с источниками, инструкциями и полезными ссылками.`}
+  kind="CollectionPage"
+  breadcrumbs={[
+    { title: 'Главная', path: '/' },
+    { title: 'Справочник', path: '/articles/' },
+    { title: category.title, path: `/topics/${category.id}/` },
+  ]}
+>
   <Browse category={category.id} />
 </Base>

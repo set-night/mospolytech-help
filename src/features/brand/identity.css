@@ -1,6 +1,125 @@
 .identity-curl {
   pointer-events: none;
 }
+.brand-artwork {
+  pointer-events: none;
+  overflow: visible;
+}
+.page-identity > .brand-artwork {
+  width: 100%;
+  height: 100%;
+}
+.art-motion {
+  animation-play-state: paused !important;
+  transform-origin: 280px 280px;
+}
+.brand-artwork.is-visible .art-motion {
+  animation-play-state: running !important;
+}
+.document-hidden .brand-artwork.is-visible .art-motion,
+.document-hidden .curl-ink {
+  animation-play-state: paused !important;
+}
+.orbit-forward {
+  animation: orbit-turn 28s linear infinite;
+}
+.orbit-backward {
+  animation: orbit-turn 35s linear infinite reverse;
+}
+.wave-drift {
+  animation: wave-sway 7s ease-in-out infinite alternate;
+}
+.rosette-breathe {
+  animation: rosette-bloom 10s ease-in-out infinite alternate;
+}
+.route-draw {
+  stroke-dasharray: 1;
+  animation: route-trace 9s var(--ease) infinite;
+}
+.route-beacons {
+  animation: beacon-breathe 4s ease-in-out infinite alternate;
+}
+.fan-open {
+  animation: fan-unfold 8s ease-in-out infinite alternate;
+  transform-origin: 85px 440px;
+}
+.guide-artwork {
+  position: absolute;
+  width: 210px;
+  height: 150px;
+  right: 110px;
+  bottom: -20px;
+  opacity: 0.15;
+  color: var(--red);
+}
+.guide-intro {
+  position: relative;
+  isolation: isolate;
+}
+.guide-intro > :not(.brand-artwork) {
+  position: relative;
+  z-index: 1;
+}
+.page-identity:has([data-motif='route']) {
+  color: #4b6eb9;
+}
+@keyframes orbit-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes wave-sway {
+  from {
+    transform: translateX(-10px) rotate(-2deg);
+  }
+  to {
+    transform: translateX(10px) rotate(2deg);
+  }
+}
+@keyframes rosette-bloom {
+  from {
+    transform: rotate(-7deg) scale(0.96);
+    opacity: 0.6;
+  }
+  to {
+    transform: rotate(7deg) scale(1.04);
+    opacity: 1;
+  }
+}
+@keyframes route-trace {
+  0% {
+    stroke-dashoffset: 1;
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  55%,
+  80% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+@keyframes beacon-breathe {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fan-unfold {
+  from {
+    transform: scaleX(0.9) rotate(-3deg);
+  }
+  to {
+    transform: scaleX(1) rotate(3deg);
+  }
+}
 .scene-art > .identity-curl,
 .page-identity > .identity-curl {
   width: 100%;
@@ -62,6 +181,11 @@
   }
 }
 @media (max-width: 580px) {
+  .guide-artwork {
+    right: 70px;
+    width: 130px;
+    height: 110px;
+  }
   .scene-curl {
     opacity: 0.56;
   }
@@ -72,6 +196,11 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  .brand-artwork .art-motion {
+    animation: none;
+    transform: none;
+    stroke-dashoffset: 0;
+  }
   .identity-curl .curl-ink {
     animation: none;
     stroke-dashoffset: 0;

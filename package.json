@@ -18,7 +18,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "deploy": "wrangler pages deploy dist --project-name polytech-help",
-    "verify": "npm run check:content && npm run check && npm run build && npm run check:links"
+    "verify": "npm run check:content && npm run check:coverage && npm run check && npm run build && npm run check:links",
+    "check:coverage": "node scripts/check-coverage.mjs"
   },
   "repository": {
     "type": "git",

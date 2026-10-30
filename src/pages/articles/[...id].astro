@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
 import { categories, repository, statusLabels } from '../../lib/data';
+import { modifiedAt } from '../../features/seo/modified';
 export async function getStaticPaths() {
   return (await getCollection('articles')).map((article) => ({
     params: { id: article.id },
@@ -15,15 +16,35 @@ const related = (await getCollection('articles'))
   .filter((a) => a.id !== article.id && a.data.category === article.data.category)
   .slice(0, 3);
 const issueUrl = `${repository}/issues/new?template=correction.yml&title=${encodeURIComponent(`Поправка: ${article.data.title}`)}`;
+const lastModified = modifiedAt(
+  ['src/pages/articles/[...id].astro', `src/content/articles/${article.id}.md`],
+  article.data.reviewedAt,
+)!;
 ---
 
-<Base title={article.data.title} description={article.data.description}>
+<Base
+  title={article.data.title}
+  description={article.data.description}
+  article={{
+    section: category.title,
+    tags: article.data.tags,
+    sources: article.data.sources,
+    modifiedAt: lastModified,
+  }}
+  breadcrumbs={[
+    { title: 'Главная', path: '/' },
+    { title: category.title, path: `/topics/${category.id}/` },
+    { title: article.data.title, path: `/articles/${article.id}/` },
+  ]}
+>
   <div class="article-layout wrap">
     <article data-pagefind-body>
       <div class="article-header">
-        <a class="back-link" href={`/topics/${category.id}/`}>
-          ← {category.title}
-        </a>
+        <nav class="article-breadcrumbs" aria-label="Хлебные крошки" data-pagefind-ignore>
+          <a href="/">Главная</a>
+          <span aria-hidden="true">/</span>
+          <a href={`/topics/${category.id}/`}>{category.title}</a>
+        </nav>
         <span data-pagefind-filter="category" class="sr-only">
           {category.id}
         </span>

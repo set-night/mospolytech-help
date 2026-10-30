@@ -5,6 +5,8 @@ import { categories, repository, resources, statusLabels } from '../../lib/data'
 import { quickTags, normalizeTag, formatMaterialCount } from './topics';
 import Ribbon from './Ribbon.astro';
 import Curl from '../brand/Curl.astro';
+import Artwork from '../brand/Artwork.astro';
+import './hero.css';
 interface Props {
   services?: boolean;
   category?: string;
@@ -43,7 +45,41 @@ const icons: Record<string, IconName> = {
   career: 'briefcase',
   community: 'people',
 };
-const serviceIcons: IconName[] = ['calendar', 'map', 'book', 'file'];
+const dailyLinks = [
+  {
+    ...resources.find((resource) => resource.id === 'mosrasp')!,
+    image: '/images/services/mosrasp.svg',
+    icon: 'calendar' as const,
+    hint: 'Пары и экзамены',
+  },
+  {
+    ...resources.find((resource) => resource.id === 'mpunav')!,
+    image: '/images/services/mpunav.png',
+    icon: 'map' as const,
+    hint: 'Корпуса и аудитории',
+  },
+  {
+    ...resources.find((resource) => resource.id === 'account')!,
+    image: undefined,
+    icon: 'file' as const,
+    hint: 'Справки и заявления',
+  },
+];
+const guideLinks = [
+  {
+    title: 'Справочник',
+    url: '#guide',
+    icon: 'book' as const,
+    hint: formatMaterialCount(articles.length),
+  },
+  {
+    title: 'Все сервисы',
+    url: '/resources/',
+    icon: 'grid' as const,
+    hint: `${resources.length} полезных ресурсов`,
+  },
+  { title: 'Чаты и медиа', url: '/community/', icon: 'chat' as const, hint: 'Спросить у своих' },
+];
 ---
 
 <div
@@ -51,7 +87,13 @@ const serviceIcons: IconName[] = ['calendar', 'map', 'book', 'file'];
   data-browse
   data-initial-category={initialCategory}
 >
-  <h1 class="sr-only">Справочник студентов Московского Политеха</h1>
+  <h1 class="sr-only">
+    {services
+      ? 'Справочник студентов Московского Политеха'
+      : initialCategory
+        ? `${categories.find((item) => item.id === initialCategory)?.title}: вопросы студентов Московского Политеха`
+        : 'Все вопросы и статьи для студентов Московского Политеха'}
+  </h1>
   <section
     class:list={[services ? 'search-stage' : 'directory-search']}
     aria-label="Поиск и полезные ссылки"
@@ -90,31 +132,83 @@ const serviceIcons: IconName[] = ['calendar', 'map', 'book', 'file'];
     </div>
     {services && (
       <>
-        <nav class="floating-services" aria-label="Полезные сервисы">
-          {resources.slice(0, 4).map((resource, index) => (
-            <div class={`float-anchor float-anchor-${index + 1}`} data-enter>
-              <a href={resource.url} target="_blank" rel="noopener noreferrer" class="float-link">
-                <span class="float-icon">
-                  <Icon name={serviceIcons[index]} />
-                </span>
-                <span>
-                  <strong>{resource.title}</strong>
-                  <small>
-                    {
-                      [
-                        'Какая следующая пара?',
-                        'Найти аудиторию',
-                        'Новости и документы',
-                        'Справки и заявления',
-                      ][index]
-                    }
-                  </small>
-                </span>
-                <Icon name="arrow" size={15} />
-              </a>
-            </div>
+        <div class="floating-services">
+          {[
+            { label: 'На каждый день', className: 'cluster-daily', links: dailyLinks },
+            { label: 'Разделы сайта', className: 'cluster-guide', links: guideLinks },
+          ].map((group, groupIndex) => (
+            <nav class={`hero-cluster ${group.className}`} aria-label={group.label}>
+              <span class="cluster-label">{group.label}</span>
+              <div class="cluster-body">
+                <svg
+                  class="cluster-garland garland-desktop"
+                  viewBox="0 0 840 130"
+                  preserveAspectRatio="none"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <defs>
+                    <linearGradient
+                      id={`join-${groupIndex}`}
+                      x1="100"
+                      y1="70"
+                      x2="750"
+                      y2="35"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="currentColor" stop-opacity=".08" />
+                      <stop offset=".5" stop-color="currentColor" stop-opacity=".7" />
+                      <stop offset="1" stop-color="currentColor" stop-opacity=".08" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M132 67Q274 8 420 42Q562 8 708 67"
+                    pathLength="1"
+                    stroke={`url(#join-${groupIndex})`}
+                    stroke-width="1.3"
+                  />
+                </svg>
+                <svg
+                  class="cluster-garland garland-mobile"
+                  viewBox="0 0 360 150"
+                  preserveAspectRatio="none"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M86 48Q180 10 274 48M86 48Q86 122 180 122Q274 122 274 48"
+                    pathLength="1"
+                    stroke="currentColor"
+                    stroke-width="1"
+                  />
+                </svg>
+                <div class="cluster-links">
+                  {group.links.map((link) => (
+                    <a
+                      class="float-link"
+                      href={link.url}
+                      target={groupIndex === 0 ? '_blank' : undefined}
+                      rel={groupIndex === 0 ? 'noopener noreferrer' : undefined}
+                    >
+                      <span class="float-icon">
+                        {'image' in link && link.image ? (
+                          <img src={link.image} width="28" height="28" alt="" decoding="async" />
+                        ) : (
+                          <Icon name={link.icon} size={21} />
+                        )}
+                      </span>
+                      <span>
+                        <strong>{link.title}</strong>
+                        <small>{link.hint}</small>
+                      </span>
+                      <Icon name="arrow" size={15} />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </nav>
           ))}
-        </nav>
+        </div>
         <a class="stage-more" href="#guide">
           <span>К справочнику</span>
           <Icon name="chevron" size={18} />
@@ -128,6 +222,7 @@ const serviceIcons: IconName[] = ['calendar', 'map', 'book', 'file'];
   <section class:list={['guide-body', { wrap: services }]} id="guide" aria-label="Справочник">
     {services && (
       <div class="guide-intro" data-reveal>
+        <Artwork id="directory-fan" motif="fan" class="guide-artwork" />
         <div>
           <span class="eyebrow">СПРАВОЧНИК СООБЩЕСТВА</span>
           <h2>Всё, что пригодится.</h2>

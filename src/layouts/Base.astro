@@ -4,23 +4,50 @@ import '@fontsource-variable/golos-text';
 import '../styles/global.css';
 import '../features/navigation/header.css';
 import '../features/brand/identity.css';
+import '../features/seo/seo.css';
 import Search from '../components/Search.astro';
 import Icon from '../components/Icon.astro';
-import Curl from '../features/brand/Curl.astro';
+import Artwork, { type Motif } from '../features/brand/Artwork.astro';
 import { repository } from '../lib/data';
+import { buildMetadata, type ArticleMetadata, type Breadcrumb } from '../features/seo/metadata';
 interface Props {
   title?: string;
   description?: string;
+  kind?: 'WebPage' | 'CollectionPage' | 'AboutPage';
+  breadcrumbs?: Breadcrumb[];
+  article?: ArticleMetadata;
+  indexable?: boolean;
 }
 const {
   title = 'Справочник студентов Московского Политеха',
   description = 'Расписание, навигация, документы и ответы на вопросы студентов Московского Политеха. Открытый неофициальный справочник с источниками.',
+  kind,
+  breadcrumbs,
+  article,
+  indexable = true,
 } = Astro.props;
 const isHome = Astro.url.pathname === '/';
+const path = Astro.url.pathname;
+const motif: Motif = path.startsWith('/resources')
+  ? 'route'
+  : path.startsWith('/community')
+    ? 'rosette'
+    : path.startsWith('/topics') || path === '/articles/'
+      ? 'fan'
+      : path.startsWith('/articles/')
+        ? 'orbits'
+        : 'wave';
 const currentSection = /^\/(articles|topics)\//.test(Astro.url.pathname)
   ? '/articles/'
   : Astro.url.pathname;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const seo = buildMetadata({
+  title,
+  description,
+  pathname: Astro.url.pathname,
+  kind,
+  breadcrumbs,
+  article,
+});
 const nav = [
   { href: '/', title: 'Главная', icon: 'home' },
   { href: '/articles/', title: 'Справочник', icon: 'book' },
@@ -37,16 +64,37 @@ const nav = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark light" />
     <meta name="theme-color" content="#1e1e1e" />
-    <title>{title} — polytech.help</title>
+    <title>{seo.title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
+    <meta
+      name="robots"
+      content={indexable ? 'index,follow,max-image-preview:large' : 'noindex,follow'}
+    />
+    <link rel="canonical" href={seo.canonical} />
     <link rel="icon" href="/favicon.svg?v=4" type="image/svg+xml" />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={seo.title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content={article ? 'article' : 'website'} />
+    <meta property="og:url" content={seo.canonical} />
+    <meta property="og:site_name" content="polytech.help" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:image" content="https://polytech.help/images/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="polytech.help — справочник студентов Московского Политеха"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={seo.title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://polytech.help/images/og.png" />
+    <meta
+      name="twitter:image:alt"
+      content="polytech.help — справочник студентов Московского Политеха"
+    />
+    {article && <meta property="article:modified_time" content={article.modifiedAt} />}
+    {indexable && <script type="application/ld+json" is:inline set:html={seo.jsonLd} />}
   </head>
   <body>
     <a class="skip-link" href="#main">
@@ -105,7 +153,7 @@ const nav = [
     </nav>
     {!isHome && (
       <div class="page-identity" aria-hidden="true">
-        <Curl id="page-curl" />
+        <Artwork id="page-art" motif={motif} />
       </div>
     )}
     <main id="main">
@@ -123,7 +171,7 @@ const nav = [
             <Icon name="arrow" size={25} />
           </span>
         </a>
-        <Curl id="footer-curl" class="footer-ribbon" />
+        <Artwork id="footer-art" motif="wave" class="footer-ribbon" />
       </div>
       <div class="footer-bottom">
         <a href="/" class="footer-wordmark">
