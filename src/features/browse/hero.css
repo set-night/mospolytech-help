@@ -1,5 +1,5 @@
 .search-stage {
-  min-height: 680px;
+  min-height: calc(680 * var(--u));
 }
 .floating-services {
   position: absolute;
@@ -8,44 +8,44 @@
 }
 .hero-cluster {
   position: absolute;
-  width: min(840px, calc(100% - 80px));
+  width: min(calc(840 * var(--u)), calc(100% - 80px));
   left: 50%;
   transform: translateX(-50%);
 }
 .cluster-daily {
-  top: calc(50% - 252px);
+  top: calc(50% - 252 * var(--u));
 }
 .cluster-guide {
-  top: calc(50% + 134px);
+  top: calc(50% + 134 * var(--u));
 }
 .cluster-label {
   display: block;
   color: var(--muted);
-  font-size: 12px;
-  margin: 0 0 16px 8px;
+  font-size: calc(12 * var(--u));
+  margin: 0 0 calc(16 * var(--u)) calc(8 * var(--u));
 }
 .cluster-body {
   position: relative;
-  min-height: 106px;
+  min-height: calc(106 * var(--u));
 }
 .cluster-links {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  gap: calc(24 * var(--u));
   align-items: start;
 }
 .float-link {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 15px 16px;
-  min-height: 72px;
+  gap: calc(12 * var(--u));
+  padding: calc(15 * var(--u)) calc(16 * var(--u));
+  min-height: calc(72 * var(--u));
   border: 1px solid var(--line);
-  border-radius: 11px;
+  border-radius: calc(11 * var(--u));
   background: var(--paper);
   box-shadow: 0 10px 28px #0001;
-  transform: translateY(20px) rotate(-3deg);
+  transform: translateY(calc(20 * var(--u))) rotate(-3deg);
   transition:
     border-color 0.25s,
     box-shadow 0.25s;
@@ -54,13 +54,13 @@
   transform: rotate(2deg);
 }
 .float-link:nth-child(3) {
-  transform: translateY(20px) rotate(3deg);
+  transform: translateY(calc(20 * var(--u))) rotate(3deg);
 }
 .cluster-guide .float-link {
   transform: rotate(2deg);
 }
 .cluster-guide .float-link:nth-child(2) {
-  transform: translateY(20px) rotate(-2deg);
+  transform: translateY(calc(20 * var(--u))) rotate(-2deg);
 }
 .cluster-guide .float-link:nth-child(3) {
   transform: rotate(-3deg);
@@ -71,22 +71,28 @@
   color: var(--red);
 }
 .float-icon img {
-  width: 28px;
-  height: 28px;
-  border-radius: 7px;
+  width: calc(28 * var(--u));
+  height: calc(28 * var(--u));
+  border-radius: calc(7 * var(--u));
+}
+.float-icon svg {
+  width: calc(21 * var(--u));
+  height: calc(21 * var(--u));
 }
 .float-link strong {
   display: block;
-  font: 600 14px var(--display);
+  font: 600 calc(14 * var(--u)) var(--display);
   letter-spacing: -0.02em;
 }
 .float-link small {
   display: block;
-  font-size: 12px;
+  font-size: calc(12 * var(--u));
   color: var(--muted);
-  margin-top: 6px;
+  margin-top: calc(6 * var(--u));
 }
 .float-link > svg {
+  width: calc(15 * var(--u));
+  height: calc(15 * var(--u));
   color: var(--muted);
   margin-left: auto;
   flex-shrink: 0;
@@ -102,7 +108,7 @@
   position: absolute;
   inset: 0;
   width: 100%;
-  height: 130px;
+  height: calc(130 * var(--u));
   color: var(--red);
   pointer-events: none;
 }

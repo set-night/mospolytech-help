@@ -20,6 +20,8 @@
   --space-md: 24px;
   --space-lg: 48px;
   --space-xl: 96px;
+  /* Fluid pixel for the home scene: 1px up to 1440×820, grows with both viewport axes. */
+  --u: clamp(1px, min(100vw / 1440, 100svh / 820), 1.9px);
   font-family: var(--body);
   color: var(--ink);
   background: var(--paper);
@@ -1208,7 +1210,8 @@ mark {
 }
 @media (min-width: 1600px) {
   .wrap {
-    max-width: 1320px;
+    max-width: 1440px;
+    padding-inline: 56px;
   }
   .browse-layout {
     gap: 48px;
@@ -1608,7 +1611,7 @@ mark {
 }
 .search-stage {
   position: relative;
-  min-height: 680px;
+  min-height: calc(680 * var(--u));
   height: 100svh;
   overflow: clip;
 }
@@ -1616,8 +1619,8 @@ mark {
   position: absolute;
   left: 50%;
   top: 49%;
-  width: min(780px, 72vw);
-  height: min(780px, 72vw);
+  width: min(calc(780 * var(--u)), 72vw);
+  height: min(calc(780 * var(--u)), 72vw);
   transform: translate(calc(-44% + var(--drift-x, 0px)), calc(-50% + var(--drift-y, 0px)));
   pointer-events: none;
   opacity: calc(0.9 - var(--scene-progress, 0) * 0.9);
@@ -1649,15 +1652,15 @@ mark {
   position: absolute;
   right: 10%;
   top: 22%;
-  font-size: 25px;
+  font-size: calc(25 * var(--u));
   color: var(--red);
   font-weight: 200;
 }
 .stage-search-wrap {
   position: absolute;
-  width: min(740px, calc(100% - 64px));
+  width: min(calc(740 * var(--u)), calc(100% - 64px));
   left: 50%;
-  top: calc(50% - 38px);
+  top: calc(50% - 38 * var(--u));
   transform: translateX(-50%);
   z-index: 23;
   transform-origin: top center;
@@ -1668,15 +1671,24 @@ mark {
   transform: translate(-50%, var(--search-y)) scale(var(--search-scale));
 }
 .search-stage .hub-search {
-  min-height: 80px;
+  min-height: calc(80 * var(--u));
+  gap: calc(18 * var(--u));
   background: var(--paper);
   border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 18px 22px;
+  border-radius: calc(10 * var(--u));
+  padding: calc(18 * var(--u)) calc(22 * var(--u));
   box-shadow: 0 20px 70px #0002;
 }
+.search-stage .hub-search > svg {
+  width: calc(26 * var(--u));
+  height: calc(26 * var(--u));
+}
 .search-stage .hub-search input {
-  font-size: 20px;
+  font-size: calc(20 * var(--u));
+}
+.search-stage kbd {
+  font-size: calc(11 * var(--u));
+  padding: calc(4 * var(--u)) calc(6 * var(--u));
 }
 .search-stage .hub-search input::placeholder {
   color: var(--muted);
@@ -1684,9 +1696,13 @@ mark {
 .search-stage .hub-search button {
   background: var(--red);
   color: #fff;
-  width: 46px;
-  height: 46px;
-  border-radius: 7px;
+  width: calc(46 * var(--u));
+  height: calc(46 * var(--u));
+  border-radius: calc(7 * var(--u));
+}
+.search-stage .hub-search button svg {
+  width: calc(22 * var(--u));
+  height: calc(22 * var(--u));
 }
 .search-stage .hub-search:focus-within {
   box-shadow:
@@ -1695,13 +1711,13 @@ mark {
 }
 .stage-more {
   position: absolute;
-  bottom: 44px;
+  bottom: calc(44 * var(--u));
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: 18px;
-  font-size: 11px;
+  gap: calc(18 * var(--u));
+  font-size: calc(12 * var(--u));
   min-height: 44px;
   letter-spacing: 0.02em;
   color: var(--muted);
@@ -1842,7 +1858,6 @@ mark {
 }
 .site-footer {
   display: block;
-  max-width: 1240px;
   padding-top: 0;
   margin-top: 0;
 }
@@ -2139,6 +2154,26 @@ mark {
   }
   .scene-ribbon {
     animation: none;
+  }
+}
+@media (min-width: 2000px) {
+  .wrap {
+    max-width: 1680px;
+    padding-inline: 72px;
+  }
+  .browse-layout {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 80px;
+  }
+  .category-nav a {
+    font-size: 15px;
+  }
+  .answer-main h3 {
+    font-size: 20px;
+  }
+  .answer-category,
+  .answer-tags a {
+    font-size: 13px;
   }
 }
 @media print {

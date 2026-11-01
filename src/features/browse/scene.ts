@@ -12,10 +12,11 @@ if (element) {
   let frame = 0,
     startY = 0,
     endY = 0,
+    shrink = 0,
     mobile = false;
   function render(): void {
     const progress = Math.min(1, Math.max(0, scrollY / Math.max(1, startY - endY)));
-    const scale = 1 - (mobile ? 0.04 : 0.28) * progress * progress;
+    const scale = 1 - shrink * progress * progress;
     search.style.setProperty('--search-y', `${Math.max(endY, startY - scrollY)}px`);
     search.style.setProperty('--search-scale', String(scale));
     scene.style.setProperty('--scene-progress', String(progress));
@@ -28,6 +29,8 @@ if (element) {
     mobile = matchMedia('(max-width: 1050px)').matches;
     startY = scene.clientHeight / 2 - form.offsetHeight / 2;
     endY = mobile ? document.querySelector<HTMLElement>('.site-header')!.offsetHeight + 11 : 12;
+    // The search grows with the viewport, so the docked size is capped to fit the 84px header.
+    shrink = mobile ? 0.04 : 1 - Math.min(0.72, 60 / form.offsetHeight);
     render();
   }
   function schedule(): void {
